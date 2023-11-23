@@ -21,7 +21,7 @@
                 <div class="header-top">
                     <div class="container">
                         <div class="logo">
-                            <a href="index.html"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
+                            <a href="index.php"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
                         </div>
                         <div class="header-top-right">
                             <div class="dropdown">
@@ -34,10 +34,10 @@
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
-                                  <li><a class="dropdown-item" href="./users/kurslar.html">Kurslarim</a></li>
-                                  <li><a class="dropdown-item" href="./users/cobinet.html">Kabinet</a></li>
+                                  <li><a class="dropdown-item" href="./users/kurslar.php">Kurslarim</a></li>
+                                  <li><a class="dropdown-item" href="./users/cobinet.php">Kabinet</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="./login.html">Chiqish</a></li>
+                                  <li><a class="dropdown-item" href="./login.php">Chiqish</a></li>
                                 </ul>
                             </div>
                             <a href="#" class="burger-btn d-block d-xl-none">
@@ -50,25 +50,25 @@
                     <div class="container">
                         <ul>
                             <li class="menu-item active">
-                                <a href="index.html" class='menu-link'><span> Bosh sahifa</span></a>
+                                <a href="index.php" class='menu-link'><span> Bosh sahifa</span></a>
                             </li>
                             <li class="menu-item">
-                                <a href="./cours.html" class='menu-link'><span> Kurslar</span></a>
+                                <a href="./cours.php" class='menu-link'><span> Kurslar</span></a>
                             </li>
                             <li class="menu-item ">
-                                <a href="./users/kurslar.html" class='menu-link'><span> Kurslarim</span></a>
+                                <a href="./users/kurslar.php" class='menu-link'><span> Kurslarim</span></a>
                             </li>
                             <li class="menu-item">
-                                <a href="./contact.html" class='menu-link'><span> Bog'lanish</span></a>
+                                <a href="./contact.php" class='menu-link'><span> Bog'lanish</span></a>
                             </li>
                             <li class="menu-item">
-                                <a href="./help.html" class='menu-link'><span> Yordam</span></a>
+                                <a href="./help.php" class='menu-link'><span> Yordam</span></a>
                             </li>
                             <li class="menu-item">
-                                <a href="login.html" class='menu-link'><span> Kirish</span></a>
+                                <a href="login.php" class='menu-link'><span> Kirish</span></a>
                             </li>
                             <li class="menu-item">
-                                <a href="./registr.html" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
+                                <a href="./registr.php" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
                             </li>
                         </ul>
                     </div>
@@ -82,27 +82,15 @@
                         <div class="card-body">
                             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carouselfade">
                                 <div class="carousel-inner">
+
                                     <div class="carousel-item active">
-                                        <img src="./assets/compiled/png/1.png" class="d-block w-100" style="height: 300px;" alt="...">
+                                        <img src="./assets/img/banner/01.jpg" class="d-block w-100" style="height: 300px;" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                            <h5 class="text-danger">First slide label</h5>
+                                            <p class="text-success">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="./assets/compiled/png/2.png" class="d-block w-100" style="height: 300px;" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Second slide label</h5>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="./assets/compiled/png/3.png" class="d-block w-100" style="height: 300px;" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h5>Third slide label</h5>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -135,7 +123,7 @@
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">
                                         <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.html">
+                                        <a href="./cours_eye.php">
                                             <button class="btn btn-light-primary">Kurs haqida</button>
                                         </a>
                                     </div>
@@ -154,7 +142,7 @@
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">
                                         <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.html">
+                                        <a href="./cours_eye.php">
                                             <button class="btn btn-light-primary">Kurs haqida</button>
                                         </a>
                                     </div>
@@ -173,7 +161,7 @@
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">
                                         <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.html">
+                                        <a href="./cours_eye.php">
                                             <button class="btn btn-light-primary">Kurs haqida</button>
                                         </a>
                                     </div>
@@ -181,7 +169,7 @@
                             </div>
                         </div>
                         <div class="page-title text-center">
-                            <a href="./cours.html">
+                            <a href="./cours.php">
                                 <button class="btn btn-primary">Barcha kurslar</button>
                             </a>
                         </div>
@@ -223,18 +211,18 @@
                     <div class="col-lg-3 col-6">
                         <h4 class="card-title">Bo'limlar</h4><br>
                         <ul>
-                            <li><a href="./cours.html" class="text-white">Kurslar</a></li>
-                            <li><a href="./contact.html" class="text-white">Bog'lanish</a></li>
-                            <li><a href="./help.html" class="text-white">Yordam</a></li>
+                            <li><a href="./cours.php" class="text-white">Kurslar</a></li>
+                            <li><a href="./contact.php" class="text-white">Bog'lanish</a></li>
+                            <li><a href="./help.php" class="text-white">Yordam</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-6">
                         <h4 class="card-title">Qo'llab quvvatlash</h4><br>
                         <ul>
-                            <li><a href="./login.html" class="text-white">Kirish</a></li>
-                            <li><a href="./registr.html" class="text-white">Ro'yhatdan o'tish</a></li>
-                            <li><a href="./users/kurslar.html" class="text-white">Kurslarim</a></li>
-                            <li><a href="./users/cobinet.html" class="text-white">Kabinet</a></li>
+                            <li><a href="./login.php" class="text-white">Kirish</a></li>
+                            <li><a href="./registr.php" class="text-white">Ro'yhatdan o'tish</a></li>
+                            <li><a href="./users/kurslar.php" class="text-white">Kurslarim</a></li>
+                            <li><a href="./users/cobinet.php" class="text-white">Kabinet</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-6">
