@@ -1,7 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    include_once("./config/config.php");
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,20 +79,25 @@
 
             <div class="content-wrapper container">
                 <div class="page-content">
-                    <!-- Sliders -->
+                    <!-- Banner -->
                     <div class="card">
                         <div class="card-body">
                             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carouselfade">
                                 <div class="carousel-inner">
-
-                                    <div class="carousel-item active">
-                                        <img src="./assets/img/banner/01.jpg" class="d-block w-100" style="height: 300px;" alt="...">
+                                    <?php
+                                        $sqlb = "SELECT * FROM `banner`";
+                                        $resb = $conn->query($sqlb);
+                                        $i=1;
+                                        while ($rowb = $resb->fetch()) {
+                                    ?>
+                                    <div class="carousel-item <?php if($i===1){ echo "active"; } ?>">
+                                        <img src="./assets/img/banner/<?php echo $rowb['Image']; ?>" class="d-block w-100" style="height: 300px;" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5 class="text-danger">First slide label</h5>
-                                            <p class="text-success">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                            <h5 class="text-danger"><?php echo $rowb['H1']; ?></h5>
+                                            <p class="text-success"><?php echo $rowb['P']; ?></p>
                                         </div>
                                     </div>
-                                    
+                                        <?php $i++; } ?>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -116,9 +123,6 @@
                                         <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
                                         <div class="card-body">
                                             <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">
@@ -135,9 +139,6 @@
                                         <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
                                         <div class="card-body">
                                             <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">
@@ -154,9 +155,6 @@
                                         <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
                                         <div class="card-body">
                                             <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">

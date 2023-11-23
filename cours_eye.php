@@ -79,65 +79,84 @@
                 <div class="page-content">
                     <section class="row">
                         <!-- Yangi kurslar -->
-                        <div class="page-title text-center">
-                            <h3>Barcha kurslar</h3>
-                            <p class="text-subtitle text-muted">Eng yangi video kurslar</p>
-                        </div>
-                        <div class="row">
+                        <div class="row my-3 mb-5">
                             <div class="col-lg-4">
-                                <div class="card" style="max-height:400px; min-height: 300px;">
+                                <div class="card">
                                     <div class="card-content">
-                                        <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
+                                        <img src="./assets/compiled/jpg/7.jpg" class="card-img-top img-fluid" style="max-height:250px;" alt="singleminded">
+                                        <div class="card-body py-2">
+                                            <h4 class="card-title m-0 p-0 w-100 text-center">Kursning nomi</h4>
                                         </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.php">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
-                                        </a>
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><b>Kurs narxi: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>Mavzular soni: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>Davomiyligi: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>Til: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>Daraja: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>O'qituvchi: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>Davomiyligi: </b> 50 000 so'm</li>
+                                            <li class="list-group-item text-center">
+                                                <i class='text-success'>Kursni sotib olish uchun oldin ro'yhatdan o'ting</i><br>
+                                                <button class="btn btn-success">Sotib olish</button>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card" style="max-height:400px; min-height: 300px;">
+                            <div class="col-lg-8">
+                                <div class="card">
                                     <div class="card-content">
-                                        <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
+                                        <div class="card-body p-2">
+                                            <video controls style="width:100%;" controlsList="nodownload">
+                                                <source src="./assets/video/video.mp4" type="video/mp4">
+                                            </video>
                                         </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.php">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card" style="max-height:400px; min-height: 300px;">
-                                    <div class="card-content">
-                                        <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
                                         <div class="card-body">
-                                            <h5 class="card-title">Be Single Minded</h5>
                                             <p class="card-text">
-                                                Chocolate sesame
+                                                Hurs haqida qisqacha malumot 
+                                                Candy cupcake sugar plum oat cake wafer marzipan jujubes.
+                                                Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut pastry gummies
+                                                tiramisu
+                                                chocolate bar muffin.
                                             </p>
+                                            <div class="accordion" id="accordionExample">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Kurs mavzulari</button></h2>
+                                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <table class="table">
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Mavzular</th>
+                                                                    <th>Vaqt</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1- mavzu haqida</td>
+                                                                    <td>00:00:00</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1- mavzu haqida</td>
+                                                                    <td>00:00:00</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1- mavzu haqida</td>
+                                                                    <td>00:00:00</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1- mavzu haqida</td>
+                                                                    <td>00:00:00</td>
+                                                                </tr>
+                                                            </table>    
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.php">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
