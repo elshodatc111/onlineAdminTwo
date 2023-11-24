@@ -56,7 +56,7 @@
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
-                    <?php echo $_COOKIE['code']; ?>
+                    <?php if(isset($_COOKIE['code'])){echo $_COOKIE['code'];} ?>
                 </div>
             </div>
         </div>
