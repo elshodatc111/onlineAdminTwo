@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 24 2023 г., 15:13
--- Версия сервера: 10.4.28-MariaDB
--- Версия PHP: 8.0.28
+-- Время создания: Ноя 24 2023 г., 19:31
+-- Версия сервера: 10.4.25-MariaDB
+-- Версия PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `banner` (
   `H1` varchar(50) NOT NULL,
   `P` varchar(70) NOT NULL,
   `Image` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `banner`
@@ -64,7 +64,7 @@ CREATE TABLE `cours_eye` (
   `Video` varchar(150) NOT NULL,
   `Text` text NOT NULL,
   `Date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `cours_eye`
@@ -92,14 +92,15 @@ CREATE TABLE `users` (
   `Email` varchar(45) NOT NULL,
   `Image` varchar(45) NOT NULL,
   `Dates` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `UserID`, `FIO`, `Addres`, `Phone`, `Email`, `Image`, `Dates`) VALUES
-(1, '451541', 'Elshod', 'Qarshi shaxar', '908830450', 'elshod@gmail.com', '01.jpg', '2023-11-24 13:27:58');
+(3, '1700850090', 'Elshod', 'elshodatc1116@gmail.com', '908830450ss', 'Qarshi shahar', '01.png', '2023-11-24 18:21:30'),
+(4, '1700850217', 'Elshod', '', '908830450', '', '01.png', '2023-11-24 18:23:37');
 
 --
 -- Индексы сохранённых таблиц
@@ -143,7 +144,7 @@ ALTER TABLE `cours_eye`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
