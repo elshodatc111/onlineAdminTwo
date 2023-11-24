@@ -26,7 +26,7 @@
                             <a href="index.php"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
                         </div>
                         <div class="header-top-right">
-                            <div class="dropdown">
+                            <div class="dropdown" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
                                 <a href="#" id="topbarUserDropdown" class="user-dropdown d-flex align-items-center dropend dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="avatar avatar-md2" >
                                         <img src="./assets/compiled/jpg/1.jpg" alt="Avatar">
@@ -54,7 +54,7 @@
                             <li class="menu-item ">
                                 <a href="index.php" class='menu-link'><span> Bosh sahifa</span></a>
                             </li>
-                            <li class="menu-item active">
+                            <li class="menu-item active" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
                                 <a href="./cours.php" class='menu-link'><span> Kurslar</span></a>
                             </li>
                             <li class="menu-item ">
@@ -66,10 +66,10 @@
                             <li class="menu-item">
                                 <a href="./help.php" class='menu-link'><span> Yordam</span></a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item"  style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
                                 <a href="login.php" class='menu-link'><span> Kirish</span></a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item"  style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
                                 <a href="./registr.php" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
                             </li>
                         </ul>
@@ -137,10 +137,10 @@
                     <div class="col-lg-3 col-6">
                         <h4 class="card-title">Qo'llab quvvatlash</h4><br>
                         <ul>
-                            <li><a href="./login.php" class="text-white">Kirish</a></li>
-                            <li><a href="./registr.php" class="text-white">Ro'yhatdan o'tish</a></li>
-                            <li><a href="./users/kurslar.php" class="text-white">Kurslarim</a></li>
-                            <li><a href="./users/cobinet.php" class="text-white">Kabinet</a></li>
+                            <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./login.php" class="text-white">Kirish</a></li>
+                            <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./registr.php" class="text-white">Ro'yhatdan o'tish</a></li>
+                            <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./users/kurslar.php" class="text-white">Kurslarim</a></li>
+                            <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./users/cobinet.php" class="text-white">Kabinet</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-6">
