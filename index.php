@@ -3,6 +3,11 @@
     if(isset($_GET['chiqish'])){
         setcookie("UserID", "", time()-6*3600);
         header("location: index.php");
+    }elseif(isset($_GET['chiqish'])){
+        setcookie("code", "", time()-6*3600);
+        setcookie("FIO", "", time()-6*3600);
+        setcookie("Phone", "", time()-6*3600);
+        header("location: index.php");
     }
 ?>
 <!DOCTYPE html>

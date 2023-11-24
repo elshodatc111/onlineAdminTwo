@@ -22,9 +22,9 @@
                     <div class="auth-logo text-center mb-2">
                         <a href="index.php"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
                     </div>
-                    <h1 class="auth-title w-100 text-center">Kirish</h1>
+                    <h1 class="auth-title w-100 text-center mt-3">Kirish</h1>
                     <!--Telegon raqam-->
-                    <form action="login2.php" method="POST" style="display:<?php if(isset($_GET['sendmessege'])){ echo "none;";} ?>">
+                    <form action="login2.php" method="POST" class="pt-3" style="display:<?php if(isset($_GET['sendmessege'])){ echo "none;";} ?>">
                         <p class="auth-subtitle text-danger mb-3 text-center" style="display:<?php if(!isset($_GET['phone1'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tmagan. Tizimga kirish uchun oldin ro'yhatdan o'ting</p>
                         <div class="form-group position-relative has-icon-left">
                             <input type="text" class="form-control form-control-xl phone" name="Phones" placeholder="Telefon raqam" required>
@@ -33,7 +33,7 @@
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-1" name="Phone">Kirish</button>
                     </form>
                     <!-- Tasdiqlash kodi -->
-                    <form action="login2.php?Phone=<?php if(isset($_GET['Phone'])){echo $_GET['Phone'];} ?>" style="display:
+                    <form action="login2.php?Phone=<?php if(isset($_GET['Phone'])){echo $_GET['Phone'];} ?>" class="pt-3" style="display:
                     <?php if(isset($_GET['phone1'])){echo 'none;';}
                     elseif(isset($_GET['sendmessege'])){echo 'block;';}
                     else{echo 'none;';} ?>" method="POST">
