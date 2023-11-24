@@ -80,9 +80,79 @@
                     <section class="row">
                         <!-- Yangi kurslar -->
                         <div class="page-title text-center">
-                            <h3>Kurslarim</h3>
-                            <p class="text-subtitle text-muted">Eng yangi video kurslar</p>
+                            <h3>Mening kurslar</h3>
+                            <p class="text-subtitle text-muted">Siz xarid qilgan kurslaringiz.</p>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card" style="">
+                                    <div class="card-content p-0">
+                                        <img src="../assets/img/cours/01.jpg" class="card-img-top img-fluid">
+                                        <div class="card-body p-3 m-0">
+                                            <h5 class="card-title p-0">Kurs nomi</h5>
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-between m-0 p-2 px-3">
+                                            <p class="pt-0 text-danger pt-2"><b>Muddat:</b> 25/11/2023</p>
+                                            <a href="./kurs_eye.php?CoursID=CoursID">
+                                                <button class="btn btn-primary">Boshlash</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card" style="">
+                                    <div class="card-content p-0">
+                                        <img src="../assets/img/cours/01.jpg" class="card-img-top img-fluid">
+                                        <div class="card-body p-3 m-0">
+                                            <h5 class="card-title p-0">Kurs nomi</h5>
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-between m-0 p-2 px-3">
+                                            <p class="pt-0 text-danger pt-2"><b>Muddat:</b> 25/11/2023</p>
+                                            <a href="./kurs_eye.php?CoursID=CoursID">
+                                                <button class="btn btn-primary">Boshlash</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card" style="">
+                                    <div class="card-content p-0">
+                                        <img src="../assets/img/cours/01.jpg" class="card-img-top img-fluid">
+                                        <div class="card-body p-3 m-0">
+                                            <h5 class="card-title p-0">Kurs nomi</h5>
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-between m-0 p-2 px-3">
+                                            <p class="pt-0 text-danger pt-2"><b>Muddat:</b> 25/11/2023</p>
+                                            <a href="./kurs_eye.php?CoursID=CoursID">
+                                                <button class="btn btn-primary">Boshlash</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card" style="">
+                                    <div class="card-content p-0">
+                                        <img src="../assets/img/cours/01.jpg" class="card-img-top img-fluid">
+                                        <div class="card-body p-3 m-0">
+                                            <h5 class="card-title p-0">Kurs nomi</h5>
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-between m-0 p-2 px-3">
+                                            <p class="pt-0 text-danger pt-2"><b>Muddat:</b> 25/11/2023</p>
+                                            <a href="./kurs_eye.php?CoursID=CoursID">
+                                                <button class="btn btn-primary">Boshlash</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        
 
                     </section>
                 </div>

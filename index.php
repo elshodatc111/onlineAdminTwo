@@ -123,18 +123,18 @@
                                 while ($rowCours = $resCours->fetch()) {
                             ?>
                             <div class="col-lg-4">
-                                <div class="card" style="max-height:400px; min-height: 300px;">
+                                <div class="card">
                                     <div class="card-content">
                                         <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid">
                                         <div class="card-body">
-                                            <h5 class="card-title"><?php echo $rowCours['CoursName']; ?></h5>
+                                            <h5 class="card-title p-0 m-0"><?php echo $rowCours['CoursName']; ?></h5>
                                         </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger"><?php echo $rowCours['CoursSumma']; ?> so'm</h3>
-                                        <a href="./cours_eye.php?CoursID=<?php echo $rowCours['CoursID']; ?>">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
-                                        </a>
+                                        <div class="card-footer d-flex justify-content-between p-0 m-0 py-1 px-3">
+                                            <h3 class="pt-1 text-danger"><?php echo $rowCours['CoursSumma']; ?> so'm</h3>
+                                            <a href="./cours_eye.php?CoursID=<?php echo $rowCours['CoursID']; ?>">
+                                                <button class="btn btn-light-primary">Kurs haqida</button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
