@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+    include_once("./config/config.php");
+    
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,26 +24,30 @@
                     </div>
                     <h1 class="auth-title w-100 text-center">Kirish</h1>
                     <!--Telegon raqam-->
-                    <form action="index.php">
-                        <p class="auth-subtitle text-danger mb-3 text-center">Telefon raqam ro'yhatdan o'tmagan. Tizimga kirish uchun oldin ro'yhatdan o'ting</p>
+                    <form action="login2.php" method="POST" style="display:<?php if(isset($_GET['sendmessege'])){ echo "none;";} ?>">
+                        <p class="auth-subtitle text-danger mb-3 text-center" style="display:<?php if(!isset($_GET['phone1'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tmagan. Tizimga kirish uchun oldin ro'yhatdan o'ting</p>
                         <div class="form-group position-relative has-icon-left">
-                            <input type="text" class="form-control form-control-xl phone" placeholder="Telefon raqam" required>
-                            <div class="form-control-icon">
-                                <i class="bi bi-phone"></i>
-                            </div>
+                            <input type="text" class="form-control form-control-xl phone" name="Phones" placeholder="Telefon raqam" required>
+                            <div class="form-control-icon pt-2"><i class="bi bi-phone"></i></div>
                         </div>
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-1">Kirish</button>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-1" name="Phone">Kirish</button>
                     </form>
                     <!-- Tasdiqlash kodi -->
-                    <form action="index.php">
-                        <p class="auth-subtitle text-success mb-3 text-center">Tasdiqlash kodi 0450 raqamiga yuborildi. Tasdiqlash kodini kiriting.</p>
+                    <form action="login2.php?Phone=<?php if(isset($_GET['Phone'])){echo $_GET['Phone'];} ?>" style="display:
+                    <?php if(isset($_GET['phone1'])){echo 'none;';}
+                    elseif(isset($_GET['sendmessege'])){echo 'block;';}
+                    else{echo 'none;';} ?>" method="POST">
+                        <p class="auth-subtitle text-success mb-3 text-center" style="display:<?php if(isset($_GET['codeerror'])){echo 'none;';} ?>">Tasdiqlash kodi 
+                            <?php if(isset($_GET['sendmessege'])){echo $_GET['Phone'];} ?> 
+                            raqamiga yuborildi. Tasdiqlash kodini kiriting.</p>
+                        <p class="auth-subtitle text-danger mb-1 text-center" style="display:<?php if(!isset($_GET['codeerror'])){echo 'none';} ?>;">Tasdiqlash kodi noto'g'ri</p>
                         <div class="form-group position-relative has-icon-left">
-                            <input type="text" class="form-control form-control-xl kodes" placeholder="Tasdiqlash kodi" required>
-                            <div class="form-control-icon">
+                            <input type="text" class="form-control form-control-xl kodes" name="tasdiqkodi" placeholder="Tasdiqlash kodi" required>
+                            <div class="form-control-icon pt-2">
                                 <i class="bi bi-code"></i>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-1">Kodni tasdiqlash</button>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-1" name="tasdiqlash">Kodni tasdiqlash</button>
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
                         <p class="text-gray-600"><a href="./registr.php" class="font-bold">Ro'yhatdan o'tish</a>.</p>
@@ -49,7 +56,7 @@
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
-                    
+                    <?php echo $_COOKIE['code']; ?>
                 </div>
             </div>
         </div>
