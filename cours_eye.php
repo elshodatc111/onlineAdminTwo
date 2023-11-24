@@ -1,4 +1,10 @@
+<?php
+    include_once("./config/config.php");
 
+    $sqlCour = "SELECT * FROM `cours_eye` WHERE `CoursID`='".$_GET['CoursID']."'";
+    $resCour = $conn->query($sqlCour);
+    $rowCour = $resCour->fetch();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,18 +89,18 @@
                             <div class="col-lg-4">
                                 <div class="card">
                                     <div class="card-content">
-                                        <img src="./assets/compiled/jpg/7.jpg" class="card-img-top img-fluid" style="max-height:250px;" alt="singleminded">
+                                        <img src="./assets/img/cours/<?php echo $rowCour['CoursImage']; ?>" class="card-img-top img-fluid" style="max-height:250px;" alt="singleminded">
                                         <div class="card-body py-2">
-                                            <h4 class="card-title m-0 p-0 w-100 text-center">Kursning nomi</h4>
+                                            <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $rowCour['CoursName']; ?></h4>
                                         </div>
                                         <ul class="list-group">
-                                            <li class="list-group-item"><b>Kurs narxi: </b> 50 000 so'm</li>
-                                            <li class="list-group-item"><b>Mavzular soni: </b> 50 000 so'm</li>
-                                            <li class="list-group-item"><b>Davomiyligi: </b> 50 000 so'm</li>
-                                            <li class="list-group-item"><b>Til: </b> 50 000 so'm</li>
-                                            <li class="list-group-item"><b>Daraja: </b> 50 000 so'm</li>
-                                            <li class="list-group-item"><b>O'qituvchi: </b> 50 000 so'm</li>
-                                            <li class="list-group-item"><b>Davomiyligi: </b> 50 000 so'm</li>
+                                            <li class="list-group-item"><b>Kurs narxi: </b> <?php echo $rowCour['CoursSumma']; ?> so'm</li>
+                                            <li class="list-group-item"><b>Mavzular soni: </b> <?php echo $rowCour['MavzuCount']; ?></li>
+                                            <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $rowCour['CoursLine']; ?></li>
+                                            <li class="list-group-item"><b>Til: </b> <?php echo $rowCour['Til']; ?></li>
+                                            <li class="list-group-item"><b>Daraja: </b> <?php echo $rowCour['Daraja']; ?></li>
+                                            <li class="list-group-item"><b>O'qituvchi: </b> <?php echo $rowCour['Oqituvchi']; ?></li>
+                                            <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $rowCour['Davomiylig']; ?></li>
                                             <li class="list-group-item text-center">
                                                 <i class='text-success'>Kursni sotib olish uchun oldin ro'yhatdan o'ting</i><br>
                                                 <button class="btn btn-success">Sotib olish</button>
@@ -108,16 +114,12 @@
                                     <div class="card-content">
                                         <div class="card-body p-2">
                                             <video controls style="width:100%;" controlsList="nodownload">
-                                                <source src="./assets/video/video.mp4" type="video/mp4">
+                                                <source src="./assets/video/<?php echo $rowCour['Video']; ?>" type="video/mp4">
                                             </video>
                                         </div>
                                         <div class="card-body">
                                             <p class="card-text">
-                                                Hurs haqida qisqacha malumot 
-                                                Candy cupcake sugar plum oat cake wafer marzipan jujubes.
-                                                Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut pastry gummies
-                                                tiramisu
-                                                chocolate bar muffin.
+                                                <?php echo $rowCour['Text']; ?>
                                             </p>
                                             <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">

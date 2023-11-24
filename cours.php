@@ -1,4 +1,6 @@
-
+<?php
+    include_once("./config/config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,63 +86,29 @@
                             <p class="text-subtitle text-muted">Eng yangi video kurslar</p>
                         </div>
                         <div class="row">
+                            <?php
+                                $sqlCours = "SELECT * FROM `cours_eye` ORDER BY `id` DESC";
+                                $resCours = $conn->query($sqlCours);
+                                while ($rowCours = $resCours->fetch()) {
+                            ?>
                             <div class="col-lg-4">
                                 <div class="card" style="max-height:400px; min-height: 300px;">
                                     <div class="card-content">
-                                        <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
+                                        <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid">
                                         <div class="card-body">
-                                            <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
+                                            <h5 class="card-title"><?php echo $rowCours['CoursName']; ?></h5>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.php">
+                                        <h3 class="pt-2 text-danger"><?php echo $rowCours['CoursSumma']; ?> so'm</h3>
+                                        <a href="./cours_eye.php?CoursID=<?php echo $rowCours['CoursID']; ?>">
                                             <button class="btn btn-light-primary">Kurs haqida</button>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card" style="max-height:400px; min-height: 300px;">
-                                    <div class="card-content">
-                                        <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.php">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card" style="max-height:400px; min-height: 300px;">
-                                    <div class="card-content">
-                                        <img src="./assets/compiled/jpg/motorcycle.jpg" style="min-height:150px;max-height: 200px;" class="card-img-top img-fluid" alt="singleminded">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Be Single Minded</h5>
-                                            <p class="card-text">
-                                                Chocolate sesame
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between">
-                                        <h3 class="pt-2 text-danger">350 000 so'm</h3>
-                                        <a href="./cours_eye.php">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
+                            
                         </div>
                         
 
