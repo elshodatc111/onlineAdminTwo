@@ -50,57 +50,55 @@
 
             <div class="content-wrapper container">
                 <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Kabinet</h4>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="images w-100 text-center">
-                                        <img src="../assets/img/avatar/01.png" style='border-radius:50%;width:128px;'>
-                                        <h6 class="mt-2">Elshod</h6>
-                                    </div>
-                                    <hr>
-                                    <div class="form px-3 text-center">
-                                        <h5>Profil rasmini yanfilash</h5>
-                                        <form action="">
-                                            <label for="formFile" class="form-label">Rasm .jpg yoki .png formatda bo'lsin.</label>
-                                            <div class="input-group mb-3">
-                                                <input type="file" class="form-control" required>
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-outline-secondary" type="submit">Saqlash</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                    <div class="card-header">
+                        <h4 class="card-title">Kabinet</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="images w-100 text-center">
+                                    <img src="../assets/img/avatar/01.png" style='border-radius:50%;width:128px;'>
+                                    <h4 class="mt-2"><?php echo $rowaa['FIO']; ?></h4>
                                 </div>
-                                <div class="col-md-6">
+                                <hr>
+                                <div class="form px-3 text-center">
+                                    <h6>Profil rasmini yanfilash</h6>
                                     <form action="">
-                                        <div class="form-group">
-                                            <label>Ismingiz</label>
-                                            <input type="text" class="form-control" onclick="document.getElementById('buttons').style.display='block'" id="basicInput" placeholder="Ismingiz" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" onclick="document.getElementById('buttons').style.display='block'" placeholder="Email" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Yashash manzilingiz</label>
-                                            <input type="text" class="form-control" onclick="document.getElementById('buttons').style.display='block'" placeholder="Address" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Telefon raqam</label>
-                                            <input type="text" class="form-control" placeholder="90 883 0450" disabled>
-                                        </div>
-                                        <div class="form-group w-100 text-center" id="buttons" style="display:none;">
-                                            <button class="btn btn-outline-secondary" type="submit">O'zgarishlarni saqlash</button>
+                                        <label for="formFile" class="form-label">Rasm .jpg yoki .png formatda bo'lsin.</label>
+                                        <div class="input-group mb-3">
+                                            <input type="file" class="form-control" required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="submit">Saqlash</button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <form action="./edet/user_edit.php" method="POST">
+                                    <div class="form-group">
+                                        <label>Ismingiz</label>
+                                        <input type="text" name="FIO" value="<?php echo $rowaa['FIO']; ?>" class="form-control" onclick="document.getElementById('buttons').style.display='block'" id="basicInput" placeholder="Ismingiz" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="Email" value="<?php echo $rowaa['Email']; ?>" class="form-control" onclick="document.getElementById('buttons').style.display='block'" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Yashash manzilingiz</label>
+                                        <input type="text" name="Addres" value="<?php echo $rowaa['Addres']; ?>" class="form-control" onclick="document.getElementById('buttons').style.display='block'" placeholder="Address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Telefon raqam</label>
+                                        <input type="text" class="form-control"  value="<?php echo $rowaa['Phone']; ?>" disabled>
+                                    </div>
+                                    <div class="form-group w-100 text-center" id="buttons" style="display:none;">
+                                        <button class="btn btn-outline-secondary" type="submit">O'zgarishlarni saqlash</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        
+                    </div>
                 </div>
             </div>
             <!--Footer-->
