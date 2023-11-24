@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="./assets/compiled/css/app.css">
     <link rel="stylesheet" href="./assets/compiled/css/app-dark.css">
     <link rel="stylesheet" href="./assets/compiled/css/iconly.css">
+    <script>
+        if(isset($_GET['send'])){
+            echo "alert('Murojatingiz qabul qilindi. Tez orada siz bilan boglanamiz.');";
+        }
+    </script>
 </head>
 
 <body>
@@ -122,28 +127,28 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body py-0">
-                                        <form class="form form-horizontal m-0 p-0">
+                                        <form class="form form-horizontal m-0 p-0" action="./bot.php" method="post">
                                             <div class="form-body">
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <input type="text" class="form-control" placeholder="Ismingiz" id="first-name-horizontal-icon" required>
+                                                        <input type="text" class="form-control" placeholder="Ismingiz" name="Ism" id="first-name-horizontal-icon" required>
                                                         <div class="form-control-icon"><i class="bi bi-person"></i></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <input type="email" class="form-control" placeholder="Email" required>
+                                                        <input type="email" class="form-control" placeholder="Email" name="email" required>
                                                         <div class="form-control-icon"><i class="bi bi-envelope"></i></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <input type="number" class="form-control phone" placeholder="Telefon raqam" id="contact-info-horizontal-icon">
+                                                        <input type="text" class="form-control phone" placeholder="Telefon raqam" name="phone" id="contact-info-horizontal-icon">
                                                         <div class="form-control-icon"><i class="bi bi-phone"></i></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group has-icon-left">
-                                                    <textarea class="form-control" required></textarea>
+                                                    <textarea class="form-control p-1" name="text" required></textarea>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">
                                                     <button type="submit" class="btn btn-primary me-1 mb-1">Yuborish</button>
@@ -212,5 +217,15 @@
     <script src="assets/compiled/js/app.js"></script>
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="assets/static/js/pages/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/jquery.inputmask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.phone').inputmask('99 999 9999');
+            $('.pasport').inputmask('AA 9999999');
+            $('.pnfl').inputmask('99999999999999');
+            $('.kodes').inputmask('9 9 9 9 9 9');
+        });
+    </script>
 </body>
 </html>

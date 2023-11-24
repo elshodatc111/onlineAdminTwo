@@ -102,8 +102,8 @@
                                             <li class="list-group-item"><b>O'qituvchi: </b> <?php echo $rowCour['Oqituvchi']; ?></li>
                                             <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $rowCour['Davomiylig']; ?></li>
                                             <li class="list-group-item text-center">
-                                                <i class='text-success'>Kursni sotib olish uchun oldin ro'yhatdan o'ting</i><br>
-                                                <button class="btn btn-success">Sotib olish</button>
+                                                <i class='text-danger' style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Kursni sotib olish uchun oldin ro'yhatdan o'ting</i><br>
+                                                <button class="btn btn-success" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Sotib olish</button>
                                             </li>
                                         </ul>
                                     </div>
