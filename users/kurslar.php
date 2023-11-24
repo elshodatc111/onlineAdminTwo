@@ -162,11 +162,11 @@
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <h4 class="card-title">Ijtimoiy tarmoqda</h4><br>
-                        <small class=" text-center w-100 pt-5" style="font-size:18px">
-                            <a href="" class="mx-1 text-white"><i class="bi bi-telegram"></i></a>
-                            <a href="" class="mx-1 text-white"><i class="bi bi-instagram"></i></a>
-                            <a href="" class="mx-1 text-white"><i class="bi bi-facebook"></i></a>
-                        </small>
+                        <div class=" text-center w-50" style="font-size:18px;text-align:ecnter">
+                            <a href="https://t.me/atko_teams" class="mx-1 text-info"><i class="bi bi-telegram"></i></a>
+                            <a href="https://instagram.com/atko_teams?igshid=OGQ5ZDc2ODk2ZA==" class="mx-1 text-danger"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.facebook.com/atkoteams/" class="mx-1 text-warning"><i class="bi bi-facebook"></i></a>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-6">
                         <h4 class="card-title">Bo'limlar</h4><br>
@@ -188,9 +188,9 @@
                     <div class="col-lg-3 col-6">
                         <h4 class="card-title">Bog'lanish</h4><br>
                         <p class="card-text m-0">
-                            <i class="bi bi-phone"></i> +998 90 883 0450</p>
+                            <i class="bi bi-phone"></i> +998 91 950 1101</p>
                         <p class="card-text m-0">
-                            <i class="bi bi-envelope"></i> elshodatc1116@gmail.com</p>
+                            <i class="bi bi-envelope"></i> atkoteams@gmail.com</p>
                         <p class="card-text m-0">
                             <i class="bi bi-align-center"></i> Qarshi shaxar, Mustaqillik<br>shox ko'chasi 2-uy</p>
                         
