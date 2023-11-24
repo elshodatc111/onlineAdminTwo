@@ -81,9 +81,86 @@
                         <!-- Yangi kurslar -->
                         <div class="page-title text-center">
                             <h3>Bog'lanish</h3>
-                            <p class="text-subtitle text-muted">Eng yangi video kurslar</p>
+                            <p class="text-subtitle text-muted">Savollaringiz bo'lsa biz bilan bo'g'laning.</p>
                         </div>
-
+                        <div class="col-lg-6">
+                            <div class="card" style="height:340px;">
+                                <div class="card-header">
+                                    <h4 class="card-title m-0">Contact</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body py-2">
+                                        <p class="card-text m-2">
+                                            <i class="bi bi-phone"></i> +998 90 883 0450</p>
+                                        <p class="card-text m-2">
+                                            <i class="bi bi-envelope"></i> elshodatc1116@gmail.com
+                                        </p>
+                                        <p class="card-text m-2">
+                                            <i class="bi bi-align-center"></i> Qarshi shaxar, Mustaqillik shox ko'chasi 2-uy
+                                        </p>
+                                        <br><br>
+                                        <h4 class="card-title m-0">Ijtimoiy tarmoqda</h4><br>
+                                        <small class="text-dark text-center w-100 p-0" style="font-size:18px">
+                                            <a href="" class="mt-1 text-white">
+                                                <i class="bi bi-telegram text-dark"></i>
+                                            </a>
+                                            <a href="" class="mt-1 text-white">
+                                                <i class="bi bi-instagram text-dark"></i>
+                                            </a>
+                                            <a href="" class="mt-1 text-white">
+                                                <i class="bi bi-facebook text-dark"></i>
+                                            </a>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card" style="height:340px;">
+                                <div class="card-header">
+                                    <h4 class="card-title m-0">Biz bilan bog'laning.</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body py-0">
+                                        <form class="form form-horizontal m-0 p-0">
+                                            <div class="form-body">
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Ismingiz" id="first-name-horizontal-icon" required>
+                                                        <div class="form-control-icon"><i class="bi bi-person"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <input type="email" class="form-control" placeholder="Email" required>
+                                                        <div class="form-control-icon"><i class="bi bi-envelope"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <input type="number" class="form-control phone" placeholder="Telefon raqam" id="contact-info-horizontal-icon">
+                                                        <div class="form-control-icon"><i class="bi bi-phone"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group has-icon-left">
+                                                    <textarea class="form-control" required></textarea>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Yuborish</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <div class="card-body">
+                                <div class="googlemaps">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d776.9433489873635!2d65.79316163656479!3d38.83765019846608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4ea957f326d9a5%3A0x3d028f90ab8f3695!2sATKO!5e0!3m2!1sen!2s!4v1700739700747!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
