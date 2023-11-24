@@ -13,6 +13,20 @@
             $rand1 = rand(100000, 999999);
             echo $Phone;
             setcookie("code", $rand1, time()+5*60);
+            $text = "Tasdiqlash kodi: ".$rand1;
+            $data = json_encode([
+                'send'=>'',
+                'number'=>$Phone,
+                'text'=>$text,
+                'user_id'=>'5139864291',
+                'token'=>"PVDdSjstLFTQHMgpxGRiYbqZyheoJKrvaUfmNulBIEXknOA",
+                'id'=>'5390'
+            ]);
+            $url = "https://api.xssh.uz/smsv1/?data=".urlencode($data);
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+            $res = curl_exec($ch);
             header("Location: login.php?sendmessege=true&Phone=".$Phone."");
         }else{
             header("Location: login.php?phone1=error");
