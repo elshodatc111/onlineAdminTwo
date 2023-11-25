@@ -50,13 +50,13 @@
                 </nav>
             </header>
 
-            <div class="content-wrapper container">
+            <div class="content-wrapper container mb-5 pb-5">
                 <div class="page-content">
                     <div class="card collapse-icon accordion-icon-rotate">
                         <div class="card-header">
                             <h4 class="card-title pl-1">Yordam</h4>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body mb-5">
                             <div class="accordion" id="cardAccordion">
                                 <div class="accordion" id="accordionExample">
                                     <div class="accordion-item">

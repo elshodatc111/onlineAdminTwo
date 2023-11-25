@@ -7,7 +7,7 @@
 
     $sql1 = "UPDATE `users` SET `FIO`=?,`Addres`=?,`Email`=? WHERE `UserID`='".$UserID."'";
     $stmt1= $conn->prepare($sql1);
-    $stmt1->execute([$FIO, $Email,$Addres]);
+    $stmt1->execute([$FIO ,$Addres , $Email]);
 
     header("location: ../cobinet.php");
 ?>

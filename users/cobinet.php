@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="../assets/compiled/css/app.css">
     <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
     <link rel="stylesheet" href="../assets/compiled/css/iconly.css">
+    <script>
+        <?php
+            if(isset($_GET['error'])){
+        ?>
+        alert('<?php echo $_GET['error'] ?>');
+        <?php } ?>
+    </script>
 </head>
 
 <body>
@@ -57,18 +64,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="images w-100 text-center">
-                                    <img src="../assets/img/avatar/01.png" style='border-radius:50%;width:128px;'>
+                                    <img src="../assets/img/avatar/<?php echo $rowaa['Image']; ?>" style='border-radius:50%;width:128px;'>
                                     <h4 class="mt-2"><?php echo $rowaa['FIO']; ?></h4>
                                 </div>
                                 <hr>
                                 <div class="form px-3 text-center">
                                     <h6>Profil rasmini yanfilash</h6>
-                                    <form action="">
+                                    <form action="./edet/image_edet.php" class="mx-5 px-5" enctype="multipart/form-data" method="POST">
                                         <label for="formFile" class="form-label">Rasm .jpg yoki .png formatda bo'lsin.</label>
                                         <div class="input-group mb-3">
-                                            <input type="file" class="form-control" required>
+                                            <input type="file" name="fileToUpload" class="form-control" required>
                                             <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="submit">Saqlash</button>
+                                                <button class="btn btn-outline-secondary" name="submit" type="submit">Saqlash</button>
                                             </div>
                                         </div>
                                     </form>
