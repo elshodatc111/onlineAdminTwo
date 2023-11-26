@@ -103,28 +103,21 @@
                                                                 <tr>
                                                                     <th>#</th>
                                                                     <th>Mavzular</th>
-                                                                    <th>Vaqt</th>
+                                                                    <th style="text-align:right;">Davomiyligi</th>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>1- mavzu haqida</td>
-                                                                    <td>00:00:00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>1- mavzu haqida</td>
-                                                                    <td>00:00:00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>1- mavzu haqida</td>
-                                                                    <td>00:00:00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>1- mavzu haqida</td>
-                                                                    <td>00:00:00</td>
-                                                                </tr>
+                                                                <?php
+                                                                    $sqlm = "SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."' ORDER BY `Numbers` ASC";
+                                                                    $resm = $conn->query($sqlm);
+                                                                    $i=1;
+                                                                    while ($rowm=$resm->fetch()) {
+                                                                        echo "<tr>
+                                                                            <td>".$i."</td>
+                                                                            <td>".$rowm['MavzuName']."</td>
+                                                                            <td style='text-align:right;'>".$rowm['TimeLine']."</td>
+                                                                        </tr>";
+                                                                        $i++;
+                                                                    }
+                                                                ?>
                                                             </table>    
                                                         
                                                         </div>
