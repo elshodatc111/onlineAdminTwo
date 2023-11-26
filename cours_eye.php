@@ -67,7 +67,7 @@
                                             <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $rowCour['CoursName']; ?></h4>
                                         </div>
                                         <ul class="list-group">
-                                            <li class="list-group-item"><b>Kurs narxi: </b> <?php echo $rowCour['CoursSumma']; ?> so'm</li>
+                                            <li class="list-group-item"><b>Kurs narxi: </b><?php echo number_format(($rowCour['CoursSumma']), 0, '.', ' '); ?> so'm</li>
                                             <li class="list-group-item"><b>Mavzular soni: </b> <?php echo $rowCour['MavzuCount']; ?></li>
                                             <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $rowCour['CoursLine']; ?></li>
                                             <li class="list-group-item"><b>Til: </b> <?php echo $rowCour['Til']; ?></li>

@@ -103,7 +103,7 @@
                                         <h5 class="card-title p-0 m-0"><?php echo $rowCours['CoursName']; ?></h5>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between p-0 m-0 py-1 px-3">
-                                        <h3 class="pt-1 text-danger"><?php echo $rowCours['CoursSumma']; ?> so'm</h3>
+                                        <h3 class="pt-1 text-danger"><?php echo number_format(($rowCours['CoursSumma']), 0, '.', ' '); ?> so'm</h3>
                                         <a href="./cours_eye.php?CoursID=<?php echo $rowCours['CoursID']; ?>">
                                             <button class="btn btn-light-primary">Kurs haqida</button>
                                         </a>
