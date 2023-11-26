@@ -165,11 +165,11 @@
                                                 <?php }elseif ($row['Type']==='insert') { ?>
                                                 <!-- To'g'ri javobni yozish -->
                                                 <nav class='py-3' style='border-bottom:1px solid #607080;'>
-                                                    <form action="">
+                                                    <form action="./test/test_insert.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>&TestID=<?php echo $row['TestID']; ?>" method="POST">
                                                         <h6><?php echo $i.". ".$row['Savol']; ?></h6>
                                                         <i class='text-danger'>To'g'ri javobni kiriting</i>
-                                                        <input type="text" class='form-control' required>
-                                                        <button type="submit" class='btn btn-success p-1 mt-2'>Tekshirish</button>
+                                                        <input type="text" name="javob" class='form-control' required>
+                                                        <button type="submit" name="insert" class='btn btn-success p-1 mt-2'>Tekshirish</button>
                                                     </form>
                                                 </nav>
                                             <?php } $i++; } ?>
