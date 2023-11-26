@@ -1,0 +1,1 @@
+kurs_lugat.php
