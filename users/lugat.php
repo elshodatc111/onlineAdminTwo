@@ -69,65 +69,13 @@
                 <div class="page-content">
                     <section class="row">
                         <!-- Mavzu videosi -->
-                        <div class="row">
-                        <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body py-2">
-                                            <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $rowB['CoursName']; ?></h4><hr class='p-0 m-0 mt-1'>
-                                        </div>
-                                        <table class="table">
-                                            <?php
-                                                $sqlm = "SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."' ORDER BY `Numbers` ASC";
-                                                $resm = $conn->query($sqlm);
-                                                $i=1;
-                                                while ($rowm=$resm->fetch()) {
-                                            ?>
-                                            <tr>
-                                                <td>
-                                                    <?php
-                                                        if($MavzuID===$rowm['MavzuID']){
-                                                            echo "<a class='text-danger' href='kurs_eye.php?CoursID=".$_GET['CoursID']."&MavzuID=".$rowm['MavzuID']."'
-                                                            style='font-weight:700;padding-left:15px'><b>".$i."</b>. ".$rowm['MavzuName']."</a>";
-                                                        }else{
-                                                            echo "<a href='kurs_eye.php?CoursID=".$_GET['CoursID']."&MavzuID=".$rowm['MavzuID']."'
-                                                            style='font-weight:700;padding-left:15px'><b>".$i."</b>. ".$rowm['MavzuName']."</a>";
-                                                        }
-                                                    ?>
-                                                </td>
-                                                <td style='text-align:right;'><i style='padding-right:15px;'>00:00:00</i> </td>
-                                            </tr>
-                                            <?php $i++; }?>
-                                            <tr>
-                                                <td colspan='2'>
-                                                    <a href="./lugat.php?CoursID=<?php echo $_GET['CoursID']; ?>" class='btn btn-info text-white w-100'>Lug'atlar</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body py-2">
+                                    <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $rowB['CoursName']; ?></h4><hr class='p-0 m-0 mt-1'>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body p-2">
-                                            <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $rowA['MavzuName']; ?></h4><hr class='p-0 m-0 mt-1'>
-                                            <video controls style="width:100%;" controlsList="nodownload">
-                                                <source src="../assets/video/<?php echo $rowA['Video']; ?>" type="video/mp4">
-                                            </video>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text"><?php echo $rowA['Text']; ?></p>
-                                            <p class="card-footer p-0 m-0 pt-1 ">
-                                                <div class="row">
-                                                    <div class="col-12"><a href="kurs_test.php?CoursID=<?php echo $_GET['CoursID'] ?>&MavzuID=<?php echo $MavzuID; ?>" class="btn btn-primary p-1 w-100 my-1">Testlar</a></div>
-                                                </div>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                    
                         </div>
                     </section>
                 </div>
