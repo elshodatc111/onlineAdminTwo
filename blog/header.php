@@ -8,7 +8,7 @@
     ?>
     <div class="container">
         <div class="logo">
-            <a href="index.php"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
+            <a href="index.php"><h1 class="px-3 my-0 text-white  bg-danger w-100">ATKO</h1></a>
         </div>
         <div class="header-top-right">
             <div class="dropdown" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">

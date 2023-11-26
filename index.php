@@ -71,10 +71,10 @@
                                         while ($rowb = $resb->fetch()) {
                                     ?>
                                     <div class="carousel-item <?php if($i===1){ echo "active"; } ?>">
-                                        <img src="./assets/img/banner/<?php echo $rowb['Image']; ?>" class="d-block w-100" style="height: 300px;" alt="...">
+                                        <img src="./assets/img/banner/<?php echo $rowb['Image']; ?>" class="d-block w-100" style="max-height: 400px;" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5 class="text-danger"><?php echo $rowb['H1']; ?></h5>
-                                            <p class="text-success"><?php echo $rowb['P']; ?></p>
+                                            <h5 class="text-white py-2 bg-danger"><?php echo $rowb['H1']; ?></h5>
+                                            <p class="text-success bg-primary text-white "><?php echo $rowb['P']; ?></p>
                                         </div>
                                     </div>
                                     <?php $i++; } ?>
@@ -98,7 +98,7 @@
                             ?>
                             <div class="col-lg-4">
                                 <div class="card">
-                                    <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid">
+                                    <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid" style='max-height:300px;width:100%'>
                                     <div class="card-body">
                                         <h5 class="card-title p-0 m-0"><?php echo $rowCours['CoursName']; ?></h5>
                                     </div>

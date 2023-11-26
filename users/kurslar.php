@@ -66,7 +66,7 @@
                                     echo "<div class='col-lg-4'>
                                         <div class='card' style=''>
                                             <div class='card-content p-0'>
-                                                <img src='../assets/img/cours/".$row['CoursImage']."' class='card-img-top img-fluid'>
+                                                <img src='../assets/img/cours/".$row['CoursImage']."' class='card-img-top img-fluid'  style='max-height:300px;width:100%'>
                                                 <div class='card-body p-3 m-0'>
                                                     <h5 class='card-title p-0'>".$row['CoursName']."</h5>
                                                 </div>

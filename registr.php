@@ -17,12 +17,12 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo text-center mb-1">
-                        <a href="index.php"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
+                        <a href="index.php"><h1 class="px-3 my-0 text-white  bg-danger w-100">ATKO</h1></a>
                     </div>
-                    <h1 class="auth-title w-100 text-center">Ro'yhatdan o'tish</h1>
+                    <h3 class="w-100 mt-4 text-center">Ro'yhatdan o'tish</h3>
                     <form action="./registr1.php" style="<?php if(isset($_GET['tasdiq'])){echo 'display:none;';} ?>" method="POST">
-                        <p class="auth-subtitle mb-1 text-center text-danger" style="display:<?php if(!isset($_GET['phone'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tgan</p>
-                        <p class="auth-subtitle mb-1 text-center text-danger" style="display:<?php if(!isset($_GET['tasdiqerror'])){echo 'none;';} ?>">Tasdiqlash kodi vaqti tugadi. Qaytadan urinib ko'ring.</p>
+                        <p class="mb-1 text-center text-danger" style="display:<?php if(!isset($_GET['phone'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tgan</p>
+                        <p class="mb-1 text-center text-danger" style="display:<?php if(!isset($_GET['tasdiqerror'])){echo 'none;';} ?>">Tasdiqlash kodi vaqti tugadi. Qaytadan urinib ko'ring.</p>
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" name="FIO" placeholder="Ismingiz" required>
                             <div class="form-control-icon">
@@ -39,8 +39,8 @@
                     </form>
                     <!-- Tasdiqlash kodi -->
                     <form action="./registr1.php" method="POST" style="<?php if(!isset($_GET['tasdiq'])){echo 'display:none;';} ?>">
-                        <p class="auth-subtitle text-success mb-3 text-center" style="display:<?php if(isset($_GET['code'])){echo "none;";} ?>">Tasdiqlash kodi <?php if(isset($_COOKIE['Phone'])){echo $_COOKIE['Phone'];} ?> raqamiga yuborildi. Tasdiqlash kodini kiriting.</p>
-                        <p class="auth-subtitle text-danger mb-3 text-center" style="display:<?php if(!isset($_GET['code'])){echo "none;";} ?>">Tasdiqlash kodi noto'g'ri qaytadan kiriting.</p>
+                        <p class="text-success mb-3 text-center" style="display:<?php if(isset($_GET['code'])){echo "none;";} ?>">Tasdiqlash kodi <?php if(isset($_COOKIE['Phone'])){echo $_COOKIE['Phone'];} ?> raqamiga yuborildi. Tasdiqlash kodini kiriting.</p>
+                        <p class="text-danger mb-3 text-center" style="display:<?php if(!isset($_GET['code'])){echo "none;";} ?>">Tasdiqlash kodi noto'g'ri qaytadan kiriting.</p>
                         <div class="form-group position-relative has-icon-left">
                             <input type="text" class="form-control form-control-xl kodes" name="TasdiqKodi" placeholder="Tasdiqlash kodi" required>
                             <div class="form-control-icon">
@@ -49,7 +49,7 @@
                         </div>
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-1" name="Tasdiqlash">Kodni tasdiqlash</button>
                     </form>
-                    <div class="text-center mt-2 text-lg fs-4">
+                    <div class="text-center mt-3 text-lg fs-4">
                         <p class='text-gray-600'>Oldin ro'yhatdan o'tganmisiz? <a href="./login.php" class="font-bold">Kirish</a>.</p>
                     </div>
                 </div>

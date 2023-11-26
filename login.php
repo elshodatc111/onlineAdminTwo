@@ -20,12 +20,12 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo text-center mb-2">
-                        <a href="index.php"><h1 class="py-0 my-0 text-danger">ATKO</h1></a>
+                        <a href="index.php"><h1 class="px-3 my-0 text-white  bg-danger w-100">ATKO</h1></a>
                     </div>
-                    <h1 class="auth-title w-100 text-center mt-3">Kirish</h1>
+                    <h3 class="w-100 text-center mt-4">Kirish</h3>
                     <!--Telegon raqam-->
-                    <form action="login2.php" method="POST" class="pt-3" style="display:<?php if(isset($_GET['sendmessege'])){ echo "none;";} ?>">
-                        <p class="auth-subtitle text-danger mb-3 text-center" style="display:<?php if(!isset($_GET['phone1'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tmagan. Tizimga kirish uchun oldin ro'yhatdan o'ting</p>
+                    <form action="login2.php" method="POST" class="pt-4" style="display:<?php if(isset($_GET['sendmessege'])){ echo "none;";} ?>">
+                        <p class="text-danger mb-3 text-center" style="display:<?php if(!isset($_GET['phone1'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tmagan. Tizimga kirish uchun oldin ro'yhatdan o'ting</p>
                         <div class="form-group position-relative has-icon-left">
                             <input type="text" class="form-control form-control-xl phone" name="Phones" placeholder="Telefon raqam" required>
                             <div class="form-control-icon pt-2"><i class="bi bi-phone"></i></div>
@@ -37,10 +37,10 @@
                     <?php if(isset($_GET['phone1'])){echo 'none;';}
                     elseif(isset($_GET['sendmessege'])){echo 'block;';}
                     else{echo 'none;';} ?>" method="POST">
-                        <p class="auth-subtitle text-success mb-3 text-center" style="display:<?php if(isset($_GET['codeerror'])){echo 'none;';} ?>">Tasdiqlash kodi 
+                        <p class="text-success mb-3 text-center" style="display:<?php if(isset($_GET['codeerror'])){echo 'none;';} ?>">Tasdiqlash kodi 
                             <?php if(isset($_GET['sendmessege'])){echo $_GET['Phone'];} ?> 
                             raqamiga yuborildi. Tasdiqlash kodini kiriting.</p>
-                        <p class="auth-subtitle text-danger mb-1 text-center" style="display:<?php if(!isset($_GET['codeerror'])){echo 'none';} ?>;">Tasdiqlash kodi noto'g'ri</p>
+                        <p class="text-danger mb-1 text-center" style="display:<?php if(!isset($_GET['codeerror'])){echo 'none';} ?>;">Tasdiqlash kodi noto'g'ri</p>
                         <div class="form-group position-relative has-icon-left">
                             <input type="text" class="form-control form-control-xl kodes" name="tasdiqkodi" placeholder="Tasdiqlash kodi" required>
                             <div class="form-control-icon pt-2">

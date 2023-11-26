@@ -67,7 +67,7 @@
                             <div class="col-lg-4">
                                 <div class="card">
                                     <div class="card-content">
-                                        <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid">
+                                        <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid"  style='max-height:300px;width:100%'>
                                         <div class="card-body">
                                             <h5 class="card-title p-0 m-0"><?php echo $rowCours['CoursName']; ?></h5>
                                         </div>
