@@ -143,7 +143,7 @@
                                                 <?php }elseif ($row['Type']==='javoblar') { ?>
                                                 <!-- Bir nechtasini tanlash -->
                                                 <nav class='py-3' style='border-bottom:1px solid #607080;'>
-                                                    <form action="">
+                                                    <form action="./test/birnechta.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>&TestID=<?php echo $row['TestID']; ?>" method="POST">
                                                         <h6><?php echo $i.". ".$row['Savol']; ?></h6>
                                                         <i class='text-danger'>To'g'ri javoblarni tanlang</i>
                                                         <div class="form-check">
@@ -154,12 +154,12 @@
                                                                     $i=0;
                                                             ?>
                                                             <div class="checkbox">
-                                                                <input type="checkbox" class="form-check-input">
+                                                                <input type="checkbox" class="form-check-input" name="javob[]" value="<?php echo $rowtt['JavobID']; ?>">
                                                                 <label><?php echo $rowtt['Javob']; ?></label>
                                                             </div>
                                                             <?php $i++; } ?>
                                                         </div>
-                                                        <button type="submit" class='btn btn-success p-1 mt-2'>Tekshirish</button>
+                                                        <button type="submit" name="birnechta" class='btn btn-success p-1 mt-2'>Tekshirish</button>
                                                     </form>
                                                 </nav>
                                                 <?php }elseif ($row['Type']==='insert') { ?>
@@ -176,6 +176,14 @@
                                             <div class="row">
                                                 <div class="col-12"><a href="kurs_eye.php?CoursID=<?php echo $_GET['CoursID'] ?>&MavzuID=<?php echo $MavzuID; ?>" class="btn btn-primary p-1 w-100 my-1">Mavzuga qaytish</a></div>
                                             </div>
+                                            <?php
+                                                if(isset($_GET['error'])){
+                                                    echo "<script>alert('Noto`g`ri javob tanladingiz.');</script>";
+                                                }
+                                                if(isset($_GET['status'])){
+                                                    echo "<script>alert('To`g`ri javob tanladingiz.');</script>";
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -195,5 +203,6 @@
     <script src="../assets/compiled/js/app.js"></script>
     <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="../assets/static/js/pages/dashboard.js"></script>
+    <script src="../assets/static/js/pages/component-toasts.js"></script>
 </body>
 </html>
