@@ -128,7 +128,7 @@
                                                         <h6><?php echo $i.". ".$row['Savol']; ?></h6>
                                                         <i class='text-danger'>To'g'ri javobni tanlang</i>
                                                         <?php
-                                                            $sqltanlang = "SELECT * FROM `cours_test_javob` WHERE `TestID`='".$row['TestID']."'";
+                                                            $sqltanlang = "SELECT * FROM `cours_test_javob` WHERE `TestID`='".$row['TestID']."' order by rand()";
                                                             $restanlang = $conn->query($sqltanlang);
                                                             while ($rowtt = $restanlang->fetch()) {
                                                         ?>
@@ -148,7 +148,7 @@
                                                         <i class='text-danger'>To'g'ri javoblarni tanlang</i>
                                                         <div class="form-check">
                                                             <?php
-                                                                $sqltanlang2 = "SELECT * FROM `cours_test_javob` WHERE `TestID`='".$row['TestID']."'";
+                                                                $sqltanlang2 = "SELECT * FROM `cours_test_javob` WHERE `TestID`='".$row['TestID']."' order by rand()";
                                                                 $restanlang2 = $conn->query($sqltanlang2);
                                                                 while ($rowtt = $restanlang2->fetch()) {
                                                                     $i=0;
