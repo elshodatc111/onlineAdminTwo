@@ -124,7 +124,7 @@
                                             ?>
                                                 <!-- birini tanlash -->
                                                 <nav class='py-3' style='border-bottom:0.5px solid #607080;'>
-                                                    <form action="">
+                                                    <form action="./test/test_tanlash.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>&TestID=<?php echo $row['TestID']; ?>" method="POST">
                                                         <h6><?php echo $i.". ".$row['Savol']; ?></h6>
                                                         <i class='text-danger'>To'g'ri javobni tanlang</i>
                                                         <?php
@@ -133,11 +133,11 @@
                                                             while ($rowtt = $restanlang->fetch()) {
                                                         ?>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" required>
+                                                            <input class="form-check-input" type="radio" name="javobID" value="<?php echo $rowtt['JavobID']; ?>" required>
                                                             <label class="form-check-label" for="flexRadioDefault1"><?php echo $rowtt['Javob']; ?></label>
                                                         </div>
                                                         <?php } ?>
-                                                        <button type="submit" id="tanlang" class='btn btn-success p-1 mt-2'>Tekshirish</button>
+                                                        <button type="submit" name="tanlang" class='btn btn-success p-1 mt-2'>Tekshirish</button>
                                                     </form>
                                                 </nav>
                                                 <?php }elseif ($row['Type']==='javoblar') { ?>
