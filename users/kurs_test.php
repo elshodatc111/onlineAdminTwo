@@ -100,7 +100,7 @@
                                             <?php $i++; }?>
                                             <tr>
                                                 <td colspan='2'>
-                                                    <a href="./lugat.php?CoursID=<?php echo $_GET['CoursID']; ?>" class='btn btn-primary w-100'>Lug'atlar</a>
+                                                    <a href="./lugat.php?CoursID=<?php echo $_GET['CoursID']; ?>" class='btn btn-info text-white w-100'>Lug'atlar</a>
                                                 </td>
                                             </tr>
                                         </table>

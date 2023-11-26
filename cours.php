@@ -27,10 +27,10 @@
                             <li class="menu-item ">
                                 <a href="index.php" class='menu-link'><span> Bosh sahifa</span></a>
                             </li>
-                            <li class="menu-item active" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
+                            <li class="menu-item active">
                                 <a href="./cours.php" class='menu-link'><span> Kurslar</span></a>
                             </li>
-                            <li class="menu-item ">
+                            <li class="menu-item " style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
                                 <a href="./users/kurslar.php" class='menu-link'><span> Kurslarim</span></a>
                             </li>
                             <li class="menu-item">
