@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Statistika</title>
+        <title>Admin</title>
         <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
@@ -53,15 +53,60 @@
             </div>
         </div>
         <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none"><i class="bi bi-justify fs-3"></i></a>
-            </header>
             <div class="page-heading">
                 <h3>Admin</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Admin</li>
+                    </ol>
+                </nav>
             </div> 
-            <div class="page-content">
-                
-            </div>
+            <section class="section row">
+
+                <div class="col-lg-3 col-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4>Yangi admin qo'shish</h4>
+                                <form action="">
+                                    <label class="mt-3" style="font-weight:700;">FIO</label>
+                                    <input type="text" class="form-control" placeholder="FIO" required>
+                                    <label class="mt-3" style="font-weight:700;">Login</label>
+                                    <input type="text" class="form-control" placeholder="Login" required>
+                                    <label class="mt-3" style="font-weight:700;">Parol</label>
+                                    <input type="password" class="form-control" placeholder="Parol" required>
+                                    <button type="submit" class="btn btn-primary ms-1 w-100 mt-4">
+                                        <i class="bx bx-check d-block d-sm-none"></i><span class="d-none d-sm-block">Saqlash</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body text-center">
+                                <img class="img-fluid w-50" src="../assets/img/avatar/01.png" style="width:50%;">
+                                <h4 class="card-title">Card With Header And Footer</h4>
+                                <p class="p-0 m-0">Login:</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <a href="" class="btn btn-light-danger">
+                                    <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i> O'chirish
+                                </a>
+                                <a href="" class="btn btn-light-danger">
+                                    <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i> Taxrirlash
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    
+            </section>
         </div>
     </div>
 
