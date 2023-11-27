@@ -53,15 +53,68 @@
             </div>
         </div>
         <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none"><i class="bi bi-justify fs-3"></i></a>
-            </header>
             <div class="page-heading">
-                <h3>Kobinet</h3>
+                <h3>Kabinet</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kabinet</li>
+                    </ol>
+                </nav>
             </div> 
-            <div class="page-content">
+            <section class="section row">
+                <div class="col-lg-4 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body text-center">
+                                <img class="img-fluid" src="../assets/img/avatar/01.png" style="width:180px;">
+                                <h4 class="card-title">Card With Header And Footer</h4>
+                                <p class="p-0 m-0">Login:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4>Parolni yangilash</h4>
+                                <form action="">
+                                    <label class="mt-2" style="font-weight:700;">Joriy parol</label>
+                                    <input type="password" class="form-control" placeholder="FIO" required>
+                                    <label class="mt-2" style="font-weight:700;">Yangi parol</label>
+                                    <input type="password" class="form-control" placeholder="Login" required>
+                                    <button type="submit" class="btn btn-primary ms-1 w-100 mt-4">
+                                        <i class="bx bx-check d-block d-sm-none"></i><span class="d-none d-sm-block">Yangilash</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4>Profil rasmini yangilash</h4>
+                                <form action="">
+                                    <label class="mt-1 w-100" style="font-weight:700;">Rasm tanlang (O'lchami: 120x120px)</label>
+                                    <label class="mt-1 w-100" style="font-weight:700;">(1MBdan oshmasin).</label>
+                                    <label class="mt-1 w-100" style="font-weight:700;">(jpg yoki png formatda).</label>
+                                    <input type="file" class="form-control mt-3" placeholder="Image" required>
+                                    <button class="btn btn-primary w-100 mt-4">
+                                        <i class="bx bx-check d-block d-sm-none"></i><span class="d-none d-sm-block">Yangilash</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 
-            </div>
+
+                    
+            </section>
         </div>
     </div>
 
