@@ -68,10 +68,10 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
+                                <img class="img-fluid w-100" src="../assets/img/banner/01.jpg">
                                 <h4 class="card-title">Card With Header And Footer</h4>
                                 <p class="card-text">Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.</p>
                             </div>
-                            <img class="img-fluid w-100" src="../assets/img/banner/01.jpg">
                         </div>
                     </div>
                 </div>

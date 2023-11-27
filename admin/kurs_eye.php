@@ -193,8 +193,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <a href="#" class="btn btn-danger">Kursni o'chirish</a>
             </div> 
             <!-- Kurs haqida -->
             <section class="row">
@@ -225,7 +223,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body p-2">
-                                    <video controls style="width:70%;margin-left:15%" controlsList="nodownload">
+                                    <video controls style="width:100%;" controlsList="nodownload">
                                         <source src="../assets/video/video.mp4" type="video/mp4">
                                     </video>
                                 </div>
