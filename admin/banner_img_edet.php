@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bannerlar</title>
+        <title>Banner edit</title>
         <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
@@ -58,29 +58,12 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Bannerlar</li>
+                        <li class="breadcrumb-item"><a href="./banner.php">Banner</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Banner edet</li>
                     </ol>
                 </nav>
             </div> 
             <div class="page-content row">
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <h4 class="card-title w-100 text-center">Yangi banner qo'shish</h4>
-                                <form action="">
-                                    <label class='mt-2 mb-1'>H1 Text</label>
-                                    <input type="text" class="form-control" required>
-                                    <label class='mt-2 mb-1'>P Text</label>
-                                    <input type="text" class="form-control" required>
-                                    <label class='mt-2 mb-1'>Image (1020x350px JPG)</label>
-                                    <input type="file" class="form-control" required>
-                                    <button class='btn btn-warning w-100 mt-3'>Bannerni qo'shish</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-3">
                     <div class="card">
                         <div class="card-content">
@@ -90,10 +73,19 @@
                             </div>
                             <img class="img-fluid w-100" src="../assets/img/banner/01.jpg">
                         </div>
-                        <div class="card-footer d-flex justify-content-between">
-                            <a href="./banner_text_edet.php" class="btn btn-light-info"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Matn</a>
-                            <a href="./banner_img_edet.php" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Rasm</a>
-                            <a href="" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4 class="card-title w-100 text-center">Rasmni yangilash</h4>
+                                <form action="">
+                                    <label class='mt-2 mb-1'>Image (1020x350px JPG)</label>
+                                    <input type="file" class="form-control" required>
+                                    <button class='btn btn-warning w-100 mt-3'>Yangilash</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
