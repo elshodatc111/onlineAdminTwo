@@ -23,15 +23,15 @@
                 <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" href="./kurslar.php">Kurslarim</a>
+                        <a class="dropdown-item" href="./users/kurslar.php">Kurslarim</a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" href="../users/cobinet.php">Kabinet</a>
+                        <a class="dropdown-item" href="./users/cobinet.php">Kabinet</a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" href="../index.php?chiqish=true">Chiqish</a>
+                        <a class="dropdown-item" href="./index.php?chiqish=true">Chiqish</a>
                     </li>
                 </ul>
             </div>

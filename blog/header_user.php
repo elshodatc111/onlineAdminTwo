@@ -27,7 +27,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" href="./cobinet.php">Kabinet</a>
+                        <a class="dropdown-item" href="../users/cobinet.php">Kabinet</a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
