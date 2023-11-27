@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 26 2023 г., 20:14
--- Версия сервера: 10.4.25-MariaDB
--- Версия PHP: 8.1.10
+-- Время создания: Ноя 27 2023 г., 14:42
+-- Версия сервера: 10.4.28-MariaDB
+-- Версия PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `banner` (
   `H1` varchar(50) NOT NULL,
   `P` varchar(70) NOT NULL,
   `Image` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `banner`
@@ -64,7 +64,7 @@ CREATE TABLE `cours_eye` (
   `Video` varchar(150) NOT NULL,
   `Text` text NOT NULL,
   `Date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `cours_eye`
@@ -93,7 +93,7 @@ CREATE TABLE `cours_mavzu` (
   `Numbers` int(11) NOT NULL,
   `TimeLine` varchar(11) NOT NULL,
   `Dates` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `cours_mavzu`
@@ -140,7 +140,7 @@ CREATE TABLE `cours_test` (
   `Savol` varchar(90) NOT NULL,
   `Type` varchar(10) NOT NULL,
   `Date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `cours_test`
@@ -164,7 +164,7 @@ CREATE TABLE `cours_test_javob` (
   `JavobID` varchar(11) NOT NULL,
   `Javob` varchar(70) NOT NULL,
   `Status` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `cours_test_javob`
@@ -196,7 +196,7 @@ CREATE TABLE `lugat` (
   `Til1_soz` varchar(70) NOT NULL,
   `Til_2` varchar(70) NOT NULL,
   `Til_2_soz` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `lugat`
@@ -223,14 +223,15 @@ CREATE TABLE `users` (
   `Email` varchar(45) NOT NULL,
   `Image` varchar(45) NOT NULL,
   `Dates` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `UserID`, `FIO`, `Addres`, `Phone`, `Email`, `Image`, `Dates`) VALUES
-(4, '1700850217', 'Elshod', '', '908830450', '', '01.png', '2023-11-24 18:23:37');
+(4, '1700850217', 'Elshod', '', '908830450s', '', '01.png', '2023-11-24 18:23:37'),
+(5, '1701062650', 'Elshod', '', '908830450', '', '01.png', '2023-11-27 05:24:10');
 
 -- --------------------------------------------------------
 
@@ -247,7 +248,7 @@ CREATE TABLE `user_cours` (
   `Izoh` varchar(70) NOT NULL,
   `Data` timestamp NOT NULL DEFAULT current_timestamp(),
   `MengerID` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `user_cours`
@@ -353,7 +354,7 @@ ALTER TABLE `lugat`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `user_cours`
