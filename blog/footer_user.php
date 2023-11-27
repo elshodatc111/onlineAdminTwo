@@ -27,8 +27,8 @@
             <ul>
                 <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./login.php" class="text-white">Kirish</a></li>
                 <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./registr.php" class="text-white">Ro'yhatdan o'tish</a></li>
-                <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./users/kurslar.php" class="text-white">Kurslarim</a></li>
-                <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./users/cobinet.php" class="text-white">Kabinet</a></li>
+                <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./kurslar.php" class="text-white">Kurslarim</a></li>
+                <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./cobinet.php" class="text-white">Kabinet</a></li>
             </ul>
         </div>
     </div>
