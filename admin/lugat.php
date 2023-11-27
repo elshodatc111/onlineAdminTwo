@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Talabalar</title>
+        <title>Lug'atlar</title>
         <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
@@ -18,38 +18,38 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo w-100">
-                            <a href="./index.html"><h3 class="w-100 text-center text-white bg-danger py-2 pt-3">ATKO</h3></a>
+                            <a href="./index.php"><h3 class="w-100 text-center text-white bg-danger py-2 pt-3">ATKO</h3></a>
                         </div>
                     </div>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-item ">
-                            <a href="./index.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bosh sahifa</span></a>
+                            <a href="./index.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bosh sahifa</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./banner.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bannerlar</span></a>
+                            <a href="./banner.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bannerlar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./kurslar.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
-                        </li>
-                        <li class="sidebar-item ">
-                            <a href="./lugat.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
+                            <a href="./kurslar.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
                         </li>
                         <li class="sidebar-item active">
-                            <a href="./talaba.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
+                            <a href="./lugat.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./statistika.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Statistika</span></a>
+                            <a href="./talaba.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./kobinet.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kabinet</span></a>
+                            <a href="./statistika.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Statistika</span></a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a href="./kobinet.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kabinet</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./users.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Admin</span></a>
+                            <a href="./users.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Admin</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./login.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Chiqish</span></a>
+                            <a href="./login.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Chiqish</span></a>
                         </li>
                     </ul>
                 </div>
@@ -60,7 +60,7 @@
                 <a href="#" class="burger-btn d-block d-xl-none"><i class="bi bi-justify fs-3"></i></a>
             </header>
             <div class="page-heading">
-                <h3>Talabalar</h3>
+                <h3>Lug'atlar</h3>
             </div> 
             <div class="page-content">
                 

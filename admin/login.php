@@ -19,7 +19,7 @@
                 <div id="auth-left">
                     <h1 class="auth-title">Kirish</h1>
                     <p class="auth-subtitle mb-5 text-danger">Login yoki parol xato.</p>
-                    <form action="index.html" method="POST">
+                    <form action="index.php" method="POST">
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" required>
                             <div class="form-control-icon"><i class="bi bi-person"></i></div>

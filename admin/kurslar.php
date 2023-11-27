@@ -18,38 +18,38 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo w-100">
-                            <a href="./index.html"><h3 class="w-100 text-center text-white bg-danger py-2 pt-3">ATKO</h3></a>
+                            <a href="./index.php"><h3 class="w-100 text-center text-white bg-danger py-2 pt-3">ATKO</h3></a>
                         </div>
                     </div>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-item ">
-                            <a href="./index.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bosh sahifa</span></a>
+                            <a href="./index.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bosh sahifa</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./banner.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bannerlar</span></a>
+                            <a href="./banner.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bannerlar</span></a>
                         </li>
                         <li class="sidebar-item active">
-                            <a href="./kurslar.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
+                            <a href="./kurslar.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./lugat.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
+                            <a href="./lugat.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./talaba.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
+                            <a href="./talaba.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./statistika.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Statistika</span></a>
+                            <a href="./statistika.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Statistika</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./kobinet.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kabinet</span></a>
+                            <a href="./kobinet.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kabinet</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./users.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Admin</span></a>
+                            <a href="./users.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Admin</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./login.html" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Chiqish</span></a>
+                            <a href="./login.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Chiqish</span></a>
                         </li>
                     </ul>
                 </div>
