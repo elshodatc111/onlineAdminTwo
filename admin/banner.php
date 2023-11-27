@@ -34,9 +34,6 @@
                             <a href="./kurslar.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./lugat.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
-                        </li>
-                        <li class="sidebar-item ">
                             <a href="./talaba.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
                         </li>
                         <li class="sidebar-item ">

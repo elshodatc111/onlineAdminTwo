@@ -34,9 +34,6 @@
                             <a href="./kurslar.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./lugat.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
-                        </li>
-                        <li class="sidebar-item ">
                             <a href="./talaba.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
                         </li>
                         <li class="sidebar-item ">
@@ -61,6 +58,13 @@
             </header>
             <div class="page-heading">
                 <h3>Kurs haqida</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
+                        <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kurs</li>
+                    </ol>
+                </nav>
                 <!-- KURSNI TAXRIRLASH -->
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kursedit">Kursni taxrirlash</button>
                 <div class="modal fade text-left" id="kursedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160" aria-hidden="true">
@@ -211,6 +215,9 @@
                                     <li class="list-group-item"><b>O'qituvchi: </b> Techer</li>
                                     <li class="list-group-item"><b>Davomiyligi: </b> 30kun</li>
                                 </ul>
+                                <div class="card-footer text-center">
+                                    <a href='./lugat.php' class="btn btn-success">Mavzuga oid testlar</a>
+                                </div>
                             </div>
                         </div>
                     </div>

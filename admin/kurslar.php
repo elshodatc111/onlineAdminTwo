@@ -34,9 +34,6 @@
                             <a href="./kurslar.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="./lugat.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Lug'atlar</span></a>
-                        </li>
-                        <li class="sidebar-item ">
                             <a href="./talaba.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Talabalar</span></a>
                         </li>
                         <li class="sidebar-item ">
@@ -61,6 +58,12 @@
             </header>
             <div class="page-heading">
                 <h3>Kurslar</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kurslar</li>
+                    </ol>
+                </nav>
                 <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#primary">Yangi kurs qo'shish</button>
                 <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
