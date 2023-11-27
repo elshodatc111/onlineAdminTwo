@@ -21,10 +21,18 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
-                    <li><a class="dropdown-item" href="./kurslar.php">Kurslarim</a></li>
-                    <li><a class="dropdown-item" href="./cobinet.php">Kabinet</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="../index.php?chiqish=true">Chiqish</a></li>
+                    <li>
+                        <a class="dropdown-item" href="./kurslar.php">Kurslarim</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="./cobinet.php">Kabinet</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="../index.php?chiqish=true">Chiqish</a>
+                    </li>
                 </ul>
             </div>
             <a href="#" class="burger-btn d-block d-xl-none">

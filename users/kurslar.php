@@ -62,6 +62,7 @@
                             <?php
                                 $sqlC = "SELECT cours_eye.CoursName, cours_eye.CoursID, cours_eye.CoursImage, user_cours.End FROM `user_cours` JOIN `cours_eye` ON user_cours.CoursID=cours_eye.CoursID WHERE `UserID`='".$_COOKIE['UserID']."' AND user_cours.Start<='".date("Y-m-d")."' AND user_cours.End>='".date("Y-m-d")."'";
                                 $resC = $conn->query($sqlC);
+                                $i=0;
                                 while ($row = $resC->fetch()) {
                                     echo "<div class='col-lg-4'>
                                         <div class='card' style=''>
@@ -75,6 +76,19 @@
                                                     <a href='./kurs_eye.php?CoursID=".$row['CoursID']."'>
                                                         <button class='btn btn-primary'>Boshlash</button>
                                                     </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>";
+                                    $i++;
+                                }
+                                if($i===0){
+                                    echo "<div class='col-lg-12'>
+                                        <div class='card' style=''>
+                                            <div class='card-content p-0'>
+                                                <div class='card-body p-3 m-0 text-center pt-4'>
+                                                    <h5 class='card-title p-0 text-danger'>Sizning aktiv kurslaringiz mavjud emas.</h5>
+                                                    <a href='../cours.php' class='btn btn-success'>Kurslar xarid qilish.</a>
                                                 </div>
                                             </div>
                                         </div>
