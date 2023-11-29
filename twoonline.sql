@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 27 2023 г., 14:42
+-- Время создания: Ноя 29 2023 г., 14:18
 -- Версия сервера: 10.4.28-MariaDB
 -- Версия PHP: 8.0.28
 
@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `UserID` varchar(11) NOT NULL,
+  `FIO` varchar(45) NOT NULL,
+  `Login` varchar(45) NOT NULL,
+  `Password` varchar(150) NOT NULL,
+  `Image` text NOT NULL,
+  `Data` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `admin`
+--
+
+INSERT INTO `admin` (`id`, `UserID`, `FIO`, `Login`, `Password`, `Image`, `Data`) VALUES
+(1, '55555', 'Elshod Musurmonov', 'Admin', '202cb962ac59075b964b07152d234b70', '170124431717008979182.jpg', '2023-11-29 06:45:33'),
+(4, '1701242459', 'Elshod Musurmonov', 'elshod123', '202cb962ac59075b964b07152d234b70', '01.png', '2023-11-29 07:20:59');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `banner`
 --
 
@@ -39,9 +63,8 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `H1`, `P`, `Image`) VALUES
-(1, 'Birinchi manner sozlamalari 50 ta belgidan iborat', 'Birinchi banner haqida 70 ta belgidan oshmasin', '01.jpg'),
-(2, 'Ikkinchi banner 50 ta belgidan iborat', 'Ikkinchi banner 70 ta belgidan iborat bo\'lishi kerak', '02.jpg'),
-(3, 'uchunchi banner 50 ta belgi', 'uchunchi banner 70 ta belgidan iborat bo\'lishi kerak', '03.jpg');
+(3, 'uchunchi banner 50 ta belgi', 'uchunchi banner 70 ta belgidan iborat bo\'lishi kerak', '03.jpg'),
+(4, 'ssss', 'aaaa', '170124770301.jpg');
 
 -- --------------------------------------------------------
 
@@ -71,11 +94,12 @@ CREATE TABLE `cours_eye` (
 --
 
 INSERT INTO `cours_eye` (`id`, `CoursID`, `CoursName`, `CoursSumma`, `CoursImage`, `MavzuCount`, `CoursLine`, `Til`, `Daraja`, `Oqituvchi`, `Davomiylig`, `Video`, `Text`, `Date`) VALUES
-(1, '152', '1-kurs', '50000', '01.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30kun', 'video.mp4', 'text', '2023-11-24 05:34:35'),
-(2, '153', '2-1-kurs', '50000', '02.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30kun', 'video.mp4', 'text', '2023-11-24 05:34:55'),
-(3, '154', '3-kurs', '50000', '03.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30kun', 'video.mp4', 'text', '2023-11-24 05:34:55'),
-(4, '155', '4-kurs', '50000', '04.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30kun', 'video.mp4', 'text', '2023-11-24 05:34:55'),
-(5, '156', '5-kurs', '50000', '05.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30kun', 'video.mp4', 'text', '2023-11-24 05:34:55');
+(1, '152', '1-kurs', '50000', '01.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:35'),
+(2, '153', '2-1-kurs', '50000', '02.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:55'),
+(3, '154', '3-kurs', '50000', '03.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:55'),
+(4, '155', '4-kurs', '50000', '04.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:55'),
+(5, '156', 'Test uchun ochilgan guruh', '50000', '05.jpg', '15', '15:00:00', 'o`zbek', 'Oliy', 'Techer', '30111', 'video.mp4', 'Test uchun', '2023-11-24 05:34:55'),
+(7, '1701249870', 'Salimov', '150000', '1701249870logo.jpg', '12', '12:12:12', '1212', '12121', '1212', '21212111111', '17012498701701249591video.mp4', '  121212', '2023-11-29 09:24:30');
 
 -- --------------------------------------------------------
 
@@ -263,6 +287,12 @@ INSERT INTO `user_cours` (`id`, `UserID`, `CoursID`, `Start`, `End`, `Izoh`, `Da
 --
 
 --
+-- Индексы таблицы `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `banner`
 --
 ALTER TABLE `banner`
@@ -315,16 +345,22 @@ ALTER TABLE `user_cours`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT для таблицы `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `cours_eye`
 --
 ALTER TABLE `cours_eye`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `cours_mavzu`
