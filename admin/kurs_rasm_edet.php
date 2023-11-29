@@ -71,7 +71,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
-                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurslar</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurs</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Kurs rasm taxrirlash</li>
                     </ol>
                 </nav>
@@ -79,11 +79,22 @@
             <!-- Kurs haqida -->
             <section class="row">
                 <div class="col-lg-6 text-center">
-                    <form action="1" method="POST">
-                        <label class="mt-3" style="font-weight:700;">Kurs rasmi (320x180px .jpg)</label>
-                        <input type="file" name="" class="form-control" placeholder="Kursning rasmi" required>
-                        <button type="submit" class="btn btn-primary mt-3">O'zgarishlarni saqlash</button>
-                    <form>
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="../assets/img/cours/<?php echo $row['CoursImage']; ?>" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="./cours/cours_imge_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" enctype="multipart/form-data" method="POST">
+                                <label class="mt-3" style="font-weight:700;">Kurs rasmi (320x180px .jpg)</label>
+                                <input type="file" name="fileToUpload" class="form-control" placeholder="Kursning rasmi" required>
+                                <button type="submit" name="imageEdet" class="btn btn-primary mt-3">O'zgarishlarni saqlash</button>
+                            <form>
+                        </div>
+                    </div>
                 </div>
             </section>
 
