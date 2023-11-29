@@ -4,6 +4,9 @@
     if(!isset($_COOKIE['UserID'])){
         header("location: ./login.php");
     }
+    $sqls = "SELECT * FROM `admin` WHERE `UserID`='".$_COOKIE['UserID']."'";
+    $ress = $conn->query($sqls);
+    $rows = $ress->fetch();
 ?>
 <html lang="en">
     <head>
@@ -14,6 +17,15 @@
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
         <link rel="stylesheet" href="../assets/compiled/css/iconly.css">
+        <script>
+            <?php
+                if(isset($_GET['pass2'])){
+                    echo "alert('Parol yangilandi.');";
+                }elseif(isset($_GET['pass'])){
+                    echo "alert('Joriy parol xato.');";
+                }
+            ?>
+        </script>
     </head>
 <body>
     <script src="../assets/static/js/initTheme.js"></script>
@@ -73,9 +85,9 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body text-center">
-                                <img class="img-fluid" src="../assets/img/avatar/01.png" style="width:180px;">
-                                <h4 class="card-title">Card With Header And Footer</h4>
-                                <p class="p-0 m-0">Login:</p>
+                                <img class="img-fluid" src="../assets/img/avatar/<?php echo $rows['Image']; ?>" style="width:180px;">
+                                <h4 class="card-title"><?php echo $rows['FIO']; ?></h4>
+                                <p class="p-0 m-0">Login: <?php echo $rows['Login']; ?></p>
                             </div>
                         </div>
                     </div>
@@ -85,12 +97,12 @@
                         <div class="card-content">
                             <div class="card-body">
                                 <h4>Parolni yangilash</h4>
-                                <form action="">
+                                <form action="./users/pass_edit.php" method="POST">
                                     <label class="mt-2" style="font-weight:700;">Joriy parol</label>
-                                    <input type="password" class="form-control" placeholder="FIO" required>
+                                    <input type="password" class="form-control" placeholder="Joriy parol" name="passw1" required>
                                     <label class="mt-2" style="font-weight:700;">Yangi parol</label>
-                                    <input type="password" class="form-control" placeholder="Login" required>
-                                    <button type="submit" class="btn btn-primary ms-1 w-100 mt-4">
+                                    <input type="password" class="form-control" placeholder="Yangi parol" name="passw2" required>
+                                    <button type="submit" class="btn btn-primary ms-1 w-100 mt-4" name="editpassword">
                                         <i class="bx bx-check d-block d-sm-none"></i><span class="d-none d-sm-block">Yangilash</span>
                                     </button>
                                 </form>
