@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+    include("../config/config.php");
+    if(!isset($_COOKIE['UserID'])){
+        header("location: ./login.php");
+    }
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">

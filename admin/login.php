@@ -1,4 +1,8 @@
-
+<?php
+    $cookie_name = "UserID";
+    $cookie_value = "";
+    setcookie($cookie_name, $cookie_value, time() - (2*3600), "/");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +22,17 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <h1 class="auth-title">Kirish</h1>
-                    <p class="auth-subtitle mb-5 text-danger">Login yoki parol xato.</p>
-                    <form action="index.php" method="POST">
+                    <p class="auth-subtitle mb-5 text-danger" style='display:<?php if(!isset($_GET['passw'])){echo 'none;';} ?>'>Login yoki parol xato.</p>
+                    <form action="./users/login.php" method="POST">
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" required>
+                            <input type="text" name="login" class="form-control form-control-xl" required>
                             <div class="form-control-icon"><i class="bi bi-person"></i></div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" required>
+                            <input type="password" name="password" class="form-control form-control-xl" required>
                             <div class="form-control-icon"><i class="bi bi-shield-lock"></i></div>
                         </div>
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Kirish</button>
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" type='submit' name='kirish'>Kirish</button>
                     </form>
                 </div>
             </div>
