@@ -12,7 +12,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kurs haqida</title>
+        <title>Kursni taxrirlash</title>
         <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
@@ -71,63 +71,42 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurslar</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Kurs</li>
                     </ol>
                 </nav>
-                <!-- KURSNI TAXRIRLASH -->
-                <a class="btn btn-primary" href="./kurs_edit_text.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kursni taxrirlash</a>
-                <!-- VIDEONI TAXRIRLASH -->
-                <a href="./kurs_video_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-primary" >Video taxrirlash</a>
-                <a href="./kurs_rasm_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-primary" >Rasm taxrirlash</a>
-                <!-- RASMNI TAXRIRLASH -->
-                <a href="./kurs_new_mavzu_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-success">MAVZULAR</a>
-                <a href='./lugat.php' class="btn btn-success">LUG'ATLAR</a>
             </div> 
             <!-- Kurs haqida -->
             <section class="row">
-                <div class="row my-3 mb-5">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-content">
-                                <img src="../assets/img/cours/<?php echo $row['CoursImage']; ?>" class="card-img-top img-fluid" style="max-height:250px;" alt="singleminded">
-                                <div class="card-body py-2">
-                                    <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $row['CoursName']; ?></h4>
-                                </div>
-                                <ul class="list-group">
-                                    <li class="list-group-item"><b>Kurs narxi: </b><?php echo $row['CoursSumma']; ?> so'm</li>
-                                    <li class="list-group-item"><b>Mavzular soni: </b> <?php echo $row['MavzuCount']; ?></li>
-                                    <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $row['CoursLine']; ?></li>
-                                    <li class="list-group-item"><b>Til: </b> <?php echo $row['Til']; ?></li>
-                                    <li class="list-group-item"><b>Daraja: </b> <?php echo $row['Daraja']; ?></li>
-                                    <li class="list-group-item"><b>O'qituvchi: </b> <?php echo $row['Oqituvchi']; ?></li>
-                                    <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $row['Davomiylig']; ?> kun</li>
-                                </ul>
-                                <div class="card-footer text-center">
-                                    
-                                </div>
-                            </div>
-                        </div>
+                <form action="./cours/cours_tezt_edit.php?CoursID=<?php echo $_GET['CoursID']; ?>" method="POST" class='row'>
+                    <div class="col-lg-6">
+                        <label class="mt-3" style="font-weight:700;">Kursning nomi</label>
+                        <input type="text" name="CoursName" class="form-control" value="<?php echo $row['CoursName']; ?>" required>
+                        <label class="mt-3" style="font-weight:700;">Kursning narxi</label>
+                        <input type="number" name="Summa" class="form-control" value="<?php echo $row['CoursSumma']; ?>" required>
+                        <label class="mt-3" style="font-weight:700;">Mavzular soni</label>
+                        <input type="number" name="MavzuSoni" class="form-control" value="<?php echo $row['MavzuCount']; ?>" required>
+                        <label class="mt-3" style="font-weight:700;">Kursning davomiyligi(Barcha video kurslar)</label>
+                        <input type="text" name="KursUzunligi" class="form-control davomiy" value="<?php echo $row['CoursLine']; ?>" required>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-body p-2">
-                                    <video controls style="width:100%;" controlsList="nodownload">
-                                        <source src="../assets/video/<?php echo $row['Video']; ?>" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text"><?php echo $row['Text']; ?></p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-6">
+                        <label class="mt-3" style="font-weight:700;">O'qituvchi</label>
+                        <input type="text" name="Techer" class="form-control" value="<?php echo $row['Oqituvchi']; ?>" required>
+                        <label class="mt-3" style="font-weight:700;">Kursning tili</label>
+                        <input type="text" name="KursTili" class="form-control" value="<?php echo $row['Til']; ?>" required>
+                        <label class="mt-3" style="font-weight:700;">Davomiyligi (Kun)</label>
+                        <input type="number" name="Davomiyligi" class="form-control" value="<?php echo $row['Davomiylig']; ?>111" required>
+                        <label class="mt-3" style="font-weight:700;">Kurs darajasi</label>
+                        <input type="text" name="Daraja" class="form-control" value="<?php echo $row['Daraja']; ?>" required>
                     </div>
-                </div>
+                    <div class="col-lg-12">
+                        <label class="mt-2">Kurs haqida</label>
+                        <textarea class="form-control" name="Text" rows='5' required> <?php echo $row['Text']; ?></textarea>
+                        <button class="btn btn-primary mt-2" type="submit">O'zgarishlarni saqlash</button>
+                    </div>
+                <form>
             </section>
-            <!-- Kurs mavzulari -->
-            <div class="page-content">
-                
-            </div>
+
         </div>
     </div>
 

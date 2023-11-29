@@ -12,7 +12,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kurs haqida</title>
+        <title>Video taxrirlash</title>
         <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
@@ -71,63 +71,75 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Kurs</li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurslar</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kursga mavzu qo'shish</li>
                     </ol>
                 </nav>
-                <!-- KURSNI TAXRIRLASH -->
-                <a class="btn btn-primary" href="./kurs_edit_text.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kursni taxrirlash</a>
-                <!-- VIDEONI TAXRIRLASH -->
-                <a href="./kurs_video_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-primary" >Video taxrirlash</a>
-                <a href="./kurs_rasm_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-primary" >Rasm taxrirlash</a>
-                <!-- RASMNI TAXRIRLASH -->
-                <a href="./kurs_new_mavzu_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-success">MAVZULAR</a>
-                <a href='./lugat.php' class="btn btn-success">LUG'ATLAR</a>
             </div> 
             <!-- Kurs haqida -->
-            <section class="row">
-                <div class="row my-3 mb-5">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-content">
-                                <img src="../assets/img/cours/<?php echo $row['CoursImage']; ?>" class="card-img-top img-fluid" style="max-height:250px;" alt="singleminded">
-                                <div class="card-body py-2">
-                                    <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $row['CoursName']; ?></h4>
-                                </div>
-                                <ul class="list-group">
-                                    <li class="list-group-item"><b>Kurs narxi: </b><?php echo $row['CoursSumma']; ?> so'm</li>
-                                    <li class="list-group-item"><b>Mavzular soni: </b> <?php echo $row['MavzuCount']; ?></li>
-                                    <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $row['CoursLine']; ?></li>
-                                    <li class="list-group-item"><b>Til: </b> <?php echo $row['Til']; ?></li>
-                                    <li class="list-group-item"><b>Daraja: </b> <?php echo $row['Daraja']; ?></li>
-                                    <li class="list-group-item"><b>O'qituvchi: </b> <?php echo $row['Oqituvchi']; ?></li>
-                                    <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $row['Davomiylig']; ?> kun</li>
-                                </ul>
-                                <div class="card-footer text-center">
-                                    
-                                </div>
-                            </div>
+            <section class="row text-center">
+                <form action="1" method="POST">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="mt-3" style="font-weight:700;">Mavzuning nomi</label>
+                            <input type="text" class="form-control" placeholder="Mavzuning nomi" required>
+                            <label class="mt-3" style="font-weight:700;">Mavzu tartib raqami</label>
+                            <input type="number" class="form-control" placeholder="Mavzu tartib raqami" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="mt-3" style="font-weight:700;">Mavzu haqida video(.mp4)</label>
+                            <input type="file" class="form-control" placeholder="Mavzu haqida video" required>
+                            <label class="mt-3" style="font-weight:700;">Video uzunligi</label>
+                            <input type="text" class="form-control davomiy" placeholder="Video uzunligi" required>
+                        </div>
+                        <div class="col-lg-12">
+                            <label class="mt-2">Mavzu haqida</label>
+                            <textarea class="form-control" rows='5' required></textarea>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-body p-2">
-                                    <video controls style="width:100%;" controlsList="nodownload">
-                                        <source src="../assets/video/<?php echo $row['Video']; ?>" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text"><?php echo $row['Text']; ?></p>
-                                </div>
-                            </div>
+                    <button type="submit" class="btn btn-primary my-3">O'zgarishlarni saqlash</button>
+                <form>
+            </section>
+            <section class="section">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="table-responsive p-2">
+                            <h5 class="w-100 text-center">Kurs mavzulari</h5>
+                            <table class="table mb-0">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Mavzu</th>
+                                        <th class="text-center">Tartib raqami</th>
+                                        <th class="text-center">Testlar soni</th>
+                                        <th class="text-center">Video vaqti</th>
+                                        <th class='text-center'>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $sql1="SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."'";
+                                        $res1 = $conn->query($sql1);
+                                        $i=1;
+                                        while ($row1=$res1->fetch()) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $i; ?></td>
+                                        <td><?php echo $row1['MavzuName']; ?></td>
+                                        <td class='text-center'><?php echo $row1['Numbers']; ?></td>
+                                        <td class='text-center'>15</td>
+                                        <td class='text-center'><?php echo $row1['TimeLine']; ?></td>
+                                        <td class='text-center'>
+                                            <a href='./kurs_mavzu_eye.php?CoursID='><i class='badge-circle badge-circle-light-secondary font-medium-1' data-feather='eye'></i></a>
+                                        </td>
+                                    </tr>
+                                    <?php $i++; } ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Kurs mavzulari -->
-            <div class="page-content">
-                
-            </div>
         </div>
     </div>
 
