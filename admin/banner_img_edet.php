@@ -4,6 +4,9 @@
     if(!isset($_COOKIE['UserID'])){
         header("location: ./login.php");
     }
+    $sql = "SELECT * FROM `banner` WHERE `id`='".$_GET['id']."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch();
 ?>
 <html lang="en">
     <head>
@@ -74,9 +77,9 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                <img class="img-fluid w-100" src="../assets/img/banner/01.jpg">
-                                <h4 class="card-title">Card With Header And Footer</h4>
-                                <p class="card-text">Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.</p>
+                                <img class="img-fluid w-100" src="../assets/img/banner/<?php echo $row['Image'] ?>">
+                                <h4 class="card-title"><?php echo $row['H1'] ?></h4>
+                                <p class="card-text"><?php echo $row['P'] ?></p>
                             </div>
                         </div>
                     </div>
@@ -86,9 +89,9 @@
                         <div class="card-content">
                             <div class="card-body">
                                 <h4 class="card-title w-100 text-center">Rasmni yangilash</h4>
-                                <form action="">
+                                <form action="./banner/image_edet.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data" method="POST">
                                     <label class='mt-2 mb-1'>Image (1020x350px JPG)</label>
-                                    <input type="file" class="form-control" required>
+                                    <input type="file" name="fileToUpload" class="form-control" required>
                                     <button class='btn btn-warning w-100 mt-3'>Yangilash</button>
                                 </form>
                             </div>

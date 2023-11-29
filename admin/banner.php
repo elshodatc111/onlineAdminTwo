@@ -74,13 +74,13 @@
                         <div class="card-content">
                             <div class="card-body">
                                 <h4 class="card-title w-100 text-center">Yangi banner qo'shish</h4>
-                                <form action="">
+                                <form action="./banner/banner_plus.php" enctype="multipart/form-data" method="POST">
                                     <label class='mt-2 mb-1'>H1 Text</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" name="H1" class="form-control" required>
                                     <label class='mt-2 mb-1'>P Text</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" name="P" class="form-control" required>
                                     <label class='mt-2 mb-1'>Image (1020x350px JPG)</label>
-                                    <input type="file" class="form-control" required>
+                                    <input type="file" name="fileToUpload" class="form-control" required>
                                     <button class='btn btn-warning w-100 mt-3'>Bannerni qo'shish</button>
                                 </form>
                             </div>
