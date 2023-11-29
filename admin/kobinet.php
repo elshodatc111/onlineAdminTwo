@@ -23,6 +23,8 @@
                     echo "alert('Parol yangilandi.');";
                 }elseif(isset($_GET['pass'])){
                     echo "alert('Joriy parol xato.');";
+                }elseif(isset($_GET['error'])){
+                    echo "alert('Rasm mos kelmadi.');";
                 }
             ?>
         </script>
@@ -115,11 +117,11 @@
                         <div class="card-content">
                             <div class="card-body">
                                 <h4>Profil rasmini yangilash</h4>
-                                <form action="">
+                                <form action="./users/edit_image.php" enctype="multipart/form-data" method="POST">
                                     <label class="mt-1 w-100" style="font-weight:700;">Rasm tanlang (O'lchami: 120x120px)</label>
                                     <label class="mt-1 w-100" style="font-weight:700;">(1MBdan oshmasin).</label>
                                     <label class="mt-1 w-100" style="font-weight:700;">(jpg yoki png formatda).</label>
-                                    <input type="file" class="form-control mt-3" placeholder="Image" required>
+                                    <input type="file" class="form-control mt-3" name="fileToUpload" placeholder="Image" required>
                                     <button class="btn btn-primary w-100 mt-4">
                                         <i class="bx bx-check d-block d-sm-none"></i><span class="d-none d-sm-block">Yangilash</span>
                                     </button>
