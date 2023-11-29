@@ -70,58 +70,90 @@
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
                         <li class="breadcrumb-item"><a href="./kurs_eye.php">Kurs</a></li>
                         <li class="breadcrumb-item"><a href="./kurs_new_mavzu_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>">Mavzular</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Mavzu</li>
+                        <li class="breadcrumb-item"><a href="./kurs_mavzu_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>">Mavzu</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Yangi test qo'shish</li>
                     </ol>
                 </nav>
                 
             </div> 
-            <!-- Kurs haqida -->
             <section class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-content" style="min-height:400px;">
-                            <div class="card-body p-2">
-                                <video controls style="width:100%;" controlsList="nodownload">
-                                    <source src="../assets/video/video.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-body text-center">
-                                <a href="./mavzu_video_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" class="btn btn-primary w-100">Videoni yangilash</a>
-                                <a href="./test_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" class="btn btn-success text-white mt-2 w-100">TESTLAR</a>
-                                <a href="#" class="btn btn-danger mt-2 w-100">Mavzuni o'chirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body" style="min-height:400px;">
+                        <div class="card-body text-center"  style="min-height:340px;">
+                            <h5>Yangi test qo'shish</h5>
                             <form action="">
-                                <div class="row text-center">
-                                    <div class="col-lg-12">
-                                        <label style="font-weight:700;">Mavzu nomi</label>
-                                        <input type="text" name="12" class="form-control" placeholder="Mavzu nomi" required>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="mt-1" style="font-weight:700;">Mavzu tartib raqami</label>
-                                        <input type="number" name="12" class="form-control" placeholder="Tartib raqami" required>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="mt-1" style="font-weight:700;">Video uzunligi</label>
-                                        <input type="text" name="12" class="form-control davomiy" placeholder="Tartib raqami" required>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <label class="mt-2">Mavzu haqida</label>
-                                        <textarea class="form-control" rows='5' required></textarea>
-                                        <input type="submit" name="form_text_edet" class="btn btn-primary mt-3" value="O'zgarishlarni yangilash"/>
-                                    </div>
-                                </div>
-                            <form>
+                                <label class="mt-3">Test turini tablang</label>
+                                <select name="" class="form-select mt-2" required>
+                                    <option value="ddd">tanlang</option>
+                                </select>
+                                <label class="mt-3">Test savlolini kiriting</label>
+                                <input type="text" class="form-control mt-2" required>
+                                <button type="submit" class="btn btn-primary w-100 mt-4">Testni saqlash</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                
-                
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body text-center" style="min-height:340px;">
+                            <h5>Yangi javobini kiritish</h5>
+                            <form action="">
+                                <label class="mt-1">Test savolini tablang</label>
+                                <select name="" class="form-select mt-1" required>
+                                    <option value="aaa">tanlang</option>
+                                </select>
+                                <label class="mt-1">Test holatini tablang</label>
+                                <select name="" class="form-select mt-1" required>
+                                    <option value="aaaa">tanlang</option>
+                                </select>
+                                <label class="mt-1">Test javobini kiriting</label>
+                                <input type="text" class="form-control mt-1" required>
+                                <button type="submit" class="btn btn-primary w-100 mt-2">Javobni saqlash</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="w-100 text-center">Mavzuga oid testlar</h5>
+                            <table class="table text-center">
+                                <thaed>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Tast savoli</th>
+                                        <th>Test Javoblari</th>
+                                        <th>Testni o'chirish</th>
+                                    </tr>
+                                </thaed>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Test savoli</td>
+                                        <td>
+                                            <ol class="p-0 m-0">
+                                                <li><p class="text-success my-1 p-0">to'g'ri <a href=""><i data-feather="trash"></i></p> </li>
+                                                <li><p class="text-danger my-1 p-0">Noto'g'ri <a href=""><i data-feather="trash"></i></a></p> </li>
+                                            </ol>
+                                        </td>
+                                        <td><a href=""><i data-feather="trash"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Test savoli</td>
+                                        <td>
+                                            <ol class="p-0 m-0">
+                                                <li><p class="text-success my-1 p-0">to'g'ri <a href=""><i data-feather="trash"></i></p> </li>
+                                                <li><p class="text-danger my-1 p-0">Noto'g'ri <a href=""><i data-feather="trash"></i></a></p> </li>
+                                            </ol>
+                                        </td>
+                                        <td><a href=""><i data-feather="trash"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

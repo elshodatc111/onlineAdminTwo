@@ -9,7 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bannerlar</title>
+        <title>Kurs mavzu haqida</title>
         <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="../assets/compiled/css/app.css">
         <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
@@ -33,10 +33,10 @@
                         <li class="sidebar-item ">
                             <a href="./index.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bosh sahifa</span></a>
                         </li>
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item ">
                             <a href="./banner.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Bannerlar</span></a>
                         </li>
-                        <li class="sidebar-item ">
+                        <li class="sidebar-item active">
                             <a href="./kurslar.php" class='sidebar-link'><i class="bi bi-grid-fill"></i><span>Kurslar</span></a>
                         </li>
                         <li class="sidebar-item ">
@@ -59,57 +59,47 @@
             </div>
         </div>
         <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none"><i class="bi bi-justify fs-3"></i></a>
+            </header>
             <div class="page-heading">
-                <h3>Bannerlar</h3>
+                <h3>Kurs mavzusi</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Bannerlar</li>
+                        <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php">Kurs</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_new_mavzu_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>">Mavzular</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_mavzu_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>">Mavzu</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Mavzu videosini yangilash</li>
                     </ol>
                 </nav>
+                
             </div> 
-            <div class="page-content row">
-                <div class="col-lg-4">
+            <section class="row">
+                <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <h4 class="card-title w-100 text-center">Yangi banner qo'shish</h4>
-                                <form action="./banner/banner_plus.php" enctype="multipart/form-data" method="POST">
-                                    <label class='mt-2 mb-1'>H1 Text</label>
-                                    <input type="text" name="H1" class="form-control" required>
-                                    <label class='mt-2 mb-1'>P Text</label>
-                                    <input type="text" name="P" class="form-control" required>
-                                    <label class='mt-2 mb-1'>Image (1020x350px JPG)</label>
-                                    <input type="file" name="fileToUpload" class="form-control" required>
-                                    <button class='btn btn-warning w-100 mt-3'>Bannerni qo'shish</button>
-                                </form>
-                            </div>
+                        <div class="card-body text-center"  style="min-height:340px;">
+                            <h5>Joriy mavzu videosi</h5>
+                            <video controls style="width:100%;" controlsList="nodownload">
+                                <source src="../assets/video/video.mp4" type="video/mp4">
+                            </video>
                         </div>
                     </div>
                 </div>
-                <?php
-                    $sql="SELECT * FROM `banner`";
-                    $res = $conn->query($sql);
-                    while ($row = $res->fetch()) {
-                ?>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <img class="img-fluid w-100" src="../assets/img/banner/<?php echo $row['Image']; ?>">
-                                <h4 class="card-title"><?php echo $row['H1']; ?></h4>
-                                <p class="card-text"><?php echo $row['P']; ?></p>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between">
-                            <a href="./banner_text_edet.php?id=<?php echo $row['id']; ?>" class="btn btn-light-info"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Matn</a>
-                            <a href="./banner_img_edet.php?id=<?php echo $row['id']; ?>" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Rasm</a>
-                            <a href="./banner/banner_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
+                        <div class="card-body text-center" style="min-height:340px;">
+                            <h5>Mavzu videosini yangilash</h5>
+                            <form action="">
+                                <label class="mt-4">Video tanlang (mp4)</label>
+                                <input type="file" class="form-control mt-4" required>
+                                <button type="submit" class="btn btn-primary w-100 mt-5">Videoni yangilash</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <?php } ?>
-            </div>
+            </section>
         </div>
     </div>
 
@@ -118,5 +108,15 @@
     <script src="../assets/compiled/js/app.js"></script>
     <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="../assets/static/js/pages/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../assets/js/jquery.inputmask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.phone').inputmask('99 999 9999');
+            $('.davomiy').inputmask('99:99:99');
+            $('.pnfl').inputmask('99999999999999');
+            $('.kodes').inputmask('9 9 9 9 9 9');
+        });
+    </script>
 </body>
 </html>
