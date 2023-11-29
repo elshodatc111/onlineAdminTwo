@@ -88,7 +88,7 @@
                 <div class="row my-3 mb-5">
                     <div class="col-lg-4">
                         <div class="card">
-                            <div class="card-content">
+                            <div class="card-content p-1">
                                 <img src="../assets/img/cours/<?php echo $row['CoursImage']; ?>" class="card-img-top img-fluid" style="max-height:250px;" alt="singleminded">
                                 <div class="card-body py-2">
                                     <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $row['CoursName']; ?></h4>

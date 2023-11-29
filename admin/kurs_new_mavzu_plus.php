@@ -71,35 +71,12 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
-                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurslar</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurs</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Kursga mavzu qo'shish</li>
                     </ol>
                 </nav>
             </div> 
-            <!-- Kurs haqida -->
-            <section class="row text-center">
-                <form action="1" method="POST">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <label class="mt-3" style="font-weight:700;">Mavzuning nomi</label>
-                            <input type="text" class="form-control" placeholder="Mavzuning nomi" required>
-                            <label class="mt-3" style="font-weight:700;">Mavzu tartib raqami</label>
-                            <input type="number" class="form-control" placeholder="Mavzu tartib raqami" required>
-                        </div>
-                        <div class="col-lg-6">
-                            <label class="mt-3" style="font-weight:700;">Mavzu haqida video(.mp4)</label>
-                            <input type="file" class="form-control" placeholder="Mavzu haqida video" required>
-                            <label class="mt-3" style="font-weight:700;">Video uzunligi</label>
-                            <input type="text" class="form-control davomiy" placeholder="Video uzunligi" required>
-                        </div>
-                        <div class="col-lg-12">
-                            <label class="mt-2">Mavzu haqida</label>
-                            <textarea class="form-control" rows='5' required></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary my-3">O'zgarishlarni saqlash</button>
-                <form>
-            </section>
+            <!-- Kurs mavzulari -->
             <section class="section">
                 <div class="card">
                     <div class="card-content">
@@ -118,7 +95,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $sql1="SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."'";
+                                        $sql1="SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."' ORDER BY `Numbers` ASC";
                                         $res1 = $conn->query($sql1);
                                         $i=1;
                                         while ($row1=$res1->fetch()) {
@@ -130,13 +107,42 @@
                                         <td class='text-center'>15</td>
                                         <td class='text-center'><?php echo $row1['TimeLine']; ?></td>
                                         <td class='text-center'>
-                                            <a href='./kurs_mavzu_eye.php?CoursID='><i class='badge-circle badge-circle-light-secondary font-medium-1' data-feather='eye'></i></a>
+                                            <a href='./kurs_mavzu_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $row1['MavzuID']; ?>'><i class='badge-circle badge-circle-light-secondary font-medium-1' data-feather='eye'></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++; } ?>
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Kursga mavzu qo'shish -->
+            <section class="row text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Kursga yangi mavzu qo'shish</h5>
+                        <form action="./cours/cours_mavzu_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>" enctype="multipart/form-data" method="POST">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="mt-3"  style="font-weight:700;">Mavzuning nomi</label>
+                                    <input type="text" name="MavzuName" class="form-control" placeholder="Mavzuning nomi" required>
+                                    <label class="mt-3" style="font-weight:700;">Mavzu tartib raqami</label>
+                                    <input type="number" name="Number" class="form-control" placeholder="Mavzu tartib raqami" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="mt-3" style="font-weight:700;">Mavzu haqida video(.mp4)</label>
+                                    <input type="file" name="fileToUpload" class="form-control" placeholder="Mavzu haqida video" required>
+                                    <label class="mt-3" style="font-weight:700;">Video uzunligi</label>
+                                    <input type="text" name="Line" class="form-control davomiy" placeholder="Video uzunligi" required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="mt-2">Mavzu haqida</label>
+                                    <textarea class="form-control" name="Text" rows='5' required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" name="Mavzu_Plus" class="btn btn-primary my-3">O'zgarishlarni saqlash</button>
+                        <form>
                     </div>
                 </div>
             </section>

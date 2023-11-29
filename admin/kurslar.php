@@ -88,9 +88,9 @@
                     <div class="col-lg-4 col-12">
                         <div class="card">
                             <div class="card-content">
-                                <div class="card-body">
+                                <div class="card-body text-center" style="min-height:250px;">
                                     <img class="img-fluid w-100" src="../assets/img/cours/<?php echo $row['CoursImage']; ?>">
-                                    <h4 class="card-title"><?php echo $row['CoursName']; ?></h4>
+                                    <h5 class="card-title"><?php echo $row['CoursName']; ?></h5>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
                                     <a href="./kurs_eye.php?CoursID=<?php echo $row['CoursID']; ?>" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="eye"></i></a>
@@ -101,6 +101,7 @@
                     </div>
                     <?php
                         }
+                        
                     ?>
                     
 
