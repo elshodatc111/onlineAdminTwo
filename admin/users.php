@@ -72,17 +72,17 @@
 
                 <div class="col-lg-3 col-6">
                     <div class="card">
-                        <div class="card-content">
+                        <div class="card-content" style="min-height:350px;">
                             <div class="card-body">
                                 <h4>Yangi admin qo'shish</h4>
-                                <form action="">
-                                    <label class="mt-3" style="font-weight:700;">FIO</label>
-                                    <input type="text" class="form-control" placeholder="FIO" required>
-                                    <label class="mt-3" style="font-weight:700;">Login</label>
-                                    <input type="text" class="form-control" placeholder="Login" required>
-                                    <label class="mt-3" style="font-weight:700;">Parol</label>
-                                    <input type="password" class="form-control" placeholder="Parol" required>
-                                    <button type="submit" class="btn btn-primary ms-1 w-100 mt-4">
+                                <form action="./users/user_plus.php" method="post">
+                                    <label class="mt-2" style="font-weight:700;">FIO</label>
+                                    <input type="text" class="form-control" name="FIO" placeholder="FIO" required>
+                                    <label class="mt-2" style="font-weight:700;">Login</label>
+                                    <input type="text" class="form-control" name="Login" placeholder="Login" required>
+                                    <label class="mt-2" style="font-weight:700;">Parol</label>
+                                    <input type="password" class="form-control" name="Parol" placeholder="Parol" required>
+                                    <button type="submit" class="btn btn-primary ms-1 w-100 mt-3" name="user_plus">
                                         <i class="bx bx-check d-block d-sm-none"></i><span class="d-none d-sm-block">Saqlash</span>
                                     </button>
                                 </form>
@@ -90,27 +90,28 @@
                         </div>
                     </div>
                 </div>
-
+                <?php
+                    $sql = "SELECT * FROM `admin` WHERE `UserID`!='".$_COOKIE['UserID']."'";
+                    $res = $conn->query($sql);
+                    while ($row=$res->fetch()) {
+                ?>
                 <div class="col-lg-3 col-6">
                     <div class="card">
-                        <div class="card-content">
+                        <div class="card-content"  style="min-height:350px;">
                             <div class="card-body text-center">
-                                <img class="img-fluid w-50" src="../assets/img/avatar/01.png" style="width:50%;">
-                                <h4 class="card-title">Card With Header And Footer</h4>
-                                <p class="p-0 m-0">Login:</p>
+                                <img class="img-fluid w-50" src="../assets/img/avatar/<?php echo $row['Image']; ?>" style="width:50%;">
+                                <h4 class="card-title"> <?php echo $row['FIO']; ?></h4>
+                                <p class="p-0 m-0">Login: <?php echo $row['Login']; ?></p>
                             </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <a href="" class="btn btn-light-danger">
+                            <div class="card-footer text-center">
+                                <a href="./users/user_delete.php?UserID=<?php echo $row['UserID']; ?>&delete=true" class="btn btn-light-danger">
                                     <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i> O'chirish
-                                </a>
-                                <a href="" class="btn btn-light-danger">
-                                    <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i> Taxrirlash
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <?php } ?>
                     
             </section>
         </div>
