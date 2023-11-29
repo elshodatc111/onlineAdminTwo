@@ -4,6 +4,9 @@
     if(!isset($_COOKIE['UserID'])){
         header("location: ./login.php");
     }
+    $sql = "SELECT * FROM `banner` WHERE `id`='".$_GET['id']."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch();
 ?>
 <html lang="en">
     <head>
@@ -70,29 +73,29 @@
                 </nav>
             </div> 
             <div class="page-content row">
-                <div class="col-lg-3">
-                    <div class="card">
+                <div class="col-lg-4">
+                    <div class="card" style="min-height:350px;">
                         <div class="card-content">
                             <div class="card-body">
-                                <img class="img-fluid w-100" src="../assets/img/banner/01.jpg">
-                                <h4 class="card-title">Card With Header And Footer</h4>
-                                <p class="card-text">Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.</p>
+                                <img class="img-fluid w-100" src="../assets/img/banner/<?php echo $row['Image']; ?>">
+                                <h4 class="card-title"><?php echo $row['H1']; ?></h4>
+                                <p class="card-text"><?php echo $row['P']; ?></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-3">
-                    <div class="card">
+                <div class="col-lg-8">
+                    <div class="card"  style="min-height:350px;">
                         <div class="card-content">
                             <div class="card-body">
                                 <h4 class="card-title w-100 text-center">Matnni yangilash</h4>
-                                <form action="">
+                                <form action="./banner/text_edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
                                     <label class='mt-2 mb-1'>H1 Text</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" name="H1" class="form-control" value="<?php echo $row['H1']; ?>" required>
                                     <label class='mt-2 mb-1'>P Text</label>
-                                    <input type="text" class="form-control" required>
-                                    <button class='btn btn-warning w-100 mt-3'>Yangilash</button>
+                                    <input type="text" name="P" class="form-control" value="<?php echo $row['P']; ?>" required>
+                                    <button class='btn btn-warning w-100 mt-3' name='text_edit'>Yangilash</button>
                                 </form>
                             </div>
                         </div>

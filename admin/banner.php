@@ -87,22 +87,28 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    $sql="SELECT * FROM `banner`";
+                    $res = $conn->query($sql);
+                    while ($row = $res->fetch()) {
+                ?>
                 <div class="col-lg-3">
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                <img class="img-fluid w-100" src="../assets/img/banner/01.jpg">
-                                <h4 class="card-title">Card With Header And Footer</h4>
-                                <p class="card-text">Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.</p>
+                                <img class="img-fluid w-100" src="../assets/img/banner/<?php echo $row['Image']; ?>">
+                                <h4 class="card-title"><?php echo $row['H1']; ?></h4>
+                                <p class="card-text"><?php echo $row['P']; ?></p>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between">
-                            <a href="./banner_text_edet.php" class="btn btn-light-info"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Matn</a>
-                            <a href="./banner_img_edet.php" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Rasm</a>
-                            <a href="" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
+                            <a href="./banner_text_edet.php?id=<?php echo $row['id']; ?>" class="btn btn-light-info"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Matn</a>
+                            <a href="./banner_img_edet.php?id=<?php echo $row['id']; ?>" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Rasm</a>
+                            <a href="./banner/banner_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>
