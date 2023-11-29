@@ -71,19 +71,30 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
-                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurslar</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurs</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Kurs video taxrirlash</li>
                     </ol>
                 </nav>
             </div> 
             <!-- Kurs haqida -->
             <section class="row">
-                <div class="col-lg-6 text-center">
-                    <form action="2" method="POST">
-                        <label class="mt-3" style="font-weight:700;">Kurs haqida video(.mp4)</label>
-                        <input type="file" name="" class="form-control" placeholder="Kurs haqida video" required>
-                        <button type="submit" class="btn btn-primary ms-1 mt-3">O'zgarishlarni saqlash</button>
-                    <form>
+                <div class="col-lg-5 text-center">
+                    <video controls style="width:100%;" controlsList="nodownload">
+                        <source src="../assets/video/<?php echo $row['Video']; ?>" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-lg-7 text-center">
+                    <div class="card">
+                        <div class="card-body pt-5">
+                            <h4>Kurs haqida video</h4>
+                            <form action="./cours/kurs_video_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" enctype="multipart/form-data" method="POST">
+                                <label class="mt-3" style="font-weight:700;">Kurs haqida video(.mp4)</label>
+                                <input type="file" name="fileToUpload" class="form-control" placeholder="Kurs haqida video" required>
+                                <button type="submit" name="video_edet" class="btn btn-primary ms-1 mt-3">O'zgarishlarni saqlash</button>
+                            <form>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
 

@@ -85,7 +85,7 @@
                         $res = $conn->query($sql);
                         while ($row=$res->fetch()) {
                     ?>
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-4 col-12">
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body">

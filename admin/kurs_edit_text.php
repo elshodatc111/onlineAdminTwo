@@ -71,14 +71,17 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
-                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurslar</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Kurs</li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kurs haqidagi malumotlarni yangilash</li>
                     </ol>
                 </nav>
             </div> 
             <!-- Kurs haqida -->
             <section class="row">
-                <form action="./cours/cours_tezt_edit.php?CoursID=<?php echo $_GET['CoursID']; ?>" method="POST" class='row'>
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Kurs haqidagi malumotlarni yangilash</h4>
+                    <form action="./cours/cours_tezt_edit.php?CoursID=<?php echo $_GET['CoursID']; ?>" method="POST" class='row'>
                     <div class="col-lg-6">
                         <label class="mt-3" style="font-weight:700;">Kursning nomi</label>
                         <input type="text" name="CoursName" class="form-control" value="<?php echo $row['CoursName']; ?>" required>
@@ -105,6 +108,8 @@
                         <button class="btn btn-primary mt-2" type="submit">O'zgarishlarni saqlash</button>
                     </div>
                 <form>
+                    </div>
+                </div>
             </section>
 
         </div>
