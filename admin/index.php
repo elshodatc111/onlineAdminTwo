@@ -10,7 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bosh sahifa</title>
-    <link rel="shortcut icon" href="../assets/compiled/svg/favicon.svg" type="image/x-icon">
+    <meta content="ATKO koreys til markazi. Ilm orqali insonlar hayotini yaxshilash, hayotda o'z yo'llarini topishga yordam berish. Eng sifatli bilim beradigan proffessional jamoaga ega Butun O'zbekistonga ilm ulashayotgan kompaniya. Tel: 99 130 11 01, Tel: 91 950 11 01, Email: atkoteams@gmail.com" name="description">
+    <meta content="ATKO, Til markazi, Koreys tili, Ingliz tili, Koreys tili markazi, Oliy maqsadimiz, Samimiylik, Ilm olish, Jamoaviylik, Intizom, Natijaviylik, Bizning jamoa, Bog'lanish, Online, Onlinekurs, Koreys Tili kurslari, online darslar" name="keywords">
+    <meta name="author" content="Elshod Musurmonov">
+    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../assets/compiled/css/app.css">
     <link rel="stylesheet" href="../assets/compiled/css/app-dark.css">
     <link rel="stylesheet" href="../assets/compiled/css/iconly.css">

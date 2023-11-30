@@ -117,7 +117,7 @@
                                                 <input type="text" name="CoursName" class="form-control" placeholder="Kursning nomi" required>
                                                 <label class="mt-3" style="font-weight:700;">Kursning narxi</label>
                                                 <input type="number" name="narxi" class="form-control" placeholder="Kursning narxi" required>
-                                                <label class="mt-3" style="font-weight:700;">Kurs rasmi (320x180px .jpg)</label>
+                                                <label class="mt-3" style="font-weight:700;">Kurs rasmi (1280X720px .jpg)</label>
                                                 <input type="file" class="form-control" name="fileToUpload" placeholder="Kursning rasmi" required>
                                                 <label class="mt-3" style="font-weight:700;">Mavzular soni</label>
                                                 <input type="number" name="MavzuSoni" class="form-control" placeholder="Mavzular soni" required>

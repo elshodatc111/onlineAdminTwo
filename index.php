@@ -73,8 +73,8 @@
                                     <div class="carousel-item <?php if($i===1){ echo "active"; } ?>">
                                         <img src="./assets/img/banner/<?php echo $rowb['Image']; ?>" class="d-block w-100" style="max-height: 500px;" alt="...">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h5 class="text-white py-2 bg-danger"><?php echo $rowb['H1']; ?></h5>
-                                            <p class="text-success bg-primary text-white "><?php echo $rowb['P']; ?></p>
+                                            <h1 class="text-danger py-2" style="font-size:45px;font-weight:900"><?php echo $rowb['H1']; ?></h1>
+                                            <p class="text-success bg-danger text-white "><?php echo $rowb['P']; ?></p>
                                         </div>
                                     </div>
                                     <?php $i++; } ?>

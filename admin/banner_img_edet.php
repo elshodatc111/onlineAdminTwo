@@ -73,7 +73,7 @@
                 </nav>
             </div> 
             <div class="page-content row">
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
@@ -84,13 +84,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
                                 <h4 class="card-title w-100 text-center">Rasmni yangilash</h4>
                                 <form action="./banner/image_edet.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data" method="POST">
-                                    <label class='mt-2 mb-1'>Image (1020x350px JPG)</label>
+                                    <label class='mt-2 mb-1'>Image (1280x720px JPG)</label>
                                     <input type="file" name="fileToUpload" class="form-control" required>
                                     <button class='btn btn-warning w-100 mt-3'>Yangilash</button>
                                 </form>
