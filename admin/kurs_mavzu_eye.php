@@ -91,7 +91,7 @@
                             <div class="card-body text-center">
                                 <a href="./mavzu_video_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" class="btn btn-primary w-100">Videoni yangilash</a>
                                 <a href="./test_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" class="btn btn-success text-white mt-2 w-100">TESTLAR</a>
-                                <a href="#" class="btn btn-danger mt-2 w-100">Mavzuni o'chirish</a>
+                                <a href="./cours/mavzu_del.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" class="btn btn-danger mt-2 w-100">Mavzuni o'chirish</a>
                             </div>
                         </div>
                     </div>

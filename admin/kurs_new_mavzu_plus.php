@@ -99,12 +99,18 @@
                                         $res1 = $conn->query($sql1);
                                         $i=1;
                                         while ($row1=$res1->fetch()) {
+                                            $sql3 = "SELECT * FROM `cours_test` WHERE `MavzuID`='".$row1['MavzuID']."'";
+                                            $res3 = $conn->query($sql3);
+                                            $Testlar = 0;
+                                            while ($row3 = $res3->fetch()) {
+                                                $Testlar = $Testlar+1;
+                                            }
                                     ?>
                                     <tr>
                                         <td><?php echo $i; ?></td>
                                         <td><?php echo $row1['MavzuName']; ?></td>
                                         <td class='text-center'><?php echo $row1['Numbers']; ?></td>
-                                        <td class='text-center'>15</td>
+                                        <td class='text-center'><?php echo $Testlar; ?></td>
                                         <td class='text-center'><?php echo $row1['TimeLine']; ?></td>
                                         <td class='text-center'>
                                             <a href='./kurs_mavzu_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $row1['MavzuID']; ?>'><i class='badge-circle badge-circle-light-secondary font-medium-1' data-feather='eye'></i></a>
