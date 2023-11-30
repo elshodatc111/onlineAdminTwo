@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
                                     <a href="./kurs_eye.php?CoursID=<?php echo $row['CoursID']; ?>" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="eye"></i></a>
-                                    <a href="" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
+                                    <a href="./cours/cours_delete.php?CoursID=<?php echo $row['CoursID']; ?>" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
                                 </div>
                             </div>
                         </div>
