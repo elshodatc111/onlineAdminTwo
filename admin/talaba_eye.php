@@ -5,6 +5,9 @@
     if(!isset($_COOKIE['UserID'])){
         header("location: ./login.php");
     }
+    $sql = "SELECT * FROM `users` WHERE `UserID`='".$_GET['UserID']."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch();
 ?>
 <html lang="en">
 
@@ -89,28 +92,28 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="../assets/img/avatar/01.png" style='width:100px;margin:0 auto;'>
+                                    <img src="../assets/img/avatar/<?php echo $row['Image']; ?>" style='width:100px;margin:0 auto;'>
                                 </div>
                                 <table class="table">
                                     <tr>
                                         <td><b>Ismi:</b></td>
-                                        <td></td>
+                                        <td><?php echo $row['FIO']; ?></td>
                                     </tr>
                                     <tr>
                                         <td><b>Telefon:</b></td>
-                                        <td></td>
+                                        <td><?php echo $row['Phone']; ?></td>
                                     </tr>
                                     <tr>
                                         <td><b>Email:</b></td>
-                                        <td></td>
+                                        <td><?php echo $row['Email']; ?></td>
                                     </tr>
                                     <tr>
                                         <td><b>Maznil:</b></td>
-                                        <td></td>
+                                        <td><?php echo $row['Addres']; ?></td>
                                     </tr>
                                     <tr>
                                         <td><b>Ro'yhatdan o'tdi:</b></td>
-                                        <td></td>
+                                        <td><?php echo $row['Dates']; ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -120,15 +123,22 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5>Yangi kursga qo'shish</h5>
-                                <form action="">
+                                <form action="./talaba/cours_user_plus.php?UserID=<?php echo $_GET['UserID']; ?>" method="POST">
                                     <label class='mb-2 mt-2'>Kursni tanlang</label>
-                                    <select name="" class="form-select mt-1" required>
+                                    <select name="CoursID" class="form-select mt-1" required>
                                         <option value="">Tanlang</option>
+                                        <?php 
+                                            $sql1 = "SELECT * FROM `cours_eye`";
+                                            $res1 = $conn->query($sql1);
+                                            while ($row1 = $res1->fetch()) {
+                                                echo "<option value=".$row1['CoursID'].">".$row1['CoursName']."</option>";
+                                            }
+                                        ?>
                                     </select>
                                     <label class='mb-2 mt-2'>Kurs ochilish vaqti</label>
-                                    <input type="date" name="" class="form-control mt-1" required>
+                                    <input type="date" name="Start" class="form-control mt-1" required>
                                     <label class='mb-2 mt-2'>Kurs yopilish vaqti</label>
-                                    <input type="date" name="" class="form-control mt-1" required>
+                                    <input type="date" name="End" class="form-control mt-1" required>
                                     <button type="submit" class="btn btn-primary mt-1 w-100">Saqlash</button>
                                 </form>
                             </div>

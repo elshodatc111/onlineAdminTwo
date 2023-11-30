@@ -107,8 +107,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th><?php echo $rowq1['Tli_1']; ?></th>
-                                                    <th><?php echo $rowq1['Til_2']; ?></th>
+                                                    <th><?php if(isset($rowq1['Tli_1'])){echo $rowq1['Tli_1'];}else{echo ".";} ?></th>
+                                                    <th><?php if(isset($rowq1['Til_2'])){echo $rowq1['Til_2'];}else{echo ".";} ?></th>
                                                 </tr>
                                             </thead>
                                             <tbody  id="livesearch">
@@ -124,8 +124,10 @@
                                                         </tr>";
                                                         $i++;
                                                     }
+                                                    if($i===1){
+                                                        echo "<tr><td colspan=3 class='text-center'>Testlar mavjud emas.</td></tr>";
+                                                    }
                                                 ?>
-                                                
                                             </tbody>
                                         </table>
                                     </div>

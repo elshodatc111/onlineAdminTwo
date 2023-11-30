@@ -95,7 +95,7 @@
                                                         }
                                                     ?>
                                                 </td>
-                                                <td style='text-align:right;'><i style='padding-right:15px;'>00:00:00</i> </td>
+                                                <td style='text-align:right;'><i style='padding-right:15px;'><?php echo $rowm['TimeLine']; ?></i> </td>
                                             </tr>
                                             <?php $i++; }?>
                                             <tr>

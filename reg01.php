@@ -60,6 +60,7 @@
                             <div class="col-lg-4">
                                 <div class="card">
                                     <div class="card-body text-center">
+                                        <h4 class="mb-3">Ro'yhatdan o'tish</h4>
                                         <form action="./registr1.php" style="<?php if(isset($_GET['tasdiq'])){echo 'display:none;';} ?>" method="POST">
                                             <p class="mb-1 text-center text-danger" style="display:<?php if(!isset($_GET['phone'])){echo 'none;';} ?>">Telefon raqam ro'yhatdan o'tgan</p>
                                             <p class="mb-1 text-center text-danger" style="display:<?php if(!isset($_GET['tasdiqerror'])){echo 'none;';} ?>">Tasdiqlash kodi vaqti tugadi. Qaytadan urinib ko'ring.</p>

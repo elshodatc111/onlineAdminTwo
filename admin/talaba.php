@@ -88,28 +88,36 @@
                         <div class="card-body">
                             <table class="table table-striped" id="table1">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Ism</th>
-                                        <th>Telefon raqam</th>
-                                        <th>Ro'yhatdan o'tgan</th>
-                                        <th>Aktiv kurslari</th>
-                                        <th>Status</th>
+                                    <tr  class="text-center">
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">Ism</th>
+                                        <th class="text-center">Telefon raqam</th>
+                                        <th class="text-center">Ro'yhatdan o'tgan</th>
+                                        <th class="text-center">Aktiv kurslari</th>
+                                        <th class="text-center">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                        $sql = "SELECT * FROM `users` ORDER BY `id` DESC";
+                                        $res = $conn->query($sql);
+                                        $i=1;
+                                        while ($row=$res->fetch()) {
+                                            $active = 0;
+                                    ?>
                                     <tr>
-                                        <td>Graiden</td>
-                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                        <td>076 4820 8838</td>
-                                        <td>Offenburg</td>
-                                        <td>Offenburg</td>
-                                        <td>
-                                            <a href="./talaba_eye.php">
+                                        <td><?php echo $i; ?></td>
+                                        <td><?php echo $row['FIO']; ?></td>
+                                        <td class="text-center"><?php echo $row['Phone']; ?></td>
+                                        <td class="text-center"><?php echo $row['Dates']; ?></td>
+                                        <td class="text-center"><?php echo $active; ?></td>
+                                        <td class="text-center">
+                                            <a href="./talaba_eye.php?UserID=<?php echo $row['UserID']; ?>">
                                                 <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="eye"></i>
                                             </a>
                                         </td>
                                     </tr>
+                                    <?php $i++; } ?>
                                 </tbody>
                             </table>
                         </div>
