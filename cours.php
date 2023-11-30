@@ -65,7 +65,7 @@
                                 while ($rowCours = $resCours->fetch()) {
                             ?>
                             <div class="col-lg-4">
-                                <div class="card">
+                                <div class="card" style="min-height:360px;">
                                     <div class="card-content">
                                         <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid"  style='max-height:300px;width:100%'>
                                         <div class="card-body">
