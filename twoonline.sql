@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 29 2023 г., 14:18
--- Версия сервера: 10.4.28-MariaDB
--- Версия PHP: 8.0.28
+-- Время создания: Ноя 30 2023 г., 18:08
+-- Версия сервера: 10.4.25-MariaDB
+-- Версия PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
   `Password` varchar(150) NOT NULL,
   `Image` text NOT NULL,
   `Data` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `admin`
@@ -56,15 +56,15 @@ CREATE TABLE `banner` (
   `H1` varchar(50) NOT NULL,
   `P` varchar(70) NOT NULL,
   `Image` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `banner`
 --
 
 INSERT INTO `banner` (`id`, `H1`, `P`, `Image`) VALUES
-(3, 'uchunchi banner 50 ta belgi', 'uchunchi banner 70 ta belgidan iborat bo\'lishi kerak', '03.jpg'),
-(4, 'ssss', 'aaaa', '170124770301.jpg');
+(1, 'ATKO koreys til markazi.', 'Ilm orqali insonlar hayotini yaxshilash, hayotda o`z yo`llarini topish', '1701361845maxresdefault.jpg'),
+(2, 'Bizning jamoamizda', 'Eng sifatli bilim beradigan proffessional jamoaga ega Butun O`zbekisto', '170136237601.jpg');
 
 -- --------------------------------------------------------
 
@@ -87,19 +87,14 @@ CREATE TABLE `cours_eye` (
   `Video` varchar(150) NOT NULL,
   `Text` text NOT NULL,
   `Date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `cours_eye`
 --
 
 INSERT INTO `cours_eye` (`id`, `CoursID`, `CoursName`, `CoursSumma`, `CoursImage`, `MavzuCount`, `CoursLine`, `Til`, `Daraja`, `Oqituvchi`, `Davomiylig`, `Video`, `Text`, `Date`) VALUES
-(1, '152', '1-kurs', '50000', '01.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:35'),
-(2, '153', '2-1-kurs', '50000', '02.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:55'),
-(3, '154', '3-kurs', '50000', '03.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:55'),
-(4, '155', '4-kurs', '50000', '04.jpg', '15', '15', 'o\'zbek', 'Oliy', 'Techer', '30', 'video.mp4', 'text', '2023-11-24 05:34:55'),
-(5, '156', 'Test uchun ochilgan guruh', '50000', '05.jpg', '15', '15:00:00', 'o`zbek', 'Oliy', 'Techer', '30111', 'video.mp4', 'Test uchun', '2023-11-24 05:34:55'),
-(7, '1701249870', 'Salimov', '150000', '1701249870logo.jpg', '12', '12:12:12', '1212', '12121', '1212', '21212111111', '17012498701701249591video.mp4', '  121212', '2023-11-29 09:24:30');
+(1, '1701362965', 'Koreys tilini mustaqil oʻrganish', '25000', '1701362965k1.jpg', '12', '07:15:24', 'O`zbek', 'Boshlang`ich', 'O`qituvchi FIO', '30', '170136296501.mp4', 'Ushbu dastur koreys tilini onlayn oʻrganuvchilar uchun moʻljallangan boʻlib, bu ishtirokchilarga koreys tilini boshlangʻich darajadan boshlab mukammal darajagacha oʻrganish imkonini yaratadi. Darslar mutlaqo bepul va qiziqarli tashkillashtirilgan. Kursdagi har bir darsda:<br>\r\n<ol>\r\n<li>20-30 soʻz;</li>\r\n<li>darsdagi lugʻatlarga mos ravishda grammatik mavzular;</li>\r\n<li>koreys tilidagi soʻz va gaplarning audiosi mavjud. </li>\r\n</ol>\r\nKursda koreys tilini oʻrganishga qiziquvchi nomzodlar yilning istagan vaqtida ishtirok etishlari va oʻrganishlari mumkin. ', '2023-11-30 16:49:25');
 
 -- --------------------------------------------------------
 
@@ -117,38 +112,17 @@ CREATE TABLE `cours_mavzu` (
   `Numbers` int(11) NOT NULL,
   `TimeLine` varchar(11) NOT NULL,
   `Dates` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `cours_mavzu`
 --
 
 INSERT INTO `cours_mavzu` (`id`, `CoursID`, `MavzuID`, `MavzuName`, `Video`, `Text`, `Numbers`, `TimeLine`, `Dates`) VALUES
-(1, '153', '0001', 'Birinchi Mavzu', 'video.mp4', 'Textlar', 1, '00:00:00', '0000-00-00 00:00:00'),
-(2, '153', '0002', 'Birinchi 2 Mavzu', 'video.mp4', 'Textlar', 2, '00:00:00', '0000-00-00 00:00:00'),
-(3, '153', '0003', 'Birinchi 3 Mavzu', 'video.mp4', 'Textlar', 7, '00:00:00', '0000-00-00 00:00:00'),
-(4, '153', '0004', 'Birinchi 4 Mavzu', 'video.mp4', 'Textlar', 4, '00:00:00', '0000-00-00 00:00:00'),
-(5, '153', '0005', 'Birinchi 5 Mavzu', 'video.mp4', 'Textlar', 5, '00:00:00', '0000-00-00 00:00:00'),
-(6, '153', '0006', 'Birinchi 6 Mavzu', 'video.mp4', 'Textlar', 6, '00:00:00', '0000-00-00 00:00:00'),
-(7, '153', '0007', 'Birinchi 7 Mavzu', 'video.mp4', 'Textlar', 3, '00:00:00', '0000-00-00 00:00:00'),
-(8, '152', '0001', 'Birinchi 1 Mavzu', 'video.mp4', 'Textlar', 1, '00:00:00', '0000-00-00 00:00:00'),
-(9, '152', '0002', 'Birinchi 2 Mavzu', 'video.mp4', 'Textlar', 2, '00:00:00', '0000-00-00 00:00:00'),
-(10, '152', '0003', 'Birinchi 3 Mavzu', 'video.mp4', 'Textlar', 3, '00:00:00', '0000-00-00 00:00:00'),
-(11, '152', '0004', 'Birinchi 4 Mavzu', 'video.mp4', 'Textlar', 4, '00:00:00', '0000-00-00 00:00:00'),
-(12, '152', '0005', 'Birinchi 5 Mavzu', 'video.mp4', 'Textlar', 5, '00:00:00', '0000-00-00 00:00:00'),
-(13, '152', '0006', 'Birinchi 6 Mavzu', 'video.mp4', 'Textlar', 6, '00:00:00', '0000-00-00 00:00:00'),
-(14, '152', '0007', 'Birinchi 7 Mavzu', 'video.mp4', 'Textlar', 7, '00:00:00', '0000-00-00 00:00:00'),
-(15, '154', '0001', 'Birinchi 1 Mavzu', 'video.mp4', 'Textlar', 1, '00:00:00', '0000-00-00 00:00:00'),
-(16, '154', '0002', 'Birinchi 2 Mavzu', 'video.mp4', 'Textlar', 2, '00:00:00', '0000-00-00 00:00:00'),
-(17, '154', '0003', 'Birinchi 3 Mavzu', 'video.mp4', 'Textlar', 3, '00:00:00', '0000-00-00 00:00:00'),
-(18, '154', '0004', 'Birinchi 4 Mavzu', 'video.mp4', 'Textlar', 4, '00:00:00', '0000-00-00 00:00:00'),
-(19, '155', '0001', 'Birinchi 1 Mavzu', 'video.mp4', 'Textlar', 1, '00:00:00', '0000-00-00 00:00:00'),
-(20, '155', '0002', 'Birinchi 2 Mavzu', 'video.mp4', 'Textlar', 2, '00:00:00', '0000-00-00 00:00:00'),
-(21, '155', '0003', 'Birinchi 3 Mavzu', 'video.mp4', 'Textlar', 3, '00:00:00', '0000-00-00 00:00:00'),
-(22, '156', '0001', 'Birinchi 1 Mavzu', 'video.mp4', 'Textlar', 1, '00:00:00', '0000-00-00 00:00:00'),
-(23, '156', '0002', 'Birinchi 2 Mavzu', 'video.mp4', 'Textlar', 2, '00:00:00', '0000-00-00 00:00:00'),
-(24, '156', '0003', 'Birinchi 3 Mavzu', 'video.mp4', 'Textlar', 3, '00:00:00', '0000-00-00 00:00:00'),
-(25, '156', '0004', 'Birinchi 4 Mavzu', 'video.mp4', 'Textlar', 4, '00:00:00', '0000-00-00 00:00:00');
+(1, '1701362965', 'M1701363259', 'Umumit mavzu', '170136325902.mp4', 'Kursda oʻqish orqali ishtirokchilar koreys tilini bepul oʻrganishlari mumkin boʻladi;<br>\r\nKursdagi har bir dars quyidagilardan tashkil topgan:<br>\r\n-20-30 ta atrofidagi lugʻat;<br>\r\n\r\n-Lugʻatlarga mos maʼlum darajadagi grammatik mavzular;\r\n<br>\r\n-Koreys tilidagi har bir soʻz va gapning audiosi;', 1, '00:00:10', '2023-11-30 16:54:19'),
+(2, '1701362965', 'M1701363323', 'Hujjat topshirish', '170136332303.mp4', 'Kursda ishtirok etish boʻyicha muhim maʼlumotlar:<br>\r\n\r\nUshbu koreys tili onlayn kursida oʻqish uchun alohida roʻyxatdan oʻtish talab qilinmaydi. Kursda asosiy maʼlumot va darslarni mutlaqo bepul oʻrganish mumkin;<br>\r\nDastur boʻyicha qoʻshimcha materiallar pulli boʻlib, ular olinmoqchi boʻlsa nomzodning elektron pochtasi, ism-sharifi, karta raqami, manzili, istiqomat qilayotgan hududining pochta indeksi va shu kabi maʼlumotlar soʻraladi;\r\nKursda oʻqishni yilning istalgan vaqtida boshlash mumkin. ', 2, '00:00:25', '2023-11-30 16:55:23'),
+(3, '1701362965', 'M1701363374', 'Foydali tamonlar', '170136337404.mp4', 'Kursda ishtirok etish boʻyicha muhim maʼlumotlar:\r\n\r\nUshbu koreys tili onlayn kursida oʻqish uchun alohida roʻyxatdan oʻtish talab qilinmaydi. Kursda asosiy maʼlumot va darslarni mutlaqo bepul oʻrganish mumkin;<br>\r\nDastur boʻyicha qoʻshimcha materiallar pulli boʻlib, ular olinmoqchi boʻlsa nomzodning elektron pochtasi, ism-sharifi, karta raqami, manzili, istiqomat qilayotgan hududining pochta indeksi va shu kabi maʼlumotlar soʻraladi;\r\nKursda oʻqishni yilning istalgan vaqtida boshlash mumkin. <br>', 3, '00:00:45', '2023-11-30 16:56:14'),
+(4, '1701362965', 'M1701363409', 'Qo`shimcha', '170136340901.mp4', 'Kursda ishtirok etish boʻyicha muhim maʼlumotlar:\r\n<br>\r\nUshbu koreys tili onlayn kursida oʻqish uchun alohida roʻyxatdan oʻtish talab qilinmaydi. Kursda asosiy maʼlumot va darslarni mutlaqo bepul oʻrganish mumkin;<br>\r\nDastur boʻyicha qoʻshimcha materiallar pulli boʻlib, ular olinmoqchi boʻlsa nomzodning elektron pochtasi, ism-sharifi, karta raqami, manzili, istiqomat qilayotgan hududining pochta indeksi va shu kabi maʼlumotlar soʻraladi;\r\nKursda oʻqishni yilning istalgan vaqtida boshlash mumkin. ', 4, '00:00:10', '2023-11-30 16:56:49');
 
 -- --------------------------------------------------------
 
@@ -164,17 +138,7 @@ CREATE TABLE `cours_test` (
   `Savol` varchar(90) NOT NULL,
   `Type` varchar(10) NOT NULL,
   `Date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `cours_test`
---
-
-INSERT INTO `cours_test` (`id`, `CoursID`, `MavzuID`, `TestID`, `Savol`, `Type`, `Date`) VALUES
-(1, '153', '0006', '00001', 'To`g`ri javobni tanlang', 'tanlang', '2023-11-26 16:05:12'),
-(2, '153', '0006', '00002', 'To\'g\'ri javobni kiriting', 'insert', '2023-11-26 16:06:15'),
-(3, '153', '0006', '00003', 'To`g`ri javoblarnini tanlang', 'javoblar', '2023-11-26 16:06:15'),
-(4, '153', '0006', '00004', 'To`g    sssss `ri javobni tanlang', 'tanlang', '2023-11-26 16:06:15');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -188,24 +152,7 @@ CREATE TABLE `cours_test_javob` (
   `JavobID` varchar(11) NOT NULL,
   `Javob` varchar(70) NOT NULL,
   `Status` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `cours_test_javob`
---
-
-INSERT INTO `cours_test_javob` (`id`, `TestID`, `JavobID`, `Javob`, `Status`) VALUES
-(1, '00001', '1', 'To`g`ri', 'true'),
-(2, '00001', '2', 'noto`g`ri', 'false'),
-(3, '00001', '3', 'noto`g`ri', 'false'),
-(4, '00001', '4', 'noto`g`ri', 'false'),
-(5, '00002', '5', 'Elshod', 'true'),
-(6, '00003', '6', 'Elshod2', 'true'),
-(7, '00003', '7', 'Elshod1', 'true'),
-(8, '00003', '8', 'Elshod0', 'false'),
-(9, '00004', '9', 'Elshod2 T', 'true'),
-(10, '00004', '10', 'Elshod1', 'false'),
-(11, '00004', '11', 'Elshod0', 'false');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -220,17 +167,7 @@ CREATE TABLE `lugat` (
   `Til1_soz` varchar(70) NOT NULL,
   `Til_2` varchar(70) NOT NULL,
   `Til_2_soz` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `lugat`
---
-
-INSERT INTO `lugat` (`id`, `CoursID`, `Tli_1`, `Til1_soz`, `Til_2`, `Til_2_soz`) VALUES
-(1, '153', 'Koreys', 'I', 'O`zbek', 'Men'),
-(2, '153', 'Koreys', 'You', 'O`zbek', 'Sen'),
-(3, '153', 'Koreys', 'This', 'O`zbek', 'Bu'),
-(4, '153', 'Koreys', 'My', 'O`zbek', 'Men');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -247,15 +184,7 @@ CREATE TABLE `users` (
   `Email` varchar(45) NOT NULL,
   `Image` varchar(45) NOT NULL,
   `Dates` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`id`, `UserID`, `FIO`, `Addres`, `Phone`, `Email`, `Image`, `Dates`) VALUES
-(4, '1700850217', 'Elshod', '', '908830450s', '', '01.png', '2023-11-24 18:23:37'),
-(5, '1701062650', 'Elshod', '', '908830450', '', '01.png', '2023-11-27 05:24:10');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -272,15 +201,7 @@ CREATE TABLE `user_cours` (
   `Izoh` varchar(70) NOT NULL,
   `Data` timestamp NOT NULL DEFAULT current_timestamp(),
   `MengerID` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `user_cours`
---
-
-INSERT INTO `user_cours` (`id`, `UserID`, `CoursID`, `Start`, `End`, `Izoh`, `Data`, `MengerID`) VALUES
-(1, 1700850217, 153, '2023-11-01', '2023-11-30', 'Meneger Qoshdi', '2023-11-26 13:02:00', '0'),
-(2, 1700850217, 154, '2023-11-18', '2023-11-30', 'Test Izoh', '2023-11-26 13:03:39', '0');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Индексы сохранённых таблиц
@@ -354,49 +275,49 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT для таблицы `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `cours_eye`
 --
 ALTER TABLE `cours_eye`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `cours_mavzu`
 --
 ALTER TABLE `cours_mavzu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `cours_test`
 --
 ALTER TABLE `cours_test`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `cours_test_javob`
 --
 ALTER TABLE `cours_test_javob`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `lugat`
 --
 ALTER TABLE `lugat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `user_cours`
 --
 ALTER TABLE `user_cours`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
