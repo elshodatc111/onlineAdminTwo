@@ -81,7 +81,7 @@
                 <a href="./kurs_rasm_edet.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-primary" >Rasm taxrirlash</a>
                 <!-- RASMNI TAXRIRLASH -->
                 <a href="./kurs_new_mavzu_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-success">MAVZULAR</a>
-                <a href='./lugat.php' class="btn btn-success">LUG'ATLAR</a>
+                <a href='./lugat.php?CoursID=<?php echo $_GET['CoursID']; ?>' class="btn btn-success">LUG'ATLAR</a>
             </div> 
             <!-- Kurs haqida -->
             <section class="row">

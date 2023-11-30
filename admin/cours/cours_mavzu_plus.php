@@ -8,7 +8,7 @@
         $Text = str_replace("'","`",$_POST['Text']);
         $MavzuID = "M".time();
 
-        $target_dir = "../../assets/img/cours/";
+        $target_dir = "../../assets/video/";
         $file_name = time().$_FILES["fileToUpload"]["name"];
         $target_file = $target_dir . basename($file_name);
         $uploadOk = 1;

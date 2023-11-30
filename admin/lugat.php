@@ -68,28 +68,28 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./index.php">Bosh sahifa</a></li>
                         <li class="breadcrumb-item"><a href="./kurslar.php">Kurslar</a></li>
-                        <li class="breadcrumb-item"><a href="./kurs_eye.php">Kurs</a></li>
+                        <li class="breadcrumb-item"><a href="./kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>">Kurs</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Lug'at</li>
                     </ol>
                 </nav>
                 <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#primary">Yangi lug'at qo'shish</button>
                 <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                             <div class="modal-header bg-primary">
                                 <h5 class="modal-title white" id="myModalLabel160">Yangi lug'at qo'shish</h5>
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"> <i data-feather="x"></i></button>
                             </div>
-                            <form>
+                            <form action="./lugat/lugat_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>" method="POST">
                                 <div class="modal-body">
-                                    <label class="mt-3" style="font-weight:700;">Kursning nomi</label>
-                                    <input type="text" class="form-control" placeholder="Kursning nomi" required>
-                                    <label class="mt-3" style="font-weight:700;">Kursning nomi</label>
-                                    <input type="text" class="form-control" placeholder="Kursning nomi" required>
-                                    <label class="mt-3" style="font-weight:700;">Kursning nomi</label>
-                                    <input type="text" class="form-control" placeholder="Kursning nomi" required>
-                                    <label class="mt-3" style="font-weight:700;">Kursning nomi</label>
-                                    <input type="text" class="form-control" placeholder="Kursning nomi" required>
+                                    <label class="mt-3" style="font-weight:700;">Tarjima Tili</label>
+                                    <input type="text" name="Til_1" class="form-control" placeholder="Tarjima Tili" required>
+                                    <label class="mt-3" style="font-weight:700;">Tarjima So'z</label>
+                                    <input type="text" name="Til1_soz" class="form-control" placeholder="Tarjima So'z" required>
+                                    <label class="mt-3" style="font-weight:700;">Tarjima qilingan til</label>
+                                    <input type="text" name="Til_2" class="form-control" placeholder="Tarjima qilingan til" required>
+                                    <label class="mt-3" style="font-weight:700;">Tarjima qilingan so'z</label>
+                                    <input type="text" name="Til_2_soz" class="form-control" placeholder="Tarjima qilingan so'z" required>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal"><i class="bx bx-x d-block d-sm-none"></i><span class="d-none d-sm-block">Bekor qilish</span></button>
@@ -103,32 +103,45 @@
             <div class="page-content">
                 <section class="section">
                     <div class="card">
-                        <div class="card-content">
-                            <div class="table-responsive p-2">
-                                <table class="table mb-0">
-                                    <thead class="thead-dark">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark text-center">
                                         <tr>
                                             <th>#</th>
-                                            <th>Til</th>
-                                            <th>Siz</th>
-                                            <th>Til_2</th>
-                                            <th>Tarjima</th>
+                                            <th>Tarjima Tili</th>
+                                            <th>Tarjima So'z</th>
+                                            <th>Tarjima qilingan til</th>
+                                            <th>Tarjima qilingan so'z</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            $sql1 = "SELECT * FROM `lugat` WHERE `CoursID`='".$_GET['CoursID']."'";
+                                            $res1 = $conn->query($sql1);
+                                            $i=1;
+                                            while ($row1 = $res1->fetch()) {
+                                        ?>
                                         <tr>
-                                            <td>Remote</td>
-                                            <td>Remote</td>
-                                            <td>Remote</td>
-                                            <td>Remote</td>
-                                            <td>Remote</td>
-                                            <td>
-                                                <a href="./kurs_eye.php?CoursID=">
+                                            <td class='text-center'><?php echo $i; ?></td>
+                                            <td><?php echo $row1['Tli_1']; ?></td>
+                                            <td><?php echo $row1['Til1_soz']; ?></td>
+                                            <td><?php echo $row1['Til_2']; ?></td>
+                                            <td><?php echo $row1['Til_2_soz']; ?></td>
+                                            <td class='text-center'>
+                                                <a href="./lugat/lugat_del.php?CoursID=<?php echo $_GET['CoursID']; ?>&id=<?php echo $row1['id']; ?>">
                                                     <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i>
                                                 </a>
                                             </td>
                                         </tr>
+                                        <?php 
+                                                $i++; 
+                                            }
+                                            if($i===1){
+                                                echo "<tr><td colspan='6' class='text-center'>Lug'atlar mavjud emas.</td></tr>";
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
