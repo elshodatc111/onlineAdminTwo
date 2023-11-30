@@ -81,7 +81,7 @@
                     <div class="card">
                         <div class="card-body text-center"  style="min-height:340px;">
                             <h5>Yangi test qo'shish</h5>
-                            <form action="" method="POST">
+                            <form action="./cours/test_savol_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" method="POST">
                                 <label class="mt-3">Test turini tablang</label>
                                 <select name="Type" class="form-select mt-2" required>
                                     <option value="">tanlang</option>
@@ -100,17 +100,26 @@
                     <div class="card">
                         <div class="card-body text-center" style="min-height:340px;">
                             <h5>Yangi javobini kiritish</h5>
-                            <form action="">
+                            <form action="./cours/test_javob_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>" method="POST">
                                 <label class="mt-1">Test savolini tablang</label>
-                                <select name="" class="form-select mt-1" required>
-                                    <option value="aaa">tanlang</option>
+                                <select name="TestID" class="form-select mt-1" required>
+                                    <option value=''>tanlang</option>
+                                    <?php
+                                        $sql2 = "SELECT * FROM `cours_test` WHERE `MavzuID`='".$_GET['MavzuID']."'";
+                                        $res2 = $conn->query($sql2);
+                                        while ($row2 = $res2->fetch()) {
+                                            echo "<option value=".$row2['TestID'].">".$row2['Savol']."</option>";
+                                        }
+                                    ?>
                                 </select>
                                 <label class="mt-1">Test holatini tablang</label>
-                                <select name="" class="form-select mt-1" required>
-                                    <option value="aaaa">tanlang</option>
+                                <select name="Status" class="form-select mt-1" required>
+                                    <option value="">tanlang</option>
+                                    <option value="true">To'g'ri javob</option>
+                                    <option value="false">Noto'g'ri javob</option>
                                 </select>
                                 <label class="mt-1">Test javobini kiriting</label>
-                                <input type="text" class="form-control mt-1" required>
+                                <input type="text" name="Javob" class="form-control mt-1" required>
                                 <button type="submit" class="btn btn-primary w-100 mt-2">Javobni saqlash</button>
                             </form>
                         </div>
@@ -140,19 +149,36 @@
                                     <tr>
                                         <td><?php echo $i; ?></td>
                                         <td style='text-align:left'><?php echo $row['Savol']; ?></td>
-                                        <td><?php echo $row['Type']; ?></td>
+                                        <td style='text-align:left'>
+                                            <?php 
+                                                if($row['Type']==='tanlang'){
+                                                    echo "To'g'ri javobni tanlang.";
+                                                }elseif($row['Type']==='javoblar'){
+                                                    echo "To'g'ri javoblarni tanlang.";
+                                                }elseif($row['Type']==='insert'){
+                                                    echo "To'g'ri javobni kiriting.";
+                                                }
+                                            ?>
+                                        </td>
                                         <td style='text-align:left'>
                                             <ol class="p-0 m-0">
                                                 <?php
                                                     $sql1 = "SELECT * FROM `cours_test_javob` WHERE `TestID`='".$row['TestID']."'";
                                                     $res1 = $conn->query($sql1);
+                                                    $i=0;
                                                     while ($row1=$res1->fetch()) {
                                                         if($row1['Status']==='true'){
-                                                            echo "<li><p class='text-success my-1 p-0'>to'g'ri <a href='./cours/test_javob_del.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&id=".$row1['id']."'><i data-feather='trash'></i></p></a> </li>";
+                                                            echo "<li>
+                                                            <p class='text-success my-1 p-0'>".$row1['Javob']." <a href='./cours/test_javob_del.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&id=".$row1['id']."'><i data-feather='trash'></i></p></a> </li>";
+                                                            $i++;
                                                         }elseif($row1['Status']==='false'){
-                                                            echo "<li><p class='text-danger my-1 p-0'> Notogri <a href='./cours/test_javob_del.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&id=".$row1['id']."'><i data-feather='trash'></i></p></a> </li>";
+                                                            echo "<li>
+                                                            <p class='text-danger my-1 p-0'> ".$row1['Javob']." <a href='./cours/test_javob_del.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&id=".$row1['id']."'><i data-feather='trash'></i></p></a> </li>";
+                                                            $i++;
                                                         }
-                                                        
+                                                    }
+                                                    if($i===0){
+                                                        echo "Test Javoblari Kiritilmagan.";
                                                     }
                                                 ?>
                                             </ol>
