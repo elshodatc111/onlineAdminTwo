@@ -81,13 +81,16 @@
                     <div class="card">
                         <div class="card-body text-center"  style="min-height:340px;">
                             <h5>Yangi test qo'shish</h5>
-                            <form action="">
+                            <form action="" method="POST">
                                 <label class="mt-3">Test turini tablang</label>
-                                <select name="" class="form-select mt-2" required>
-                                    <option value="ddd">tanlang</option>
+                                <select name="Type" class="form-select mt-2" required>
+                                    <option value="">tanlang</option>
+                                    <option value="tanlang">Faqat bitta to'g'ri javob</option>
+                                    <option value="insert">To'g'ri javobni kiritish</option>
+                                    <option value="javoblar">To'g'ri javoblarni tanlang</option>
                                 </select>
                                 <label class="mt-3">Test savlolini kiriting</label>
-                                <input type="text" class="form-control mt-2" required>
+                                <input type="text" name="savol" class="form-control mt-2" required>
                                 <button type="submit" class="btn btn-primary w-100 mt-4">Testni saqlash</button>
                             </form>
                         </div>
@@ -122,33 +125,41 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Tast savoli</th>
+                                        <th>Test Type</th>
                                         <th>Test Javoblari</th>
                                         <th>Testni o'chirish</th>
                                     </tr>
                                 </thaed>
                                 <tbody>
+                                    <?php
+                                        $sql = "SELECT * FROM `cours_test` WHERE `CoursID`='".$_GET['CoursID']."' AND `MavzuID`='".$_GET['MavzuID']."'";
+                                        $res = $conn->query($sql);
+                                        $i=1;
+                                        while ($row = $res->fetch()) {
+                                    ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Test savoli</td>
-                                        <td>
+                                        <td><?php echo $i; ?></td>
+                                        <td style='text-align:left'><?php echo $row['Savol']; ?></td>
+                                        <td><?php echo $row['Type']; ?></td>
+                                        <td style='text-align:left'>
                                             <ol class="p-0 m-0">
-                                                <li><p class="text-success my-1 p-0">to'g'ri <a href=""><i data-feather="trash"></i></p> </li>
-                                                <li><p class="text-danger my-1 p-0">Noto'g'ri <a href=""><i data-feather="trash"></i></a></p> </li>
+                                                <?php
+                                                    $sql1 = "SELECT * FROM `cours_test_javob` WHERE `TestID`='".$row['TestID']."'";
+                                                    $res1 = $conn->query($sql1);
+                                                    while ($row1=$res1->fetch()) {
+                                                        if($row1['Status']==='true'){
+                                                            echo "<li><p class='text-success my-1 p-0'>to'g'ri <a href='./cours/test_javob_del.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&id=".$row1['id']."'><i data-feather='trash'></i></p></a> </li>";
+                                                        }elseif($row1['Status']==='false'){
+                                                            echo "<li><p class='text-danger my-1 p-0'> Notogri <a href='./cours/test_javob_del.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&id=".$row1['id']."'><i data-feather='trash'></i></p></a> </li>";
+                                                        }
+                                                        
+                                                    }
+                                                ?>
                                             </ol>
                                         </td>
-                                        <td><a href=""><i data-feather="trash"></i></a></td>
+                                        <td><a href="./cours/test_delete.php?CoursID=<?php echo $_GET['CoursID']; ?>&MavzuID=<?php echo $_GET['MavzuID']; ?>&id=<?php echo $row['id']; ?>"><i data-feather="trash"></i></a></td>
                                     </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Test savoli</td>
-                                        <td>
-                                            <ol class="p-0 m-0">
-                                                <li><p class="text-success my-1 p-0">to'g'ri <a href=""><i data-feather="trash"></i></p> </li>
-                                                <li><p class="text-danger my-1 p-0">Noto'g'ri <a href=""><i data-feather="trash"></i></a></p> </li>
-                                            </ol>
-                                        </td>
-                                        <td><a href=""><i data-feather="trash"></i></a></td>
-                                    </tr>
+                                    <?php $i++; } ?>
                                 </tbody>
                             </table>
                         </div>

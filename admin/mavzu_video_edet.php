@@ -4,6 +4,9 @@
     if(!isset($_COOKIE['UserID'])){
         header("location: ./login.php");
     }
+    $sql = "SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."' AND `MavzuID`='".$_GET['MavzuID']."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch();
 ?>
 <html lang="en">
     <head>
@@ -82,7 +85,7 @@
                         <div class="card-body text-center"  style="min-height:340px;">
                             <h5>Joriy mavzu videosi</h5>
                             <video controls style="width:100%;" controlsList="nodownload">
-                                <source src="../assets/video/video.mp4" type="video/mp4">
+                                <source src="../assets/video/<?php echo $row['Video']; ?>" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -91,10 +94,10 @@
                     <div class="card">
                         <div class="card-body text-center" style="min-height:340px;">
                             <h5>Mavzu videosini yangilash</h5>
-                            <form action="">
+                            <form action="./cours/cours_mavzu_video_edit.php?CoursID=<?php echo $_GET['CoursID'] ?>&MavzuID=<?php echo $_GET['MavzuID'] ?>" enctype="multipart/form-data" method="POST">
                                 <label class="mt-4">Video tanlang (mp4)</label>
-                                <input type="file" class="form-control mt-4" required>
-                                <button type="submit" class="btn btn-primary w-100 mt-5">Videoni yangilash</button>
+                                <input type="file" name="fileToUpload" class="form-control mt-4" required>
+                                <button type="submit" name="videoEdit" class="btn btn-primary w-100 mt-5">Videoni yangilash</button>
                             </form>
                         </div>
                     </div>

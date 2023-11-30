@@ -4,6 +4,9 @@
     if(!isset($_COOKIE['UserID'])){
         header("location: ./login.php");
     }
+    $sql = "SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."' AND `MavzuID`='".$_GET['MavzuID']."'";
+    $res = $conn->query($sql);
+    $row = $res->fetch();
 ?>
 <html lang="en">
     <head>
@@ -82,7 +85,7 @@
                         <div class="card-content" style="min-height:400px;">
                             <div class="card-body p-2">
                                 <video controls style="width:100%;" controlsList="nodownload">
-                                    <source src="../assets/video/video.mp4" type="video/mp4">
+                                    <source src="../assets/video/<?php echo $row['Video']; ?>" type="video/mp4">
                                 </video>
                             </div>
                             <div class="card-body text-center">
@@ -96,23 +99,23 @@
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-body" style="min-height:400px;">
-                            <form action="">
+                            <form action="./cours/cours_mavzu_text_edit.php?CoursID=<?php echo $_GET['CoursID'] ?>&MavzuID=<?php echo $_GET['MavzuID'] ?>" method="POST">
                                 <div class="row text-center">
                                     <div class="col-lg-12">
                                         <label style="font-weight:700;">Mavzu nomi</label>
-                                        <input type="text" name="12" class="form-control" placeholder="Mavzu nomi" required>
+                                        <input type="text" name="MavzuName" value="<?php echo $row['MavzuName']; ?>" class="form-control" placeholder="Mavzu nomi" required>
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="mt-1" style="font-weight:700;">Mavzu tartib raqami</label>
-                                        <input type="number" name="12" class="form-control" placeholder="Tartib raqami" required>
+                                        <input type="number" name="TartibRaqam" value="<?php echo $row['Numbers']; ?>" class="form-control" placeholder="Tartib raqami" required>
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="mt-1" style="font-weight:700;">Video uzunligi</label>
-                                        <input type="text" name="12" class="form-control davomiy" placeholder="Tartib raqami" required>
+                                        <input type="text" name="VideoUzunligi" value="<?php echo $row['TimeLine']; ?>" class="form-control davomiy" placeholder="Tartib raqami" required>
                                     </div>
                                     <div class="col-lg-12">
                                         <label class="mt-2">Mavzu haqida</label>
-                                        <textarea class="form-control" rows='5' required></textarea>
+                                        <textarea class="form-control" name="Text" rows='5' required><?php echo $row['Text']; ?></textarea>
                                         <input type="submit" name="form_text_edet" class="btn btn-primary mt-3" value="O'zgarishlarni yangilash"/>
                                     </div>
                                 </div>
