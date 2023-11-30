@@ -14,7 +14,7 @@
                 $count = $count + 1;
             }
             if($count>0){
-                header("location: ./registr.php?phone=true");
+                header("location: ./reg01.php?phone=true");
             }else{
                 $rand1 = rand(100000, 999999);
                 setcookie("code", $rand1, time()+5*60);   
@@ -36,7 +36,7 @@
                 $res = curl_exec($ch);
 
 
-                header("location: ./registr.php?tasdiq=true");
+                header("location: ./reg01.php?tasdiq=true");
             }
         }
     }
@@ -57,11 +57,11 @@
                 header("location: ./index.php");
                 
             }else{
-                header("location: ./registr.php?tasdiq=true&code=error");
+                header("location: ./reg01.php?tasdiq=true&code=error");
             }
             
         }else{
-            header("location: ./registr.php?tasdiqerror=true");
+            header("location: ./reg01.php?tasdiqerror=true");
         }
     }else{
         echo "Malumot yoq";

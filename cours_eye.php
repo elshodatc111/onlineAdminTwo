@@ -44,10 +44,10 @@
                                 <a href="./help.php" class='menu-link'><span> Yordam</span></a>
                             </li>
                             <li class="menu-item" style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
-                                <a href="login.php" class='menu-link'><span> Kirish</span></a>
+                                <a href="log01.php" class='menu-link'><span> Kirish</span></a>
                             </li>
                             <li class="menu-item" style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
-                                <a href="./registr.php" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
+                                <a href="./reg01.php" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
                             </li>
                         </ul>
                     </div>
@@ -75,8 +75,8 @@
                                             <li class="list-group-item"><b>O'qituvchi: </b> <?php echo $rowCour['Oqituvchi']; ?></li>
                                             <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $rowCour['Davomiylig']; ?></li>
                                             <li class="list-group-item text-center">
-                                                <i class='text-danger' style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Kursni sotib olish uchun oldin ro'yhatdan o'ting</i><br>
-                                                <button class="btn btn-success" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Sotib olish</button>
+                                                <a href="./log01.php?CoursID=<?php echo $_GET['CoursID']; ?>" class='btn btn-success' style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Sotib olish</a><br>
+                                                <a class="btn btn-success" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Sotib olish</a>
                                             </li>
                                         </ul>
                                     </div>

@@ -45,10 +45,10 @@
                                 <a href="./help.php" class='menu-link'><span> Yordam</span></a>
                             </li>
                             <li class="menu-item" style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
-                                <a href="login.php" class='menu-link'><span> Kirish</span></a>
+                                <a href="01.php" class='menu-link'><span> Kirish</span></a>
                             </li>
                             <li class="menu-item" style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
-                                <a href="./registr.php" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
+                                <a href="./reg01.php" class='menu-link'><span> Ro'yhatdan o'tish</span></a>
                             </li>
                         </ul>
                     </div>

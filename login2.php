@@ -27,9 +27,9 @@
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
             $res = curl_exec($ch);
-            header("Location: login.php?sendmessege=true&Phone=".$Phone."");
+            header("Location: log01.php?sendmessege=true&Phone=".$Phone."");
         }else{
-            header("Location: login.php?phone1=error");
+            header("Location: log01.php?phone1=error");
             echo "ok";
             echo $_POST['Phones'];
             echo $Phone;
@@ -38,7 +38,7 @@
         $TasdiqCode = str_replace(" ","",$_POST['tasdiqkodi']);
         if($_COOKIE['code']===$TasdiqCode){
             if(!isset($_COOKIE['code'])){
-                header("location: ./login.php");
+                header("location: ./log01.php");
             }
             $sql1 = "SELECT * FROM `users` WHERE `Phone`='".$_GET['Phone']."'";
             $res1 = $conn->query($sql1);
@@ -49,9 +49,9 @@
         }else{
             echo "false";
             if(!isset($_COOKIE['code'])){
-                header("location: ./login.php");
+                header("location: ./log01.php");
             }
-            header("Location: login.php?sendmessege=true&Phone=".$Phone."&codeerror=true");
+            header("Location: log01.php?sendmessege=true&Phone=".$Phone."&codeerror=true");
         }
 
     }
