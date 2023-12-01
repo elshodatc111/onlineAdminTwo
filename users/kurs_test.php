@@ -183,6 +183,9 @@
                                                 if(isset($_GET['status'])){
                                                     echo "<script>alert('To`g`ri javob tanladingiz.');</script>";
                                                 }
+                                                if(isset($_GET['error1'])){
+                                                    echo "<script>alert('Siz javoblarni tanlamdingiz.');</script>";
+                                                }
                                             ?>
                                         </div>
                                     </div>

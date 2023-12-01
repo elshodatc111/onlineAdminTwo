@@ -33,6 +33,7 @@
             }
         }else{
             echo "no";
+            header("location: ../kurs_test.php?CoursID=".$_GET['CoursID']."&MavzuID=".$_GET['MavzuID']."&error1=error");
         }
     }
 ?>
