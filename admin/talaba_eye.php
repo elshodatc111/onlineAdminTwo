@@ -88,8 +88,8 @@
                     </div>
                 </div>
                 <section class="section row">
-                    <div class="col-lg-4">
-                        <div class="card">
+                    <div class="col-lg-6">
+                        <div class="card" style="min-height:365px;">
                             <div class="card-body">
                                 <div class="text-center">
                                     <img src="../assets/img/avatar/<?php echo $row['Image']; ?>" style='width:100px;margin:0 auto;'>
@@ -119,8 +119,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card">
+                    <div class="col-lg-6">
+                        <div class="card" style="min-height:365px;">
                             <div class="card-body">
                                 <h5>Yangi kursga qo'shish</h5>
                                 <form action="./talaba/cours_user_plus.php?UserID=<?php echo $_GET['UserID']; ?>" method="POST">
@@ -139,24 +139,12 @@
                                     <input type="date" name="Start" class="form-control mt-1" required>
                                     <label class='mb-2 mt-2'>Kurs yopilish vaqti</label>
                                     <input type="date" name="End" class="form-control mt-1" required>
-                                    <button type="submit" class="btn btn-primary mt-1 w-100">Saqlash</button>
+                                    <button type="submit" class="btn btn-primary mt-1 w-100">Kursga qo'shish</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5>Telefon raqamini almashtirish</h5>
-                                <form action="">
-                                    <label class='mb-2 mt-2'>Telefon raqam</label>
-                                    <input type="text" name="" class="form-control mt-1 phone" required>
-                                    <button type="submit" class="btn btn-primary mt-3 w-100">Saqlash</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5>Talaba aktiv kurslari</h5>
@@ -172,39 +160,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            $date = date("Y-m-d");
+                                            $sqla = "SELECT 
+                                            cours_eye.CoursName, 
+                                            user_cours.Start, 
+                                            user_cours.End,
+                                            user_cours.MengerID,
+                                            user_cours.Data FROM `user_cours` JOIN `cours_eye` ON user_cours.CoursID=cours_eye.CoursID WHERE user_cours.UserID='".$_GET['UserID']."' AND `Start`<='".$date."' AND `End`>='".$date."'";
+                                            $resa = $conn->query($sqla);
+                                            $i=1;
+                                            while ($rowa=$resa->fetch()) {
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo $rowa['CoursName']; ?></td>
+                                            <td><?php echo $rowa['Start']; ?></td>
+                                            <td><?php echo $rowa['End']; ?></td>
+                                            <td><?php echo $rowa['MengerID']; ?></td>
+                                            <td><?php echo $rowa['Data']; ?></td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5>Talaba online to'lovlari</h5>
-                                <table class="table text-center">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Kurs</th>
-                                            <th>Summa</th>
-                                            <th>To'lov vaqti</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                        </tr>
+                                        <?php $i++; } ?>
                                     </tbody>
                                 </table>
                             </div>

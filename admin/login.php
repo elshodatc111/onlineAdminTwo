@@ -21,9 +21,9 @@
         <div class="row h-100">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
-                    <h1 class="auth-title">Kirish</h1>
+                    <h1 class="auth-title mt-lg-5">Kirish</h1>
                     <p class="auth-subtitle mb-5 text-danger" style='display:<?php if(!isset($_GET['passw'])){echo 'none;';} ?>'>Login yoki parol xato.</p>
-                    <form action="./users/login.php" method="POST">
+                    <form action="./users/login.php" class="mt-lg-5" method="POST">
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" name="login" class="form-control form-control-xl" required>
                             <div class="form-control-icon"><i class="bi bi-person"></i></div>

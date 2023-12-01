@@ -104,6 +104,12 @@
                                         $i=1;
                                         while ($row=$res->fetch()) {
                                             $active = 0;
+                                            $date = date("Y-m-d");
+                                            $sql1 = "SELECT * FROM `user_cours` WHERE `UserID`='".$row['UserID']."' AND `Start`<='".$date."' AND `End`>='".$date."'";
+                                            $res1 = $conn->query($sql1);
+                                            while ($row1 = $res1->fetch()) {
+                                                $active = $active + 1;
+                                            }
                                     ?>
                                     <tr>
                                         <td><?php echo $i; ?></td>

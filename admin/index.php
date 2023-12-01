@@ -83,7 +83,15 @@
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                             <h6 class="text-muted font-semibold">Bannerlar</h6>
-                                            <h6 class="font-extrabold mb-0">112.000</h6>
+                                            <?php
+                                                $sqlb = "SELECT * FROM `banner`";
+                                                $resb = $conn->query($sqlb);
+                                                $banner = 0;
+                                                while ($rowb = $resb->fetch()) {
+                                                    $banner = $banner + 1;
+                                                }
+                                            ?>
+                                            <h6 class="font-extrabold mb-0"><?php echo $banner; ?></h6>
                                         </div>
                                     </div> 
                                 </div>
@@ -100,7 +108,15 @@
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                             <h6 class="text-muted font-semibold">Barcha kurslar</h6>
-                                            <h6 class="font-extrabold mb-0">183.000</h6>
+                                            <?php
+                                                $sqlk = "SELECT * FROM `cours_eye`";
+                                                $resk = $conn->query($sqlk);
+                                                $kurslar = 0;
+                                                while ($rowk = $resk->fetch()) {
+                                                    $kurslar = $kurslar + 1;
+                                                }
+                                            ?>
+                                            <h6 class="font-extrabold mb-0"><?php echo $kurslar; ?></h6>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +132,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Sotilgan kurslar</h6>
+                                            <h6 class="text-muted font-semibold">Aktiv talabalar</h6>
                                             <h6 class="font-extrabold mb-0">80.000</h6>
                                         </div>
                                     </div>
@@ -134,7 +150,15 @@
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                             <h6 class="text-muted font-semibold">Ro'yhatdan o'tganlar</h6>
-                                            <h6 class="font-extrabold mb-0">112</h6>
+                                            <?php
+                                                $sqlR = "SELECT * FROM `cours_eye`";
+                                                $resR = $conn->query($sqlR);
+                                                $Reg = 0;
+                                                while ($rowR = $resR->fetch()) {
+                                                    $Reg = $Reg + 1;
+                                                }
+                                            ?>
+                                            <h6 class="font-extrabold mb-0"><?php echo $Reg; ?></h6>
                                         </div>
                                     </div>
                                 </div>
