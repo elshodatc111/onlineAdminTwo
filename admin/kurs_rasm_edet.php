@@ -81,7 +81,7 @@
                 <div class="col-lg-6 text-center">
                     <div class="card">
                         <div class="card-body">
-                            <img src="../assets/img/cours/<?php echo $row['CoursImage']; ?>" alt="">
+                            <img src="../assets/img/cours/<?php echo $row['CoursImage']; ?>" style='width:100%;'>
                         </div>
                     </div>
                 </div>
