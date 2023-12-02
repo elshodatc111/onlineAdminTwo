@@ -90,7 +90,11 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body py-2">
-                                    <h4 class="card-title my-2 p-0 w-100 text-center"><?php echo $rowB['CoursName']; ?> kursga oid lug'atlar<hr class='p-0 m-0 mt-1'>
+                                    <h4 class="card-title my-2 p-0 w-100 text-center">
+                                        <?php echo $rowB['CoursName']; ?> kursga oid lug'atlar
+                                    </h4>
+                                    <a href="kurs_eye.php?CoursID=<?php echo $_GET['CoursID']; ?>" class="btn btn-primary">Kursga qaytish</a>
+                                    <hr class='p-0 m-0 mt-1'>
                                     <form action="./lugat.php?CoursID=<?php echo $_GET['CoursID']; ?>" method="post" class="mt-1">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text pt-0"><i class="bi bi-search"></i></span>
