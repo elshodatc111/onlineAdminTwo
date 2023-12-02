@@ -55,34 +55,64 @@
                     <section class="row">
                         <!-- Yangi kurslar -->
                         <div class="page-title text-center">
-                            <h3>Barcha kurslar</h3>
-                            <p class="text-subtitle text-muted">Eng yangi video kurslar</p>
+                            <h3>To'lov</h3>
+                            <p class="text-subtitle text-muted">Online kurs uchun to'lov</p>
                         </div>
                         <div class="row">
                             <?php
-                                $sqlCours = "SELECT * FROM `cours_eye` ORDER BY `id` DESC";
+                                $sqlCours = "SELECT * FROM `cours_eye` WHERE `CoursID`='".$_GET['CoursID']."'";
                                 $resCours = $conn->query($sqlCours);
-                                while ($rowCours = $resCours->fetch()) {
+                                $rowCours = $resCours->fetch();
                             ?>
-                            <div class="col-lg-4">
-                                <div class="card" style="min-height:310px;">
+                            <div class="col-lg-6">
+                                <div class="card pb-2" style="height:310px;">
                                     <div class="card-content">
-                                        <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid"  style='max-height:250px;width:100%;border:1px solid red;'>
-                                        <div class="card-body">
-                                            <h5 class="card-title p-0 m-0"><?php echo $rowCours['CoursName']; ?></h5>
+                                        <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid"  style='max-height:250px;width:100%;'>
+                                        <div class="card-body py-1">
+                                            <h6 class="card-title p-0 m-0 w-100 text-center"><?php echo $rowCours['CoursName']; ?></h5>
                                         </div>
-                                        <div class="card-footer d-flex justify-content-between p-0 m-0 py-1 px-3">
+                                        <div class="d-flex justify-content-between m-0 p-0 px-3">
+                                            <h6 class='py-1 m-0'>Kurs Narxi:</h6>
                                             <?php
-                                                echo "<h3 class='pt-1 text-danger'> ".number_format(($rowCours['CoursSumma']), 0, '.', ' ')." so'm</h3>";
-                                                echo "<a href='./cours_eye.php?CoursID=".$rowCours['CoursID']."'>
-                                                    <button class='btn btn-primary'>Kurs haqida</button>
-                                                </a>";
+                                                echo "<h6 class='py-1 m-0 text-danger'> ".number_format(($rowCours['CoursSumma']), 0, '.', ' ')." so'm</h6>";
                                             ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
+                            
+                            <div class="col-lg-6">
+                                <div class="card py-5" style="height:310px">
+                                    <div class="card-content text-center">
+                                        <img src="https://cdn.paycom.uz/documentation_assets/payme_02.png" class="card-img-top img-fluid p-2 mb-2"  style='width:25%;'>
+                                        <div class="card-footer d-flex justify-left-between p-0 m-0 py-1 px-3 text-center">
+                                            <from action='index.php' method='POST'>
+                                                <table>
+                                                    <tr>
+                                                        <td class='w-50' style='text-align:left;'>
+                                                            Karta raqami
+                                                        </td>
+                                                        <td class='w-50' colspan='2' style='text-align:left;'>
+                                                            Karta muddati
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class='w-50'>
+                                                            <input class='form-control carts w-100 ml-3 mt-2' required>
+                                                        </td>
+                                                        <td class=>
+                                                            <input class='form-control w-100 carddate ml-3 mt-2' required>
+                                                        </td>
+                                                        <td class=''>
+                                                            <button class='btn btn-success w-100 mt-2' type='submit'>To'lov</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </from>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
                         </div>
                         
@@ -100,5 +130,15 @@
     <script src="assets/compiled/js/app.js"></script>
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="assets/static/js/pages/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/jquery.inputmask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carts').inputmask('9999 9999 9999 9999');
+            $('.carddate').inputmask('99 / 99');
+            $('.pnfl').inputmask('99999999999999');
+            $('.kodes').inputmask('9 9 9 9 9 9');
+        });
+    </script>
 </body>
 </html>
