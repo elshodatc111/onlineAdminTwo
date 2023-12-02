@@ -82,6 +82,17 @@
                             </div>
                             <form action="./lugat/lugat_plus.php?CoursID=<?php echo $_GET['CoursID']; ?>" method="POST">
                                 <div class="modal-body">
+                                    <label class="mt-3" style="font-weight:700;">Mavzuni tanlang</label>
+                                    <select name="MavzuID" class="form-select">
+                                        <option value="">Tanlang</option>
+                                        <?php
+                                            $sql01 = "SELECT * FROM `cours_mavzu` WHERE `CoursID`='".$_GET['CoursID']."'";
+                                            $res01 = $conn->query($sql01);
+                                            while ($row01=$res01->fetch()) {
+                                                echo "<option value=".$row01['MavzuID'].">".$row01['MavzuName']."</option>";
+                                            }
+                                        ?>
+                                    </select>
                                     <label class="mt-3" style="font-weight:700;">Tarjima Tili</label>
                                     <input type="text" name="Til_1" class="form-control" placeholder="Tarjima Tili" required>
                                     <label class="mt-3" style="font-weight:700;">Tarjima So'z</label>
@@ -109,6 +120,7 @@
                                     <thead class="thead-dark text-center">
                                         <tr>
                                             <th>#</th>
+                                            <th>Mavzu</th>
                                             <th>Tarjima Tili</th>
                                             <th>Tarjima So'z</th>
                                             <th>Tarjima qilingan til</th>
@@ -122,9 +134,13 @@
                                             $res1 = $conn->query($sql1);
                                             $i=1;
                                             while ($row1 = $res1->fetch()) {
+                                                $sqlm = "SELECT * FROM `cours_mavzu` WHERE `MavzuID`='".$row1['MavzuID']."'";
+                                                $resm = $conn->query($sqlm);
+                                                $rowm = $resm->fetch();
                                         ?>
                                         <tr>
                                             <td class='text-center'><?php echo $i; ?></td>
+                                            <td><?php echo $rowm['MavzuName']; ?></td>
                                             <td><?php echo $row1['Tli_1']; ?></td>
                                             <td><?php echo $row1['Til1_soz']; ?></td>
                                             <td><?php echo $row1['Til_2']; ?></td>
