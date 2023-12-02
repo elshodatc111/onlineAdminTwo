@@ -75,8 +75,29 @@
                                             <li class="list-group-item"><b>O'qituvchi: </b> <?php echo $rowCour['Oqituvchi']; ?></li>
                                             <li class="list-group-item"><b>Davomiyligi: </b> <?php echo $rowCour['Davomiylig']; ?></li>
                                             <li class="list-group-item text-center">
-                                                <a href="./log01.php?CoursID=<?php echo $_GET['CoursID']; ?>" class='btn btn-success' style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Sotib olish</a><br>
-                                                <a class="btn btn-success" style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">Sotib olish</a>
+                                                <!-- Ro'yhatdan o'tgan bo'lsa -->
+                                                <div style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
+                                                    <?php
+                                                        $UserID = $_COOKIE['UserID'];
+                                                        $dates = date("Y-m-d");
+                                                        $sqlss = "SELECT * FROM `user_cours` WHERE `UserID`='".$UserID."' AND `Start`<='".$dates."' AND `End`>='".$dates."' AND `CoursID`='".$_GET['CoursID']."'";
+                                                        $resss = $conn->query($sqlss);
+                                                        $cont = 0;
+                                                        while($rowt = $resss->fetch()){
+                                                            $cont = $cont + 1;
+                                                        }
+                                                        if($cont>0){
+                                                            echo "<a href='users/kurs_eye.php?CoursID=".$_GET['CoursID']."' class='btn btn-success'>Darslarni boshlash</a><br>";
+                                                        }else{
+                                                            echo "<a class='btn btn-success'>Sotib olish</a>";
+                                                        }
+                                                    ?>
+                                                    
+                                                </div>
+                                                <!-- Ro'yhatdan o'tmagan bo'lsa -->
+                                                <div style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>">
+                                                    <a href="./log01.php" class='btn btn-success' style="">Sotib olish</a><br>
+                                                </div>
                                             </li>
                                         </ul>
                                     </div>

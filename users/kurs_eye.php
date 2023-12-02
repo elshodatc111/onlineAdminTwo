@@ -118,11 +118,17 @@
                                         </div>
                                         <div class="card-body">
                                             <p class="card-text"><?php echo $rowA['Text']; ?></p>
+                                            
+                                            <p class="card-footer p-0 m-0 pt-1 ">
+                                                <div class="row">
+                                                    <div class="col-12"><a href="kurs_test.php?CoursID=<?php echo $_GET['CoursID'] ?>&MavzuID=<?php echo $MavzuID; ?>" class="btn btn-primary p-1 w-100 my-1">Mavzuga oid testlar</a></div>
+                                                </div>
+                                            </p>
                                             <h5>Mavzuga oid lug'atlar</h5>
                                             <table class="table" style='font-size:14px'>
                                             <tbody>
                                             <?php
-                                                $sql = "SELECT * FROM `lugat` WHERE `CoursID`='".$_GET['CoursID']."'";
+                                                $sql = "SELECT * FROM `lugat` WHERE `CoursID`='".$_GET['CoursID']."' AND `MavzuID`='".$MavzuID."'";
                                                 $res = $conn->query($sql);
                                                 $i=1;
                                                 while ($row = $res->fetch()) {
@@ -136,11 +142,6 @@
                                             ?>
                                             </tbody>
                                             </table>
-                                            <p class="card-footer p-0 m-0 pt-1 ">
-                                                <div class="row">
-                                                    <div class="col-12"><a href="kurs_test.php?CoursID=<?php echo $_GET['CoursID'] ?>&MavzuID=<?php echo $MavzuID; ?>" class="btn btn-primary p-1 w-100 my-1">Testlar</a></div>
-                                                </div>
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
