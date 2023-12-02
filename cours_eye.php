@@ -89,7 +89,7 @@
                                                         if($cont>0){
                                                             echo "<a href='users/kurs_eye.php?CoursID=".$_GET['CoursID']."' class='btn btn-success'>Darslarni boshlash</a><br>";
                                                         }else{
-                                                            echo "<a class='btn btn-success'>Sotib olish</a>";
+                                                            echo "<a href='./cours_pay.php?CoursID=".$_GET['CoursID']."' class='btn btn-success'>Sotib olish</a>";
                                                         }
                                                     ?>
                                                     

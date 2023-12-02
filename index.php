@@ -97,15 +97,15 @@
                                 while ($rowCours = $resCours->fetch()) {
                             ?>
                             <div class="col-lg-4">
-                                <div class="card" style="min-height:360px;">
-                                    <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid" style='max-height:300px;width:100%'>
+                                <div class="card" style="min-height:310px;">
+                                    <img src="./assets/img/cours/<?php echo $rowCours['CoursImage']; ?>" class="card-img-top img-fluid" style='max-height:250px;width:100%;border:1px solid red;'>
                                     <div class="card-body">
                                         <h5 class="card-title p-0 m-0"><?php echo $rowCours['CoursName']; ?></h5>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between p-0 m-0 py-1 px-3">
                                         <h3 class="pt-1 text-danger"><?php echo number_format(($rowCours['CoursSumma']), 0, '.', ' '); ?> so'm</h3>
                                         <a href="./cours_eye.php?CoursID=<?php echo $rowCours['CoursID']; ?>">
-                                            <button class="btn btn-light-primary">Kurs haqida</button>
+                                            <button class="btn btn-primary">Kurs haqida</button>
                                         </a>
                                     </div>
                                 </div>
