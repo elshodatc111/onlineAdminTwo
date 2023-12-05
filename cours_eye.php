@@ -83,15 +83,33 @@
                                                         $sqlss = "SELECT * FROM `user_cours` WHERE `UserID`='".$UserID."' AND `Start`<='".$dates."' AND `End`>='".$dates."' AND `CoursID`='".$_GET['CoursID']."'";
                                                         $resss = $conn->query($sqlss);
                                                         $cont = 0;
+                                                        $Start=date("Y-m-d");
+                                                        $End=date('Y-m-d', strtotime('+'.$rowCour['Davomiylig'].' day'));
                                                         while($rowt = $resss->fetch()){
                                                             $cont = $cont + 1;
                                                         }
                                                         if($cont>0){
                                                             echo "<a href='users/kurs_eye.php?CoursID=".$_GET['CoursID']."' class='btn btn-success'>Darslarni boshlash</a><br>";
-                                                        }else{
-                                                            echo "<a href='./cours_pay.php?CoursID=".$_GET['CoursID']."' class='btn btn-success'>Sotib olish</a>";
-                                                        }
-                                                    ?>
+                                                        }else{?>
+                                                            <form action="https://pay.oson.uz/ajax/payment/" method="POST" id="oson_form">
+                                                                <!--<input class="input_view" name="account_view" placeholder="Аккаунт" type="text" />-->
+                                                                <!-- <input class="input_view" min="500" name="amount_view" placeholder="Сумма" type="text" />-->
+                                                                <input name="merchant_id" type="hidden" value="1474">
+                                                                <input name="amount" type="hidden" value="1000.00">
+                                                                <input name="account" type="hidden" value="<?php echo $_COOKIE['UserID']; ?>">
+                                                                <input name="currency" type="hidden" value="UZS">
+                                                                <input name="comment" type="hidden" value="<?php echo $rowCour['CoursName']; ?> Online kursni xarid qilish uchun to'lov">
+                                                                <input name="return_url" type="hidden" value="https://atko.tech/newonline/cours_eye.php?
+                                                                    CoursID=<?php echo $_GET['CoursID'] ?>&UserID=<?php echo $_GET['CoursID'] ?>&
+                                                                    Start=<?php echo $Start; ?>&MenegerID=NULL&Izoh=Sayt Orqali&End=<?php echo $End;?>">
+                                                                <input name="lang" type="hidden" value="uz">
+                                                                <div class="osonPay second_style style_local btn_light w-100 text-center"> 
+                                                                    <button class="osonPay btn btn-success w-100" type="submit">Sotib olish</button>
+                                                                </div>
+                                                            </form>
+                                                            <script type="text/javascript" src="https://pay.oson.uz/assets/btn_invoice/cdn.js"></script>
+                                                            
+                                                        <?php } ?>
                                                     
                                                 </div>
                                                 <!-- Ro'yhatdan o'tmagan bo'lsa -->
