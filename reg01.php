@@ -56,7 +56,11 @@
                     <section class="row">
                         <!-- Yangi kurslar -->
                         <div class="row my-3 mb-5">
-                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <?php if(isset($_COOKIE['code'])){
+                                    echo $_COOKIE['code'];
+                                } ?>
+                            </div>
                             <div class="col-lg-4">
                                 <div class="card">
                                     <div class="card-body text-center">

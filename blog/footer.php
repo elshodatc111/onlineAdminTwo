@@ -25,8 +25,8 @@
         <div class="col-lg-3 col-12 pt-2">
             <h4 class="card-title mt-2">Qo'llab quvvatlash</h4><br>
             <ul>
-                <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./login.php" class="text-white">Kirish</a></li>
-                <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./registr.php" class="text-white">Ro'yhatdan o'tish</a></li>
+                <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./log01.php" class="text-white">Kirish</a></li>
+                <li style="<?php if(isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./reg01.php" class="text-white">Ro'yhatdan o'tish</a></li>
                 <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./users/kurslar.php" class="text-white">Kurslarim</a></li>
                 <li style="<?php if(!isset($_COOKIE['UserID'])){echo 'display:none;';} ?>"><a href="./users/cobinet.php" class="text-white">Kabinet</a></li>
             </ul>

@@ -3,7 +3,10 @@
 
     if(isset($_POST['registir'])){
         if($_COOKIE['code']){
-            header("Location: ./index.php?chiqish2=true");
+            setcookie("code", "", time()-3*60); 
+            setcookie("FIO", "", time()-3*60);   
+            setcookie("Phone", "", time()-3*60); 
+            header("Location: ./reg01.php?chiqish2=true");
         }else{
             $FIO = str_replace("'","`",$_POST['FIO']);
             $Phone = str_replace(" ","", $_POST['Phone']);
@@ -17,9 +20,9 @@
                 header("location: ./reg01.php?phone=true");
             }else{
                 $rand1 = rand(100000, 999999);
-                setcookie("code", $rand1, time()+5*60);   
-                setcookie("FIO", $FIO, time()+6*60);   
-                setcookie("Phone", $Phone, time()+6*60); 
+                setcookie("code", $rand1, time()+3*60);   
+                setcookie("FIO", $FIO, time()+3*60);   
+                setcookie("Phone", $Phone, time()+3*60); 
                 $text = "Tasdiqlash kodi: ".$rand1;
                 $data = json_encode([
                     'send'=>'',
