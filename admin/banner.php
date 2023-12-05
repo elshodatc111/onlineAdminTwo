@@ -72,16 +72,16 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-content">
-                            <div class="card-body">
+                            <div class="card-body p-1">
                                 <h4 class="card-title w-100 text-center">Yangi banner qo'shish</h4>
                                 <form action="./banner/banner_plus.php" enctype="multipart/form-data" method="POST">
-                                    <label class='mt-2 mb-1'>H1 Text</label>
+                                    <label class='mt-1'>H1 Text</label>
                                     <input type="text" name="H1" class="form-control" required>
-                                    <label class='mt-2 mb-1'>P Text</label>
+                                    <label class='mt-1'>P Text</label>
                                     <input type="text" name="P" class="form-control" required>
-                                    <label class='mt-2 mb-1'>Image (1280X720px JPG)</label>
+                                    <label class='mt-1'>Image (1280X720px JPG)</label>
                                     <input type="file" name="fileToUpload" class="form-control" required>
-                                    <button class='btn btn-warning w-100 mt-3'>Bannerni qo'shish</button>
+                                    <button class='btn btn-warning w-100 mt-2'>Bannerni qo'shish</button>
                                 </form>
                             </div>
                         </div>
@@ -95,13 +95,13 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-content">
-                            <div class="card-body">
+                            <div class="card-body p-1" style="min-height:200px">
                                 <img class="img-fluid w-100" src="../assets/img/banner/<?php echo $row['Image']; ?>">
-                                <h4 class="card-title"><?php echo $row['H1']; ?></h4>
-                                <p class="card-text"><?php echo $row['P']; ?></p>
+                                <h6 class="card-title p-0 m-0"><?php echo $row['H1']; ?></h6>
+                                <p class="card-text p-0 m-0"><?php echo $row['P']; ?></p>
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-between">
+                        <div class="card-content p-1 m-0 d-flex justify-content-between">
                             <a href="./banner_text_edet.php?id=<?php echo $row['id']; ?>" class="btn btn-light-info"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Matn</a>
                             <a href="./banner_img_edet.php?id=<?php echo $row['id']; ?>" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="edit"></i>Rasm</a>
                             <a href="./banner/banner_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>

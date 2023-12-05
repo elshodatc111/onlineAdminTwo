@@ -88,11 +88,11 @@
                     <div class="col-lg-4 col-12">
                         <div class="card">
                             <div class="card-content">
-                                <div class="card-body text-center" style="min-height:250px;">
+                                <div class="card-body text-center p-1">
                                     <img class="img-fluid w-100" src="../assets/img/cours/<?php echo $row['CoursImage']; ?>">
                                     <h5 class="card-title"><?php echo $row['CoursName']; ?></h5>
                                 </div>
-                                <div class="card-footer d-flex justify-content-between">
+                                <div class="card-content p-1 d-flex justify-content-between">
                                     <a href="./kurs_eye.php?CoursID=<?php echo $row['CoursID']; ?>" class="btn btn-light-primary"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="eye"></i></a>
                                     <a href="./cours/cours_delete.php?CoursID=<?php echo $row['CoursID']; ?>" class="btn btn-light-danger"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="trash"></i></a>
                                 </div>
