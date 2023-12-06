@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../assets/compiled/css/iconly.css">
 </head>
 
-<body>
+<body id="body">
     <script src="assets/static/js/initTheme.js"></script>
     <div id="app">
         <div id="main" class="layout-horizontal">
@@ -111,7 +111,7 @@
                                     <div class="card-content">
                                         <div class="card-body p-2">
                                             <h4 class="card-title m-0 p-0 w-100 text-center"><?php echo $rowA['MavzuName']; ?></h4><hr class='p-0 m-0 mt-1'>
-                                            <video controls style="width:100%;" controlsList="nodownload">
+                                            <video id="myvideo" controls style="width:100%;" controlsList="nodownload">
                                                 <source src="../assets/video/<?php echo $rowA['Video']; ?>" type="video/mp4">
                                             </video>
                                         </div>
@@ -160,5 +160,14 @@
     <script src="../assets/compiled/js/app.js"></script>
     <script src="../assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="../assets/static/js/pages/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#myvideo').bind('contextmenu',function(){return false;});
+        });
+        $(function(){
+            $('#body').bind('contextmenu',function(){return false;});
+        });
+    </script>
 </body>
 </html>
