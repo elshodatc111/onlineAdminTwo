@@ -15,7 +15,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bosh sahifa</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+        <meta name="description" content="ATKO koreys til markazi. Ilm orqali insonlar hayotini yaxshilash, hayotda o'z yo'llarini topishga yordam berish. Eng sifatli bilim beradigan proffessional jamoaga ega Butun O'zbekistonga ilm ulashayotgan kompaniya. Oliy maqsadimiz: Samimiylik, Ilm olish, Jamoaviylik, Intizom, Natijaviylik, Tel: 91 950 11 01, Email: atkoteams@gmail.com">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="keywords" content="ATKO, Til markazi, Koreys tili, Ingliz tili, Koreys tili markazi, Online, Online Kurslar, Kores tili online, markaz, O'quv markaz, Qarshi, Qarshi shahar, Yangiliklar">
+        <meta name="author" content="Elshod Musurmonov">
+        <link href="./assets/img/logo.png" rel="icon">
+        <link href="./assets/img/logo.png" rel="apple-touch-icon">
+        <meta name="google-site-verification" content="ordmO-3dRMj58qqryMoTMOTo5o0PJbUMVSM2WWGSSEk" /><meta property="og:title" content="Atko.uz ATKO o'quv markazi">
+         <meta property="og:description" content="Ilm orqali insonlar hayotini yaxshilash, hayotda o'z yo'llarini topishga yordam berish. Eng sifatli bilim beradigan proffessional jamoaga ega Butun O'zbekistonga ilm ulashayotgan kompaniya.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://atko.uz">
+        <meta property="og:site_name" content="atko.uz">
+        <meta property="og:image" content="./assets/img/logo.png"/>
+        <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+        <title>ATKO o'quv markazi</title>
         <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="./assets/compiled/css/app.css">
         <link rel="stylesheet" href="./assets/compiled/css/app-dark.css">
