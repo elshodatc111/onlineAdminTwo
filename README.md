@@ -1,1 +1,1 @@
-ATKO o'quv markazi
+Online Kurslar
