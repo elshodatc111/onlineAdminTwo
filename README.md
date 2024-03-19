@@ -1,1 +1,1 @@
-Online Kurslar
+Online Kurslar (Laravel)
